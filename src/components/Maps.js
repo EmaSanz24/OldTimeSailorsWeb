@@ -3,13 +3,7 @@
 import { useEffect, useState, useMemo, useCallback, Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  useApiIsLoaded,
-  Map,
-  useMap,
-  useMapsLibrary,
-  Marker,
-} from "@vis.gl/react-google-maps";
+import { useApiIsLoaded, Map, useMap, useMapsLibrary, Marker } from "@vis.gl/react-google-maps";
 import MainDiv from "./MainDiv";
 import windowLogo from "../../public/assets/logo-badge.svg";
 import CustomPopup from "./CustomPopup";
@@ -29,7 +23,7 @@ const Maps = ({ markersList }) => {
         ne: { lat: 63.41423162170996, lng: 18.06478665006712 }, // NE coordinates B
       },
     }),
-    [],
+    []
   );
 
   const [currentOverlay, setCurrentOverlay] = useState(overlayData.mobile);
@@ -47,8 +41,7 @@ const Maps = ({ markersList }) => {
 
   //Overlay useEffect
   useEffect(() => {
-    if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary || overlayLoaded)
-      return;
+    if (!apiIsLoaded || !map || !coreLibrary || !mapsLibrary || overlayLoaded) return;
 
     // Solid color map type to avoid showing map
     const solidColorMapType = new mapsLibrary.ImageMapType({
@@ -64,36 +57,16 @@ const Maps = ({ markersList }) => {
     map.mapTypes.set("solidColor", solidColorMapType);
     map.setMapTypeId("solidColor");
 
-    const southWestLatLng = new coreLibrary.LatLng(
-      currentOverlay.sw.lat,
-      currentOverlay.sw.lng,
-    );
-    const northEastLatLng = new coreLibrary.LatLng(
-      currentOverlay.ne.lat,
-      currentOverlay.ne.lng,
-    );
-    const bounds = new coreLibrary.LatLngBounds(
-      southWestLatLng,
-      northEastLatLng,
-    );
+    const southWestLatLng = new coreLibrary.LatLng(currentOverlay.sw.lat, currentOverlay.sw.lng);
+    const northEastLatLng = new coreLibrary.LatLng(currentOverlay.ne.lat, currentOverlay.ne.lng);
+    const bounds = new coreLibrary.LatLngBounds(southWestLatLng, northEastLatLng);
 
     const overlayOptions = { clickable: false };
-    const overlay = new mapsLibrary.GroundOverlay(
-      currentOverlay.imageUrl,
-      bounds,
-      overlayOptions,
-    );
+    const overlay = new mapsLibrary.GroundOverlay(currentOverlay.imageUrl, bounds, overlayOptions);
     overlay.setMap(map);
 
     setOverlayLoaded(true);
-  }, [
-    apiIsLoaded,
-    map,
-    coreLibrary,
-    mapsLibrary,
-    currentOverlay,
-    overlayLoaded,
-  ]);
+  }, [apiIsLoaded, map, coreLibrary, mapsLibrary, currentOverlay, overlayLoaded]);
 
   const restrictions = useMemo(
     () => ({
@@ -105,7 +78,7 @@ const Maps = ({ markersList }) => {
       },
       strictBounds: true,
     }),
-    [currentOverlay],
+    [currentOverlay]
   );
 
   const breakpoints = useMemo(
@@ -262,7 +235,7 @@ const Maps = ({ markersList }) => {
 
       // Add more breakpoints as needed
     ],
-    [],
+    []
   );
 
   // Set up resize listener and initial settings
@@ -272,15 +245,11 @@ const Maps = ({ markersList }) => {
       const isMobile = window.matchMedia("(max-width: 1279px)").matches;
 
       // Determine current overlay based on device type
-      const currentOverlay = isMobile
-        ? overlayData.mobile
-        : overlayData.desktop;
+      const currentOverlay = isMobile ? overlayData.mobile : overlayData.desktop;
       setCurrentOverlay(currentOverlay);
 
       // Find and apply the appropriate breakpoint action
-      const breakpoint = breakpoints.find(
-        (bp) => width >= bp.min && width <= bp.max,
-      );
+      const breakpoint = breakpoints.find((bp) => width >= bp.min && width <= bp.max);
       if (breakpoint) breakpoint.action();
     };
 
@@ -307,69 +276,40 @@ const Maps = ({ markersList }) => {
     (markerData) => (
       <div className="popup-bubble">
         <div className="flex items-center justify-center px-2 border-r-3 border-dashed border-[#354557]">
-          <Image
-            src={windowLogo}
-            height={50}
-            width={50}
-            alt="Old Time Sailors Tickets Logo"
-            className="md:w-[70px]"
-          />
+          <Image src={windowLogo} height={50} width={50} alt="Old Time Sailors Tickets Logo" className="md:w-[70px]" />
         </div>
 
         <div className="flex flex-col mt-2.5 md1:mt-3 mb-2 px-2 md1:px-4 items-center gap-1.5 md1:gap-3 w-full">
-          <button
-            className="absolute top-0 right-0 pt-0.5 pr-0.5"
-            onClick={() => setActiveMarkerId(null)}
-          >
+          <button className="absolute top-0 right-0 pt-0.5 pr-0.5" onClick={() => setActiveMarkerId(null)}>
             <CgClose className=" text-[15px] md1:text-[20px] text-[#232f3f] " />
           </button>
 
           <ul className="flex flex-col self-start max-xl:gap-1 -space-y-1">
             <li className="text-xl leading-5 md:text-3xl text-lightRed font-titles font-medium flex items-start max-xl:mb-0.5">
               event:
-              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
-                {markerData.event}
-              </p>
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.event}</p>
             </li>
             <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-start">
               location:
-              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
-                {markerData.location}
-              </p>
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.location}</p>
             </li>
             <li className="text-xl md:text-3xl text-lightRed font-titles font-medium flex items-start">
               date:
-              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">
-                {markerData.date}
-              </p>
+              <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.date}</p>
             </li>
           </ul>
-          <Link
-            className="octagon-tickets flex items-center justify-center bg-darkBlue"
-            href={markerData.ticketsURL}
-            target="_blank"
-          >
-            <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">
-              tickets
-            </p>
+          <Link className="octagon-tickets flex items-center justify-center bg-darkBlue" href={markerData.ticketsURL} target="_blank">
+            <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">+ Info</p>
           </Link>
         </div>
       </div>
     ),
-    [],
+    []
   );
 
   return (
     <MainDiv className="h-dvh">
-      <Map
-        zoom={5}
-        maxZoom={9}
-        center={mapCenter}
-        gestureHandling={"greedy"}
-        disableDefaultUI={true}
-        id={"MapOTS"}
-        restriction={restrictions}
-      >
+      <Map zoom={5} maxZoom={9} center={mapCenter} gestureHandling={"greedy"} disableDefaultUI={true} id={"MapOTS"} restriction={restrictions}>
         {coreLibrary &&
           markersList.map((m) => (
             <Fragment key={m.id}>
@@ -386,11 +326,7 @@ const Maps = ({ markersList }) => {
                 }}
               />
 
-              <CustomPopup
-                position={m.markerPosition}
-                isVisible={activeMarkerId === m.id}
-                isTransitioning={isTransitioning}
-              >
+              <CustomPopup position={m.markerPosition} isVisible={activeMarkerId === m.id} isTransitioning={isTransitioning}>
                 {createPopupContent(m)}
               </CustomPopup>
             </Fragment>
