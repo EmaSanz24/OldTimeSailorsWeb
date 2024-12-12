@@ -51,6 +51,16 @@ const Navbar = () => {
         setTitleBg("bluePattern");
         setTitleColor("lightRed");
         break;
+      // case "/tickets/map-view":
+      //   setTitle("tickets");
+      //   setTitleBg("bluePattern");
+      //   setTitleColor("lightRed");
+      //   break;
+      // case "/tickets/calendar-view":
+      //   setTitle("tickets");
+      //   setTitleBg("bluePattern");
+      //   setTitleColor("lightRed");
+      //   break;
       case "/reviews":
         setTitle("reviews");
         setTitleBg("bluePattern");
@@ -72,9 +82,9 @@ const Navbar = () => {
         setTitleColor("beige");
         break;
       default:
-        setTitle("reviews");
+        setTitle("tickets");
         setTitleBg("bluePattern");
-        setTitleColor("beige");
+        setTitleColor("lightRed");
         break;
     }
   }, [pathname]);

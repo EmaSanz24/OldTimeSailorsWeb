@@ -299,7 +299,7 @@ const Maps = ({ markersList }) => {
             </li>
           </ul>
           <Link className="octagon-tickets flex items-center justify-center bg-darkBlue" href={markerData.ticketsURL} target="_blank">
-            <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">+ Info</p>
+            <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">+ info</p>
           </Link>
         </div>
       </div>

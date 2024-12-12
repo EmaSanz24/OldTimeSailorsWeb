@@ -15,11 +15,7 @@ export const metadata = {
   },
 };
 const Tickets = async () => {
-  return (
-    <PagesWrapper>
-      <h1>Tickets</h1>
-    </PagesWrapper>
-  );
+  return <h1>tittle</h1>;
 };
 
 export default Tickets;
