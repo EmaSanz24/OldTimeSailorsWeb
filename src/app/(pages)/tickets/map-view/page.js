@@ -24,6 +24,10 @@ const formatMarkers = (markersApiResponse) => {
     location: marker.attributes.location,
     date: marker.attributes.date,
     ticketsURL: marker.attributes.ticketsURL,
+    venueInfo: marker.attributes.venueInfo,
+    gigStartTime: marker.attributes.gigStartTime,
+    gigFinishTime: marker.attributes.gigFinishTime,
+    typeOfShow: marker.attributes.typeOfShow,
   }));
 };
 

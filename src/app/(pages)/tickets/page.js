@@ -1,4 +1,5 @@
-import PagesWrapper from "@/wrappers/PagesWrapper";
+import MainDiv from "@/components/MainDiv";
+import ViewSelector from "@/components/ViewSelector";
 
 export const metadata = {
   title: "Tickets",
@@ -14,8 +15,12 @@ export const metadata = {
     ],
   },
 };
-const Tickets = async () => {
-  return <h1>tittle</h1>;
+const Tickets = () => {
+  return (
+    <MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain">
+      <ViewSelector></ViewSelector>
+    </MainDiv>
+  );
 };
 
 export default Tickets;
