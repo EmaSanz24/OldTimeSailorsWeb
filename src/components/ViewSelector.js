@@ -17,7 +17,7 @@ const ViewSelector = async () => {
           </div>
         </Link>
       </div>
-      <Image></Image>
+      {/* <Image></Image> */}
     </div>
   );
 };
