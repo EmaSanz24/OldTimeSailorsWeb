@@ -1,6 +1,6 @@
 import MainDiv from "@/components/MainDiv";
 import ViewSelector from "@/components/ViewSelector";
-//
+
 export const metadata = {
   title: "Tickets",
   description: "Find out where are we playing next",
