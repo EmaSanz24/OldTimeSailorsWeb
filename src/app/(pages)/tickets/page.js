@@ -1,6 +1,6 @@
 import MainDiv from "@/components/MainDiv";
 import ViewSelector from "@/components/ViewSelector";
-
+//
 export const metadata = {
   title: "Tickets",
   description: "Find out where are we playing next",
@@ -15,6 +15,7 @@ export const metadata = {
     ],
   },
 };
+
 const Tickets = () => {
   return (
     <MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain">
