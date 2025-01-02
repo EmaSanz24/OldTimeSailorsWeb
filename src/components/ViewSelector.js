@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 const ViewSelector = async () => {
   return (
     <div>
       <div className="">
-        <Link to="/tickets/map-view">
+        <Link href="/tickets/map-view">
           <div>
             <span className="text-lightRed">view gigs on</span>
             <span className="text-darkBlue">map</span>
@@ -10,7 +12,7 @@ const ViewSelector = async () => {
         </Link>
       </div>
       <div className="">
-        <Link to="/tickets/calendar-view">
+        <Link href="/tickets/calendar-view">
           <div>
             <span className="text-darkBlue">view gigs on</span>
             <span className="text-lightRed">calendar</span>

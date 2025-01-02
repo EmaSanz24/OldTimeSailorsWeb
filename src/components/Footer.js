@@ -11,7 +11,7 @@ const Footer = () => {
   const settings = useLoader() || defaultSettings;
 
   useEffect(() => {
-    if (pathname === "/tickets" || pathname === "/services") {
+    if (pathname === "/tickets" || pathname === "/services" || pathname === "/tickets/calendar-view") {
       setIsFooterBlack(true);
     } else setIsFooterBlack(false);
   }, [pathname]);
@@ -24,7 +24,9 @@ const Footer = () => {
       }}
     >
       <p
-        className={`${isFooterBlack ? "text-black" : "text-beige"} font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase `}
+        className={`${
+          isFooterBlack ? "text-darkBlue" : "text-beige"
+        } font-txt text-[9px] md1:text-lg md:text-xl xl:text-base 2k:text-3xl 4k:text-5xl uppercase `}
       >
         OLD TIME SAILORS LTD.®
       </p>
