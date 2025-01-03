@@ -2,11 +2,7 @@ const { nextui } = require("@nextui-org/theme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/components/**/*.js",
-    "./src/app/**/*.js",
-    "./node_modules/@nextui-org/theme/dist/components/modal.js",
-  ],
+  content: ["./src/components/**/*.js", "./src/app/**/*.js", "./node_modules/@nextui-org/theme/dist/components/modal.js"],
   theme: {
     extend: {
       fontFamily: {
@@ -19,6 +15,7 @@ module.exports = {
         darkBlue: "#1f344a",
         lightRed: "#dd3254",
         musicColor: "#253142",
+        darkBeige: "#d1c3a9",
       },
       backgroundImage: {
         beigePattern: "url('/assets/backgrounds/bg-beige-desktop.webp')",

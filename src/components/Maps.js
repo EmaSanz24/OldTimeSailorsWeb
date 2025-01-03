@@ -298,7 +298,10 @@ const Maps = ({ markersList }) => {
               <p className="max-xl:max-w-48 text-[19px] md:text-[28px] text-darkBlue font-txt pl-1 xl:whitespace-nowrap">{markerData.date}</p>
             </li>
           </ul>
-          <Link className="octagon-tickets flex items-center justify-center bg-darkBlue" href={`/tickets/${markerData.event.replace(/\s+/g, "-")}`}>
+          <Link
+            className="octagon-tickets flex items-center justify-center bg-darkBlue"
+            href={`/tickets/${markerData.event.replace(/\s+/g, "-").toLowerCase()}`}
+          >
             <p className="text-center text-3xl md:text-[42px] font-titles text-lightRed">+ info</p>
           </Link>
         </div>

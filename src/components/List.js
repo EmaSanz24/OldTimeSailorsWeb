@@ -13,7 +13,7 @@ const List = ({ markersList }) => {
     return dateA - dateB; // Compare dates
   });
   return (
-    <div className="w-full h-full flex-1 overflow-auto px-3">
+    <div className="w-full h-full flex-1 pt-10 md:pt-16 overflow-auto px-3">
       {sorted.map((item, index) => (
         <ListItem event={item} key={index}></ListItem>
       ))}
