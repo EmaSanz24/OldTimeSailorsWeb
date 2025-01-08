@@ -5,15 +5,15 @@ import { useLoader } from "@/context/LoaderContext";
 import { useState, useEffect } from "react";
 
 const Footer = () => {
-  const [isFooterBlack, setIsFooterBlack] = useState(false);
+  const [isFooterBlack, setIsFooterBlack] = useState(true);
   const pathname = usePathname();
   const defaultSettings = { loader: 1, photos: true };
   const settings = useLoader() || defaultSettings;
 
   useEffect(() => {
-    if (pathname === "/tickets" || pathname === "/services" || pathname === "/tickets/calendar-view") {
-      setIsFooterBlack(true);
-    } else setIsFooterBlack(false);
+    if (pathname === "/" || pathname === "/media" || pathname === "/reviews" || pathname === "/our-clients") {
+      setIsFooterBlack(false);
+    } else setIsFooterBlack(true);
   }, [pathname]);
   return (
     <footer

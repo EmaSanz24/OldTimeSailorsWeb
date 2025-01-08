@@ -1,5 +1,6 @@
 //this page will be loaded when someone clicks on the + info button on the gigs viewer
 //loading the information of the specific gig named on the url
+import FamilyLanding from "@/components/FamilyLanding";
 
 export const metadata = {
   title: "Tickets",
@@ -49,7 +50,7 @@ const fetchMarkers = async () => {
 
 const GigLanding = async () => {
   const markersList = await fetchMarkers();
-  return <h1>event fuerte</h1>;
+  return <FamilyLanding />;
 };
 
 export default GigLanding;

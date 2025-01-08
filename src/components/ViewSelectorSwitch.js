@@ -29,7 +29,7 @@ const ViewSwitch = () => {
       >
         <Link href="/tickets/map-view">
           <div>
-            <p className="text-center text-l md:text-xl font-titles text-lightRed">Map</p>
+            <p className={`text-center text-l md:text-xl font-titles ${pathname === "/tickets/map-view" ? "text-lightRed" : "text-beige"}  `}>Map</p>
           </div>
         </Link>
       </div>
@@ -40,7 +40,9 @@ const ViewSwitch = () => {
       >
         <Link href="/tickets/calendar-view">
           <div>
-            <p className="text-center text-l md:text-xl font-titles text-lightRed">Calendar</p>
+            <p className={`text-center text-l md:text-xl font-titles ${pathname === "/tickets/calendar-view" ? "text-lightRed" : "text-beige"}`}>
+              Calendar
+            </p>
           </div>
         </Link>
       </div>

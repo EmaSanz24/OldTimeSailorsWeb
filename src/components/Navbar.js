@@ -21,6 +21,9 @@ const Navbar = () => {
   const [navStyle, setNavStyle] = useState({});
   const [viewSelector, setViewSelector] = useState(false);
 
+  const fixedRoutes = ["/tickets", "/tickets/map-view", "/tickets/calendar-view", "/reviews", "/media", "/our-clients", "/services"];
+  const isDynamicRoute = pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
+
   const getBackgroundColor = (path) => {
     if (path === "/media") {
       return "rgba(35, 48, 64, 0.8)";
@@ -127,7 +130,7 @@ const Navbar = () => {
           <h1
             className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles
            text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl
-            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2`}
+            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2 ${isDynamicRoute ? "hidden" : "visible"}`}
             style={{
               opacity: settings?.loader,
               pointerEvents: settings?.photos ? "auto" : "none",
@@ -138,7 +141,11 @@ const Navbar = () => {
         </div>
         <div className="flex gap-1.5 xs:gap-2 sm:gap-4 items-center">
           <Link
-            className={`${pathname === "/tickets" || pathname === "/services" ? "bg-redPattern text-beige" : "bg-beigePattern text-lightRed"}
+            className={`${
+              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+                ? "bg-redPattern text-beige"
+                : "bg-beigePattern text-lightRed"
+            }
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
             style={{
               opacity: settings?.loader,
@@ -154,7 +161,11 @@ const Navbar = () => {
           </Link>
 
           <Link
-            className={`${pathname === "/tickets" || pathname === "/services" ? "bg-bluePattern text-beige" : "bg-beigePattern text-darkBlue"}
+            className={`${
+              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+                ? "bg-bluePattern text-beige"
+                : "bg-beigePattern text-darkBlue"
+            }
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
             style={{
               opacity: settings?.loader,
@@ -170,7 +181,11 @@ const Navbar = () => {
           </Link>
 
           <Link
-            className={`${pathname === "/tickets" || pathname === "/services" ? "bg-redPattern text-beige" : "bg-beigePattern text-lightRed"}
+            className={`${
+              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+                ? "bg-redPattern text-beige"
+                : "bg-beigePattern text-lightRed"
+            }
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
             style={{
               opacity: settings?.loader,
@@ -186,7 +201,11 @@ const Navbar = () => {
           </Link>
 
           <Link
-            className={`${pathname === "/tickets" || pathname === "/services" ? "bg-bluePattern text-beige" : "bg-beigePattern text-darkBlue"}
+            className={`${
+              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+                ? "bg-bluePattern text-beige"
+                : "bg-beigePattern text-darkBlue"
+            }
                                 bg-contain rounded-full p-1 sm:p-2 2k:p-3 4k:p-3.5 pointer-events-auto`}
             style={{
               opacity: settings?.loader,
@@ -202,8 +221,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      {viewSelector === true ? <ViewSwitch></ViewSwitch> : false}
-      {/* <ViewSwitch></ViewSwitch> */}
+      {viewSelector === true ? <ViewSwitch /> : false}
     </div>
   );
 };
