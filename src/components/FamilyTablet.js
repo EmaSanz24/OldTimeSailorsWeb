@@ -80,7 +80,9 @@ export const FamilyTablet = async () => {
             <div className="absolute inset-0 flex items-center justify-center -mb-2">
               <video
                 controls
-                className="-ml-[15px] w-[84%] mt-3 object-cover border-darkBlue border-[10px] rounder-sm z-20 shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)] "
+                preload="none"
+                poster={"/assets/thumbnailvideo.webp"}
+                className="-ml-[15px] w-[84%] mt-3 object-cover border-darkBlue border-[10px] rounder-sm z-20 shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)] hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
               >
                 <source src="/assets/familyVideo.mp4" type="video/mp4" />
               </video>
@@ -150,7 +152,13 @@ export const FamilyTablet = async () => {
             </div>
           </div>
         </div>
-        <Image src="/assets/drawing2.png" alt="Background Drawing" width={300} height={300} className="absolute bottom-[0px] right-[0px] z-20" />
+        <Image
+          src="/assets/drawing2.png"
+          alt="Background Drawing"
+          width={300}
+          height={300}
+          className="absolute -bottom-[15px] right-[0px] z-20 contrast-[25%]"
+        />
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const FamilyMobile = async () => {
   return (
-    <div className="relative -bottom-[10px] pt-9 min-[425px]:-bottom-[25px]">
+    <div className="relative pt-9 -bottom-[10px] min-[425px]:-bottom-[20px]">
       <div className="relative w-full h-full my-[10px]">
         {/* Main container with border */}
         <div className="border border-darkBeige p-2  m-4 relative min-[375px]:p-4 min-[375px]:mx-4 min-[425px]:mx-6">
@@ -59,7 +59,7 @@ export const FamilyMobile = async () => {
                 </Link>
               </div>
             </div>
-            <p className="text-[12px] pb-5 font-txt text-darkBlue pt-10 min-[375px]:pt-8 min-[425px]:text-[14px]">
+            <p className="text-[12px] pt-14 pb-5 font-txt text-darkBlue min-[375px]:pt-8 min-[425px]:text-[14px]">
               You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and
               singing! You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way you
               have never seen before. The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time of
@@ -77,7 +77,10 @@ export const FamilyMobile = async () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <video
                   controls
-                  className="w-[80%] h-[90%] mt-3 -ml-5 object-cover border-darkBlue border-[6px] rounder-sm z-20 shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)] min-[425px]:w-[82%] min-[425px]:-ml-6"
+                  preload="none"
+                  poster={"/assets/thumbnailvideo.webp"}
+                  className="w-[80%] h-[90%] mt-3 -ml-5 object-cover border-darkBlue border-[6px] rounder-sm z-20 shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)] min-[425px]:w-[82%] min-[425px]:-ml-6
+                  hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
                 >
                   <source src="/assets/familyVideo.mp4" type="video/mp4" />
                 </video>
@@ -158,7 +161,7 @@ export const FamilyMobile = async () => {
             alt="Background Drawing"
             width={600}
             height={400}
-            className="absolute -right-2 z-20 -bottom-9 w-[150px] h-[100px] min-[375px]:w-[160px] min-[375px]:h-[100px] min-[375px]:-bottom-[55px] min-[375px]:-right-[2px] min-[425px]:-bottom-[93px] min-[425px]:-right-[10px] min-[425px]:w-[180px] min-[425px]:h-[120px]"
+            className="absolute -right-2 z-20 -bottom-12 w-[150px] h-[100px] min-[375px]:w-[160px] min-[375px]:h-[100px] min-[375px]:-bottom-[55px] min-[375px]:-right-[2px] min-[425px]:-bottom-[99px] min-[425px]:-right-[8px] min-[425px]:w-[180px] min-[425px]:h-[120px] contrast-[25%]"
           />
         </div>
       </div>
