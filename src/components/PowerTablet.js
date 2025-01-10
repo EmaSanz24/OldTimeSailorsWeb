@@ -9,8 +9,8 @@ export const PowerTablet = async () => {
       <div className="relative -bottom-[150px]">
         {/* Contenedor principal con borde */}
         <div className="border border-[#e9ddc7] p-4 mx-6 relative">
-          <div className="text-left font-times">
-            <h1 className="font-bold">
+          <div className="text-left">
+            <h1>
               <span className="text-[#d22a4e] font-titles text-[40px]">
                 old time sailors{" "}
               </span>
@@ -171,7 +171,7 @@ export const PowerTablet = async () => {
                   className="absolute -left-[18px] top-[80px] w-[290px] h-[110px]"
                   loading="lazy"
                 />
-                <p className="absolute inset-0 font-titles text-[#1b344a] left-[70px] top-[105px] text-[45px]">
+                <p className="absolute inset-0 font-titles font-bold text-[#1b344a] left-[70px] top-[105px] text-[45px]">
                   more gigs
                 </p>
               </div>

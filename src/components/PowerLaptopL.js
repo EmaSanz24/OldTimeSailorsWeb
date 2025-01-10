@@ -3,46 +3,47 @@ import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 
-export const PowerLaptop = async () => {
+export const PowerLaptopL = async () => {
   return (
     <>
-      <div className="relative top-[340px] right-[5px]">
-        <div className="relative w-full h-full my-[50px]">
+      <div className="relative -bottom-[100px]">
+        <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
-          <div className="border border-[#e9ddc7] p-2 relative w-[650px] -right-[95px] -top-[310px]">
+          <div className="border border-[#e9ddc7] p-2 relative w-[950px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="leading-none">
-                <span className="text-[#d22a4e] font-titles text-[30px]">
+                <span className="text-[#d22a4e] font-titles text-[55px]">
                   old time sailors{" "}
                 </span>
-                <span className="text-[#e9ddc7] font-titles text-[30px]">
+                <span className="text-[#e9ddc7]  font-titles text-[55px]">
+                  {" "}
                   at
                 </span>
                 <br />
-                <span className="text-[#e9ddc7] font-titles text-[30px]">
+                <span className="text-[#e9ddc7] font-titles text-[55px]">
                   {" "}
                   newquay orchard
                 </span>
               </h1>
-              <p className="text-[#d22a4e] font-titles text-[20px]">newquay</p>
+              <p className="text-[#d22a4e] font-titles text-[30px]">newquay</p>
             </div>
-            <div className="absolute w-[250px] top-[21px] -right-[75px] z-20">
-              <div className="bg-[#e9ddc7] p-4 rounded-3xl ">
-                <h3 className="text-[#d22a4e] text-[25px] font-titles leading-none">
+            <div className="absolute w-[350px] top-[20px] -right-[100px] z-20">
+              <div className="bg-[#e9ddc7] h-[220px] p-6 rounded-3xl">
+                <h3 className="text-[#d22a4e] text-[30px] font-titles leading-none">
                   more about
                   <br />
                   the venue
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-[#1b344a] text-[12px] font-txt leading-tight">
+                  <p className="text-[#1b344a] text-[15px] font-txt leading-tight">
                     A rural escape built by the community, for the community in
                     the heart of Newquay.
                   </p>
-                  <p className="text-[#1b344a] text-[12px] font-txt leading-tight">
+                  <p className="text-[#1b344a] text-[15px] font-txt leading-tight">
                     A venue for the whole family with seating options.
                   </p>
                   <Link href="/venue-info">
-                    <p className="text-[#1b344a] text-[12px] mt-1 font-titles underline">
+                    <p className="text-[#1b344a] text-[15px] mt-1 font-titles underline">
                       contact the venue for + info
                     </p>
                   </Link>
@@ -64,22 +65,23 @@ export const PowerLaptop = async () => {
                       key={text}
                       className="flex items-center gap-2 text-[#e9ddc7] font-semibold"
                     >
-                      <Icon className="text-[12px] text-[#d22a4e]" />
-                      <span className="text-[12px]">{text}</span>
+                      <Icon className="text-[15px] text-[#d22a4e]" />
+                      <span className="text-[15px]">{text}</span>
                     </div>
                   ))}
                 </div>
+
                 <div className="relative w-[250px] h-[100px] ">
                   <Link
-                    className="absolute left-5 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
+                    className="absolute left-12 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                     style={{
-                      width: "200px",
-                      height: "50px",
+                      width: "300px",
+                      height: "80px",
                     }}
                     href={"/buytickets"}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[20px]">
+                    <h3 className="font-titles justify-center text-[30px]">
                       {" "}
                       buy tickets
                     </h3>
@@ -87,7 +89,7 @@ export const PowerLaptop = async () => {
                 </div>
               </div>
 
-              <p className="text-sm text-left text-[#e9ddc7] font-txt leading-[31px] px-4">
+              <p className="text-sm text-left text-[#e9ddc7] font-txt leading-8">
                 Heave ho and up she rises! Cast aside your compass, throw your
                 maps overboard and join the mutinous crew of The Old Time Sailor
                 as they set sail for the wild uninhabited islands of Irish Punk,
@@ -103,89 +105,92 @@ export const PowerLaptop = async () => {
               </p>
             </div>
           </div>
-
           <div className="absolute right-[15px] -top-[230px] z-10">
             <Image
               src="/assets/powerPhoto1.webp"
               alt="Performance"
               width={200}
               height={200}
-              className="w-[200px] h-[200px]"
+              className="w-[290px] h-[290px] "
               loading="lazy"
             />
           </div>
           {/* Photo 2 */}
-          <div className="absolute right-[25px] -top-[35px] z-30">
+          <div className="absolute right-[25px] top-[53px] z-20">
             <Image
               src="/assets/powerPhoto2.webp"
               alt="Musicians"
               width={200}
               height={200}
-              className="w-[290px]"
+              className="w-[390px] "
               loading="lazy"
             />
           </div>
           {/* Photo 3 */}
-          <div className="absolute right-[275px] top-[230px] w-[380px] z-40">
+          <div className="absolute left-[520px] top-[268px] z-30">
             <Image
               src="/assets/powerPhoto3.webp"
               alt="Crowd"
               width={400}
               height={400}
-              className="h-[360px] shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
+              className="w-[550px]"
               loading="lazy"
             />
           </div>
-          <div className="absolute -right-[28px] bottom-[0px]">
+          <div className="absolute -right-[0px] -bottom-[300px]">
             <Image
               src="/assets/shipDrawing.webp"
               alt="Background drawing"
               width={300}
               height={300}
-              className="w-[330px] h-[300px]"
+              className="w-[380px] h-[330px]"
               loading="lazy"
             />
           </div>
-          <div className="absolute top-[150px] left-[40px] w-[410px] h-[280px] z-50">
+
+          <div className="absolute top-[125px] left-[10px] z-30 ">
             <Image
               src="/assets/powerVideoBox.webp"
               alt="Video frame"
-              width={430}
-              height={100}
+              width={590}
+              height={300}
+              className="h-[450px]"
               priority={true}
             />
-            <div className="absolute inset-0 top-[45px] -left-[10px] -right-[10px] flex items-center justify-center">
-              <video
-                controls
-                preload="none"
-                poster={"/assets/thumbnailvideoP.webp"}
-                className="object-cover w-[75%] h-[75%] rounded-sm z-20  hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
-              >
-                <source src="/assets/powerVideo.mp4" type="video/mp4" />
-              </video>
-            </div>
           </div>
+
+          <div className="absolute inset-0 top-[235px] left-[74px] z-50">
+            <video
+              controls
+              preload="none"
+              poster={"/assets/thumbnailvideoP.webp"}
+              className="object-cover w-[460px] h-[270px] rounded-sm hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
+            >
+              <source src="/assets/powerVideo.mp4" type="video/mp4" />
+            </video>
+          </div>
+
           <div className="relative">
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
               width={300}
               height={300}
-              className="absolute left-[25px] -top-[100px] w-[310px] h-[110px]"
+              className="absolute left-[10px] top-[25px] w-[430px] h-[120px]"
               loading="lazy"
             />
-            <p className="absolute inset-0 font-titles font-bold text-[#1b344a] left-[130px] -top-[72px] text-[40px]">
+            <p className="absolute inset-0 font-titles font-bold text-[#1b344a] left-[170px] top-[45px] text-[50px]">
               more gigs
             </p>
           </div>
           {/* Title */}
-          <div className="absolute -bottom-[190px]  left-[45px] z-10 ">
+          <div className="absolute -bottom-[420px]  left-[15px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-none">
-                <p className="text-[#d22a4e] text-[80px] font-titles">power</p>
-                <p className="text-[#d22a4e] text-[80px] font-titles">show</p>
+                <p className="text-[#d22a4e] text-[125px] font-titles">power</p>
+                <p className="text-[#d22a4e] text-[125px] font-titles">show</p>
               </div>
-              <div className="text-[#e9ddc7] text-[20px] -mb-[95px] -ml-[65px]">
+              <div className="text-[#e9ddc7] text-[30px] -mb-[150px] -ml-[85px]">
                 <div className="font-titles leading-tight tracking-widest">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
@@ -198,4 +203,4 @@ export const PowerLaptop = async () => {
     </>
   );
 };
-export default PowerLaptop;
+export default PowerLaptopL;

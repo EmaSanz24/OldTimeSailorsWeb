@@ -32,7 +32,7 @@ export const FamilyLanding = async () => {
         </div>
       </div>
       <div className="hidden min-[1024px]:block">
-        <div className="w-[1440px] min-h-screen relative mx-auto">
+        <div className="min-h-screen relative mx-auto">
           <FamilyLaptop />
         </div>
       </div>
