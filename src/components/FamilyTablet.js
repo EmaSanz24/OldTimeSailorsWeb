@@ -75,14 +75,14 @@ export const FamilyTablet = async () => {
       <div className="w-full h-[auto] relative pt-5">
         <div className="relative h-[220px] ">
           {/* Video */}
-          <div className="absolute -top-12 -left-4 w-[480px] h-[280px] ">
-            <Image src="/assets/videoBox.png" alt="Video Frame" width={460} height={100} />
+          <div className="absolute -top-12 -left-4 w-[460px] h-[280px] ">
+            <Image src="/assets/videoBox.png" alt="Video Frame" width={460} height={100} className="h-[300px]" />
             <div className="absolute inset-0 flex items-center justify-center -mb-2">
               <video
                 controls
                 preload="none"
                 poster={"/assets/thumbnailvideo.webp"}
-                className="-ml-[15px] w-[84%] mt-3 object-cover border-darkBlue border-[10px] rounder-sm z-20 shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)] hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
+                className="ml-[30px] w-[95%] h-[82%] mt-[2px] object-cover border-darkBlue border-[10px] rounder-sm z-20 shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)] hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
               >
                 <source src="/assets/familyVideo.mp4" type="video/mp4" />
               </video>
@@ -101,13 +101,13 @@ export const FamilyTablet = async () => {
         </div>
         {/* Lower Photos  */}
         <div className="relative h-[750px] mx-5 mb-4">
-          <div className="absolute left-[0px] -top-[3px] z-20 w-1/2">
+          <div className="absolute left-[0px] -top-[5px] z-20 w-1/2">
             <Image
               src="/assets/familyPhoto1.png"
               alt="
             Performance"
-              width={580}
-              height={472}
+              width={350}
+              height={320}
               className="z-10 h-[320px] shadow-gray-500 shadow-[0px_3px_3px_rgba(0,0,0,0.3)]"
             />
             <div className="relative">
@@ -119,7 +119,7 @@ export const FamilyTablet = async () => {
                   height={440}
                   className="absolute -left-[18px] top-[30px] w-[290px] h-[110px]"
                 />
-                <p className="absolute inset-0 font-titles text-beige w-3/4 text-center top-[60px] text-[35px]">
+                <p className="absolute inset-0 font-titles text-beige w-3/4 text-center ml-4 top-[50px] text-[50px]">
                   {/* {" "} */}
                   more gigs
                 </p>
@@ -137,7 +137,7 @@ export const FamilyTablet = async () => {
           </div>
         </div>
         {/* Title */}
-        <div className="absolute -bottom-[10px] left-[15px] z-10">
+        <div className="absolute -bottom-[5px] left-[15px] z-10">
           <div className="flex flex-row items-center gap-3">
             <div className="flex flex-col leading-none mb-10">
               <p className="text-darkBlue font-titles text-[80px]">family</p>
@@ -145,7 +145,7 @@ export const FamilyTablet = async () => {
             </div>
             <div className="text-lightRed text-[15px] flex flex-col">
               <Image src="/assets/anchor.png" alt="Anchor" width={60} height={60} className="ml-[45px] rotate-12 mb-4" />
-              <div className="-ml-[20px] mb-5 leading-none tracking-widest font-titles text-[20px]">
+              <div className="-ml-[60px] mb-[30px] leading-none tracking-widest font-titles text-[20px]">
                 <p>a traditional sailor show,</p>
                 <p>sing along and dance with us!</p>
               </div>

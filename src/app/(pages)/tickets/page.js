@@ -18,7 +18,7 @@ export const metadata = {
 
 const Tickets = () => {
   return (
-    <MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain">
+    <MainDiv className="w-screen min-h-screen bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain">
       <ViewSelector></ViewSelector>
     </MainDiv>
   );

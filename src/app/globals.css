@@ -105,8 +105,8 @@
 }
 
 .octagon-tickets {
-  width: 190px;
-  height: 35px;
+  width: var(--octagon-width, 190px);
+  height: var(--octagon-height, 35px);
   clip-path: polygon(
     5% 0%,
     95% 0%,

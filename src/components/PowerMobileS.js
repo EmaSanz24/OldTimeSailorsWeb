@@ -1,0 +1,226 @@
+import Link from "next/link";
+import { FaCalendar, FaClock } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import Image from "next/image";
+import { memo } from "react";
+
+const EventDescription = memo(() => (
+  <p className="text-[12px] pb-5 text-[#e9ddc7] font-txt text-pretty" translate="no">
+    Heave ho and up she rises! Cast aside your compass, throw your maps
+    overboard and join the mutinous crew of The Old Time Sailor as they set sail
+    for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock,
+    Romani Punk, Dark Cabaret, and Twisted Circus! 'Rock and row' with our 21
+    strong crew of rebellious musicians as the navigate a voyage through the
+    thrashing seas of Hevay Metal and Hard Rock on a genre bending adventure
+    into uncharted waters, join in the Wall of Death and thrash it out with your
+    shipmates. Get ready for vigorous vocals, emphatic energy, mosh pits and
+    head banging: we play it live and we play it loud, but as always with The
+    Old Time Sailors... be prepared to expect the unexpected!
+  </p>
+));
+
+export const PowerMobileS = async () => {
+  return (
+    <>
+      <div className="relative -bottom-[80px]">
+        <div className="relative w-full h-full my-[10px]">
+          {/* Contenedor principal con borde */}
+          <div className="border border-[#9e8f73] p-2 m-4 relative">
+            <div className="text-left font-times">
+              <h1 className="font-titles ">
+                <span className="text-[#d22a4e] text-xl">
+                  old time sailors{" "}
+                </span>{" "}
+                <span className="text-beige text-xl">at</span>
+                <br />
+                <span className="text-beige text-xl">newquay orchard</span>
+              </h1>
+              <p className="text-[#d22a4e] text-sm font-titles">newquay</p>
+            </div>
+
+            <div className="border-t-2 border-dashed border-[#9e8f73] my-4" />
+
+            <div className="absolute -right-[12px] top-20 w-[160px]">
+              <div className="bg-beige p-3 py-4 rounded-2xl">
+                <h3 className="text-[#d22a4e] text-[15px]  font-titles leading-tight">
+                  more about
+                  <br />
+                  the venue
+                </h3>
+                <div className="mt-0.5 ">
+                  <p className="text-darkBlue text-[7px] leading-tight font-txt">
+                    A rural escape built by the community, for the community in
+                    the heart of Newquay.
+                  </p>
+                  <p className="text-darkBlue text-[7px] leading-tight font-txt">
+                    A venue for the whole family with seating options.
+                  </p>
+                  <Link href="/venue-info">
+                    <p className="text-darkBlue text-[8px] mt-1  underline font-titles">
+                      contact the venue for + info
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Event info */}
+            <div className="space-y-6">
+              <div className="space-y-3">
+                {[
+                  { icon: FaLocationDot, text: "Newquay Orchard, Newquay" },
+                  { icon: FaCalendar, text: "Saturday, May 12, 2025" },
+                  { icon: FaClock, text: "7:30PM to 10:30PM" },
+                ].map(({ icon: Icon, text }) => (
+                  <div
+                    key={text}
+                    className="flex items-center gap-2 text-[#1b344a] font-semibold"
+                  >
+                    <Icon className="text-[10px] text-beige" />
+                    <span className="text-[7.5px] text-beige">{text}</span>
+                  </div>
+                ))}
+
+                <div className="relative h-[18px]">
+                  <Link
+                    className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
+                    style={{
+                      "--octagon-width": "100px",
+                      "--octagon-height": "28px",
+                    }}
+                    href={"/buytickets"}
+                    target="_blank"
+                  >
+                    <h3 className="font-titles justify-center text-[12px]">
+                      {" "}
+                      buy tickets
+                    </h3>
+                  </Link>
+                </div>
+                <EventDescription />
+              </div>
+            </div>
+          </div>
+
+          {/* Media section */}
+          <div className="w-full h-[400px] relative -top-5 -left-2">
+            <div className="relative h-[200px]">
+              {/* Video */}
+              {/* Contenedor principal */}
+              <div className="relative w-[245px] h-[130px] -left-[5px]">
+                {/* Video primero en el DOM pero con z-index menor */}
+                <div className="absolute inset-0  flex items-center justify-center z-20">
+                  <video
+                    controls
+                    preload="none"
+                    poster={"/assets/thumbnailvideoP.webp"}
+                    className="w-[70%] h-[80%] absolute -top-[7px] left-[26px] object-cover rounded-sm]
+                    hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
+                  >
+                    <source src="/assets/powerVideo.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+                {/* Recuadro después en el DOM y con z-index mayor */}
+                <div className="absolute inset-0 z-10 -top-[45px] left-[5px]">
+                  <Image
+                    src="/assets/powerVideoBox.webp"
+                    alt="Video frame"
+                    width={215}
+                    height={166}
+                    className="w-[215px] h-[166px]"
+                    priority={true}
+                  />
+                </div>
+              </div>
+
+              {/* Photo 2 */}
+              <div className="absolute -right-1 -top-4 w-[130px] h-[130px]">
+                <Image
+                  src="/assets/powerPhoto2.webp"
+                  alt="Musicians"
+                  width={130}
+                  height={130}
+                  quality={75}
+                  className="w-[130px] h-[130px]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Lower photos */}
+            <div className="relative h-[200px] bottom-8">
+              <div className="absolute left-7 -top-16 w-1/2 z-20">
+                <Image
+                  src="/assets/powerPhoto1.webp"
+                  alt="Performance"
+                  width={145}
+                  height={145}
+                  quality={75}
+                  className="w-[145px] h-[145px] z-10 "
+                  loading="lazy"
+                />
+                <div className="relative">
+                  <Image
+                    src="/assets/beigeArrow.webp"
+                    alt="More gigs"
+                    width={145}
+                    height={40}
+                    quality={75}
+                    className="absolute right-8 -bottom-12 w-[145px] h-[40px]"
+                    loading="lazy"
+                  />
+                  <Link href={"/"}>
+                    <p className="absolute inset-0 font-times font-titles text-[#1b344a] left-[35px] top-[13px] text-[20px]">
+                      more gigs
+                    </p>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="absolute -right-1 -top-11 w-[156px] h-[156px] z-10">
+                <Image
+                  src="/assets/powerPhoto3.webp"
+                  alt="Crowd"
+                  width={156}
+                  height={154}
+                  quality={75}
+                  className="w-[156px] h-[156px]"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Title */}
+            <div className="absolute bottom-6 left-4 z-20">
+              <div className="flex flex-row items-center gap-3">
+                <div className="flex flex-col leading-none">
+                  <p className="text-[#d22a4e] text-[35px] font-titles">
+                    power
+                  </p>
+                  <p className="text-[#d22a4e] text-[35px] font-titles">show</p>
+                </div>
+                <div className="text-beige text-[8px] flex flex-col">
+                  <div className="-ml-[30px] mt-[40px] leading-none tracking-widest font-titles">
+                  <p>an upbeat, darker show. get ready to</p>
+                  <p>party below deck like a pirate!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Image
+              src="/assets/shipDrawing.webp"
+              alt="Background drawing"
+              width={150}
+              height={110}
+              quality={75}
+              className="w-[150px] h-[130px] absolute bottom-[10px] -right-4 z-10"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
