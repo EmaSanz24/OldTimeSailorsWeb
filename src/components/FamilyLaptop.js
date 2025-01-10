@@ -141,7 +141,7 @@ export const FamilyLaptop = async () => {
             height={300}
             className="absolute left-[25px] -top-[100px] w-[310px] h-[110px] min-[1440px]:left-[10px] min-[1440px]:-top-[180px] min-[1440px]:w-[430px] min-[1440px]:h-[120px]"
           />
-          <p className="absolute inset-0 font-titles text-beige left-[105px] -top-[72px] text-[40px] min-[1440px]:left-[135px] min-[1440px]:-top-[155px] min-[1440px]:text-[50px]">
+          <p className="absolute inset-0 font-titles text-beige left-[135px] -top-[72px] text-[40px] min-[1440px]:left-[135px] min-[1440px]:-top-[155px] min-[1440px]:text-[50px]">
             more gigs
           </p>
         </Link>

@@ -53,8 +53,8 @@ const GigLanding = async () => {
   const markersList = await fetchMarkers();
   return (
     <div>
-      {/* <FamilyLanding /> */}
-      <PowerLanding />
+      <FamilyLanding />
+      {/* <PowerLanding /> */}
     </div>
   );
 };

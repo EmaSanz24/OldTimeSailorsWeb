@@ -4,6 +4,7 @@ import FamilyTablet from "./FamilyTablet";
 import { FamilyMobileS } from "./FamilyMobileS";
 import { FamilyMobileM } from "./FamilyMobileM";
 import { FamilyMobileL } from "./FamilyMobileL";
+import FamilyLaptopL from "./FamilyLaptopL";
 
 export const FamilyLanding = async () => {
   return (
@@ -31,9 +32,16 @@ export const FamilyLanding = async () => {
           <FamilyTablet />
         </div>
       </div>
-      <div className="hidden min-[1024px]:block">
-        <div className="min-h-screen relative mx-auto">
+      {/* Laptop - 1024px */}
+      <div className="hidden min-[1024px]:block min-[1440px]:hidden">
+        <div className="w-[1024px] min-h-screen relative mx-auto">
           <FamilyLaptop />
+        </div>
+      </div>
+      {/* Laptop L - 1440px */}
+      <div className="hidden min-[1440px]:block">
+        <div className="w-[1440px] min-h-screen relative mx-auto">
+          <FamilyLaptopL />
         </div>
       </div>
     </div>
