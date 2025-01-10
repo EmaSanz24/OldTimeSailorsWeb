@@ -7,7 +7,7 @@ import footerImage from "../../public/assets/view-selector-image.JPEG";
 
 // Componente memoizado para la opción de Map
 const MapOption = memo(() => (
-  <Link href="/tickets/map" className="w-full max-w-[420px] lg:max-w-[620px]">
+  <Link href="/tickets/map-view" className="w-full max-w-[420px] lg:max-w-[620px]">
     <div className="relative px-5">
       <Image
         src={blueFrame}
@@ -19,21 +19,15 @@ const MapOption = memo(() => (
         sizes="(max-width: 768px) 420px, 620px"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2 className="text-lightRed text-2xl lg:text-4xl font-titles">
-        view gigs on
-        </h2>
+        <h2 className="text-lightRed text-2xl lg:text-4xl font-titles">view gigs on</h2>
         <h2 className="text-darkBlue text-5xl lg:text-7xl font-titles">map</h2>
       </div>
     </div>
   </Link>
 ));
-
-// Componente memoizado para la opción de Calendar
+// Componente memorizado para la opción de Calendar
 const CalendarOption = memo(() => (
-  <Link
-    href="/tickets/calendar"
-    className="w-full max-w-[420px] lg:max-w-[620px]"
-  >
+  <Link href="/tickets/calendar-view" className="w-full max-w-[420px] lg:max-w-[620px]">
     <div className="relative px-5">
       <Image
         src={redFrame}
@@ -45,11 +39,8 @@ const CalendarOption = memo(() => (
         sizes="(max-width: 768px) 420px, 620px"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2 className="text-darkBlue text-2xl lg:text-4xl font-titles">
-        view gigs on        </h2>
-        <h2 className="text-lightRed text-5xl lg:text-7xl font-titles">
-          Calendar
-        </h2>
+        <h2 className="text-darkBlue text-2xl lg:text-4xl font-titles">view gigs on </h2>
+        <h2 className="text-lightRed text-5xl lg:text-7xl font-titles">Calendar</h2>
       </div>
     </div>
   </Link>
