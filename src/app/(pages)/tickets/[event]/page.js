@@ -1,6 +1,7 @@
 //this page will be loaded when someone clicks on the + info button on the gigs viewer
 //loading the information of the specific gig named on the url
 import FamilyLanding from "@/components/FamilyLanding";
+import MainDiv from "@/components/MainDiv";
 import PowerLanding from "@/components/PowerLanding";
 
 export const metadata = {
@@ -53,7 +54,10 @@ const GigLanding = async () => {
   const markersList = await fetchMarkers();
   return (
     <div>
-      <FamilyLanding />
+      <MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain pb-[18px] md1:pb-[44px] xl:pb-[40px] 2k:pb-[52px] 4k:pb-[64px]">
+        <FamilyLanding />
+      </MainDiv>
+
       {/* <PowerLanding /> */}
     </div>
   );

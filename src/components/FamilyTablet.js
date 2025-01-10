@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const FamilyTablet = async () => {
   return (
-    <div className="pt-[120px]">
+    <div className="pt-[110px]">
       {/* Main container with border */}
       <div className="border border-darkBeige p-4 mx-6 relative">
         <div className="text-left">

@@ -25,6 +25,7 @@ const MapOption = memo(() => (
     </div>
   </Link>
 ));
+
 // Componente memorizado para la opción de Calendar
 const CalendarOption = memo(() => (
   <Link href="/tickets/calendar-view" className="w-full max-w-[420px] lg:max-w-[620px]">
@@ -70,8 +71,8 @@ const ViewSelector = async () => {
   return (
     <>
       {/* Main Content */}
-      <div className="relative bg-beigePatternMobile bg-cover lg:right-[50px] top-[150px] w-full font-times flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
-        <div className="flex flex-col space-y-8 w-full lg:w-[1000px] lg:h-[550px] items-center lg:justify-center lg:ml-20">
+      <div className="w-full h-full flex-1 pt-10 md:pt-16 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] top-[150px] font-times flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
+        <div className="flex flex-col space-y-8 w-full lg:w-[1000px] lg:h-full items-center lg:justify-center lg:ml-20">
           <MapOption />
           <CalendarOption />
         </div>

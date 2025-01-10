@@ -6,15 +6,7 @@ import { memo } from "react";
 
 const VideoComponent = memo(() => (
   <div className="absolute -left-0 -top-2.5 w-[265px] h-[140px]">
-    <Image
-      src="/assets/videoBox.png"
-      alt="Video frame"
-      width={250}
-      height={100}
-      quality={50}
-      className="transform-gpu"
-      priority={true}
-    />
+    <Image src="/assets/videoBox.png" alt="Video frame" width={250} height={100} quality={50} className="transform-gpu" priority={true} />
     <div className="absolute inset-0 flex items-center justify-center">
       <video
         controls
@@ -32,31 +24,24 @@ const VideoComponent = memo(() => (
 const EventDescription = memo(() => (
   <div className="text-[12px] pb-5 text-[#1b344a] font-txt">
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
-      You are invited to board the Sailorette and join the plentiful crew, 'The
-      Old Time Sailors', for a night of footstomping, dancing and singing!
+      You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and singing!
     </p>
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
-      You will be sailing back to the 19th century for an immersive experience
-      of traditional seafaring music performed in a way you have never seen
+      You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way you have never seen
       before.
     </p>
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
-      The Motley Crew and their plethora of traditional and eclectic instruments
-      will take you back to the time of clashing tankards, and drunken
-      debauchery. Sing and dance along like a drunken sailor as the band perform
-      centuries old folk and shanty songs.
+      The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time of clashing tankards, and drunken
+      debauchery. Sing and dance along like a drunken sailor as the band perform centuries old folk and shanty songs.
     </p>
-    <p className="leading-relaxed">
-      Fancy dress is encouraged, so pull out your best seafaring garments me
-      hearties and join the festivities.
-    </p>
+    <p className="leading-relaxed">Fancy dress is encouraged, so pull out your best seafaring garments me hearties and join the festivities.</p>
   </div>
 ));
 
 export const FamilyMobileM = async () => {
   return (
     <>
-      <div className="relative -bottom-[90px]">
+      <div className="relative -bottom-[65px]">
         {/* Contenedor principal con borde */}
         <div className="border border-[#9e8f73] p-4 mx-4 relative">
           <div className="text-left font-titles">
@@ -80,17 +65,11 @@ export const FamilyMobileM = async () => {
               </h3>
               <div className="mt-0.5">
                 <p className="text-beige text-[9px] leading-tight font-txt">
-                  A rural escape built by the community, for the community in
-                  the heart of Newquay.
+                  A rural escape built by the community, for the community in the heart of Newquay.
                 </p>
-                <p className="text-beige text-[9px] leading-tight font-txt">
-                  A venue for the whole family with seating options.
-                </p>
-                <Link href="/venue-info">
-                  <p className="text-beige text-[9px] mt-1 font-titles underline">
-                    contact the venue for + info
-                  </p>
-                </Link>
+                <p className="text-beige text-[9px] leading-tight font-txt">A venue for the whole family with seating options.</p>
+
+                <p className="text-beige text-[9px] mt-1 font-titles underline">contact the venue for + info</p>
               </div>
             </div>
           </div>
@@ -103,10 +82,7 @@ export const FamilyMobileM = async () => {
                 { icon: FaCalendar, text: "Saturday, May 12, 2025" },
                 { icon: FaClock, text: "7:30PM to 10:30PM" },
               ].map(({ icon: Icon, text }) => (
-                <div
-                  key={text}
-                  className="flex items-center gap-2 text-[#1b344a] font-semibold"
-                >
+                <div key={text} className="flex items-center gap-2 text-[#1b344a] font-semibold">
                   <Icon className="text-[10px]" />
                   <span className="text-[9px]">{text}</span>
                 </div>
@@ -122,10 +98,7 @@ export const FamilyMobileM = async () => {
                   href={"/buytickets"}
                   target="_blank"
                 >
-                  <h3 className="font-titles justify-center text-[12px]">
-                    {" "}
-                    buy tickets
-                  </h3>
+                  <h3 className="font-titles justify-center text-[12px]"> buy tickets</h3>
                 </Link>
               </div>
               <EventDescription />
@@ -175,9 +148,7 @@ export const FamilyMobileM = async () => {
                   loading="lazy"
                 />
                 <Link href={"/"}>
-                  <p className="absolute inset-0 font-titles text-amber-50 left-[42px] top-[20px] text-[20px]">
-                    more gigs
-                  </p>
+                  <p className="absolute inset-0 font-titles text-amber-50 left-[42px] top-[20px] text-[20px]">more gigs</p>
                 </Link>
               </div>
             </div>

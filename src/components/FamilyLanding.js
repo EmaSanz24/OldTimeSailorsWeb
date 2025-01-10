@@ -1,5 +1,4 @@
 import FamilyLaptop from "./FamilyLaptop";
-import FamilyMobile from "./FamilyMobile";
 import FamilyTablet from "./FamilyTablet";
 import { FamilyMobileS } from "./FamilyMobileS";
 import { FamilyMobileM } from "./FamilyMobileM";
@@ -8,7 +7,7 @@ import FamilyLaptopL from "./FamilyLaptopL";
 
 export const FamilyLanding = async () => {
   return (
-    <div className="min-h-screen bg-cover bg-beigePatternMobile overflow-auto">
+    <div className="h-full bg-cover bg-beigePatternMobile overflow-auto">
       {/* Mobile S - 320px */}
       <div className="block min-[375px]:hidden">
         <div className="w-[320px] min-h-screen relative mx-auto">
