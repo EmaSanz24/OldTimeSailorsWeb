@@ -93,7 +93,7 @@ export const FamilyTablet = async ({ data }) => {
         <div className="relative h-[220px] ">
           {/* Video */}
           <div className="absolute -top-12 -left-4 w-[460px] h-[280px] ">
-            <Image src="/assets/videoBox.png" alt="Video Frame" width={460} height={100} className="h-[300px]" />
+            <Image src="/assets/videoBox.webp" alt="Video Frame" width={460} height={100} className="h-[300px]" />
             <div className="absolute inset-0 flex items-center justify-center -mb-2">
               <video
                 controls

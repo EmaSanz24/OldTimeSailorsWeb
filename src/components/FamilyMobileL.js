@@ -6,7 +6,7 @@ import { memo } from "react";
 
 const VideoComponent = memo(() => (
   <div className="absolute -left-0 -top-2.5 w-[298px] h-[140px]">
-    <Image src="/assets/videoBox.png" alt="Video frame" width={250} height={100} quality={50} priority={true} className="transform-gpu" />
+    <Image src="/assets/videoBox.webp" alt="Video frame" width={250} height={100} quality={50} priority={true} className="transform-gpu" />
     <div className="absolute inset-0 flex items-center justify-center">
       <video
         controls

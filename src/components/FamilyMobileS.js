@@ -7,7 +7,7 @@ import { memo } from "react";
 const VideoComponent = memo(() => (
   <div className="absolute left-1 -top-2 w-[228px] h-[110px]">
     <Image
-      src="/assets/videoBox.png"
+      src="/assets/videoBox.webp"
       alt="Video frame"
       width={228}
       height={125}

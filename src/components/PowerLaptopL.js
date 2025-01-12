@@ -88,7 +88,7 @@ export const PowerLaptopL = async ({ data }) => {
                 </div>
               </div>
 
-              <p className="text-sm text-left text-[#e9ddc7] font-txt leading-8">
+              <p className="text-sm text-left text-[#e9ddc7] font-txt leading-8 pb-2">
                 Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
                 they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
                 'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and

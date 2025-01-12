@@ -139,7 +139,7 @@ export const FamilyLaptopL = async ({ data }) => {
           </div>
 
           <div className="absolute top-[170px] left-[10px]">
-            <Image src="/assets/videoBox.png" alt="Video frame" width={590} height={280} priority={true} />
+            <Image src="/assets/videoBox.webp" alt="Video frame" width={590} height={280} priority={true} />
           </div>
 
           <div className="absolute inset-0 top-[203px] left-[47px] z-40">
