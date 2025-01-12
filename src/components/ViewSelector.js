@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { memo } from "react";
-import blueFrame from "../../public/assets/blue-frame.png";
+import blueFrame from "../../public/assets/blue-frame.webp";
 import redFrame from "../../public/assets/red-frame.png";
 import footerImage from "../../public/assets/view-selector-image.JPEG";
 

@@ -3,7 +3,29 @@ import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 
-export const PowerLaptopL = async () => {
+const formatDate = (inputDate) => {
+  // Parse the input date
+  const [day, month, year] = inputDate.split("/").map(Number);
+
+  // Create a Date object
+  // Note: months in JavaScript Date are 0-indexed, so we subtract 1 from the month
+  const date = new Date(year, month - 1, day);
+
+  // Array of day names
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  // Array of month names
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  // Format the date
+  const formattedDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+
+  return formattedDate;
+};
+
+export const PowerLaptopL = async ({ data }) => {
+  const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
+  const formattedDate = formatDate(date);
   return (
     <>
       <div className="relative -bottom-[100px]">
@@ -12,41 +34,24 @@ export const PowerLaptopL = async () => {
           <div className="border border-[#e9ddc7] p-2 relative w-[950px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="leading-none">
-                <span className="text-[#d22a4e] font-titles text-[55px]">
-                  old time sailors{" "}
-                </span>
-                <span className="text-[#e9ddc7]  font-titles text-[55px]">
-                  {" "}
-                  at
-                </span>
+                <span className="text-lightRed font-titles text-[55px]">old time sailors </span>
+                <span className="text-[#e9ddc7]  font-titles text-[55px]"> at</span>
                 <br />
-                <span className="text-[#e9ddc7] font-titles text-[55px]">
-                  {" "}
-                  newquay orchard
-                </span>
+                <span className="text-[#e9ddc7] font-titles text-[55px]">{event}</span>
               </h1>
-              <p className="text-[#d22a4e] font-titles text-[30px]">newquay</p>
+              <p className="text-lightRed font-titles text-[30px] mt-4">{location}</p>
             </div>
             <div className="absolute w-[350px] top-[20px] -right-[100px] z-20">
               <div className="bg-[#e9ddc7] h-[220px] p-6 rounded-3xl">
-                <h3 className="text-[#d22a4e] text-[30px] font-titles leading-none">
+                <h3 className="text-lightRed text-[30px] font-titles leading-none">
                   more about
                   <br />
                   the venue
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-[#1b344a] text-[15px] font-txt leading-tight">
-                    A rural escape built by the community, for the community in
-                    the heart of Newquay.
-                  </p>
-                  <p className="text-[#1b344a] text-[15px] font-txt leading-tight">
-                    A venue for the whole family with seating options.
-                  </p>
-                  <Link href="/venue-info">
-                    <p className="text-[#1b344a] text-[15px] mt-1 font-titles underline">
-                      contact the venue for + info
-                    </p>
-                  </Link>
+                  <p className="text-darkBlue text-[15px] font-txt leading-tight">{venueInfo}</p>
+
+                  <p className="text-darkBlue text-[15px] mt-1 font-titles underline">contact the venue for + info</p>
                 </div>
               </div>
             </div>
@@ -57,15 +62,12 @@ export const PowerLaptopL = async () => {
               <div className="flex flex-row gap-5">
                 <div className="space-y-3">
                   {[
-                    { icon: FaLocationDot, text: "Newquay Orchard, Newquay" },
-                    { icon: FaCalendar, text: "Saturday, May 12, 2025" },
-                    { icon: FaClock, text: "7:30PM to 10:30PM" },
+                    { icon: FaLocationDot, text: `${event}` },
+                    { icon: FaCalendar, text: `${formattedDate}` },
+                    { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                   ].map(({ icon: Icon, text }) => (
-                    <div
-                      key={text}
-                      className="flex items-center gap-2 text-[#e9ddc7] font-semibold"
-                    >
-                      <Icon className="text-[15px] text-[#d22a4e]" />
+                    <div key={text} className="flex items-center gap-2 text-[#e9ddc7] font-semibold">
+                      <Icon className="text-[15px] text-lightRed" />
                       <span className="text-[15px]">{text}</span>
                     </div>
                   ))}
@@ -78,85 +80,41 @@ export const PowerLaptopL = async () => {
                       width: "300px",
                       height: "80px",
                     }}
-                    href={"/buytickets"}
+                    href={ticketsURL}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[30px]">
-                      {" "}
-                      buy tickets
-                    </h3>
+                    <h3 className="font-titles justify-center text-[30px]"> buy tickets</h3>
                   </Link>
                 </div>
               </div>
 
               <p className="text-sm text-left text-[#e9ddc7] font-txt leading-8">
-                Heave ho and up she rises! Cast aside your compass, throw your
-                maps overboard and join the mutinous crew of The Old Time Sailor
-                as they set sail for the wild uninhabited islands of Irish Punk,
-                Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted
-                Circus! 'Rock and row' with our 21 strong crew of rebellious
-                musicians as the navigate a voyage through the thrashing seas of
-                Hevay Metal and Hard Rock on a genre bending adventure into
-                uncharted waters, join in the Wall of Death and thrash it out
-                with your shipmates. Get ready for vigorous vocals, emphatic
-                energy, mosh pits and head banging: we play it live and we play
-                it loud, but as always with The Old Time Sailors... be prepared
-                to expect the unexpected!
+                Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
+                they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
+                'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and
+                Hard Rock on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates. Get
+                ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with The
+                Old Time Sailors... be prepared to expect the unexpected!
               </p>
             </div>
           </div>
           <div className="absolute right-[15px] -top-[230px] z-10">
-            <Image
-              src="/assets/powerPhoto1.webp"
-              alt="Performance"
-              width={200}
-              height={200}
-              className="w-[290px] h-[290px] "
-              loading="lazy"
-            />
+            <Image src="/assets/powerPhoto1.webp" alt="Performance" width={200} height={200} className="w-[290px] h-[290px] " loading="lazy" />
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[25px] top-[53px] z-20">
-            <Image
-              src="/assets/powerPhoto2.webp"
-              alt="Musicians"
-              width={200}
-              height={200}
-              className="w-[390px] "
-              loading="lazy"
-            />
+            <Image src="/assets/powerPhoto2.webp" alt="Musicians" width={200} height={200} className="w-[390px] " loading="lazy" />
           </div>
           {/* Photo 3 */}
           <div className="absolute left-[520px] top-[268px] z-30">
-            <Image
-              src="/assets/powerPhoto3.webp"
-              alt="Crowd"
-              width={400}
-              height={400}
-              className="w-[550px]"
-              loading="lazy"
-            />
+            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="w-[550px]" loading="lazy" />
           </div>
           <div className="absolute -right-[0px] -bottom-[300px]">
-            <Image
-              src="/assets/shipDrawing.webp"
-              alt="Background drawing"
-              width={300}
-              height={300}
-              className="w-[380px] h-[330px]"
-              loading="lazy"
-            />
+            <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[380px] h-[330px]" loading="lazy" />
           </div>
 
           <div className="absolute top-[125px] left-[10px] z-30 ">
-            <Image
-              src="/assets/powerVideoBox.webp"
-              alt="Video frame"
-              width={590}
-              height={300}
-              className="h-[450px]"
-              priority={true}
-            />
+            <Image src="/assets/powerVideoBox.webp" alt="Video frame" width={590} height={300} className="h-[450px]" priority={true} />
           </div>
 
           <div className="absolute inset-0 top-[235px] left-[74px] z-50">
@@ -179,18 +137,18 @@ export const PowerLaptopL = async () => {
               className="absolute left-[10px] top-[25px] w-[430px] h-[120px]"
               loading="lazy"
             />
-            <p className="absolute inset-0 font-titles font-bold text-[#1b344a] left-[170px] top-[45px] text-[50px]">
-              more gigs
-            </p>
+            <Link href={"/tickets/calendar-view"}>
+              <p className="absolute inset-0 font-titles font-bold text-darkBlue left-[170px] top-[45px] text-[50px]">more gigs</p>
+            </Link>
           </div>
           {/* Title */}
           <div className="absolute -bottom-[420px]  left-[15px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-none">
-                <p className="text-[#d22a4e] text-[125px] font-titles">power</p>
-                <p className="text-[#d22a4e] text-[125px] font-titles">show</p>
+                <p className="text-lightRed text-[125px] font-titles">power</p>
+                <p className="text-lightRed text-[125px] font-titles">show</p>
               </div>
-              <div className="text-[#e9ddc7] text-[30px] -mb-[150px] -ml-[85px]">
+              <div className="text-[#e9ddc7] text-[30px] -mb-[150px] -ml-[65px]">
                 <div className="font-titles leading-tight tracking-widest">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>

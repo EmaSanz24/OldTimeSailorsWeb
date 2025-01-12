@@ -3,7 +3,29 @@ import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 
-export const FamilyLaptop = async () => {
+const formatDate = (inputDate) => {
+  // Parse the input date
+  const [day, month, year] = inputDate.split("/").map(Number);
+
+  // Create a Date object
+  // Note: months in JavaScript Date are 0-indexed, so we subtract 1 from the month
+  const date = new Date(year, month - 1, day);
+
+  // Array of day names
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  // Array of month names
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  // Format the date
+  const formattedDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+
+  return formattedDate;
+};
+
+export const FamilyLaptop = async ({ data }) => {
+  const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
+  const formattedDate = formatDate(date);
   return (
     <div className="relative -bottom-[340px] min-[1440px]:-bottom-[100px]">
       <div className="relative w-full h-full my-[50px] min-[1440px]:my-[250px]">
@@ -14,9 +36,9 @@ export const FamilyLaptop = async () => {
               <span className="text-darkBlue text-[30px] min-[1440px]:text-[55px]">old time sailors </span>
               <span className="text-lightRed text-[30px] min-[1440px]:text-[55px]">at</span>
               <br />
-              <span className="text-lightRed text-[30px] min-[1440px]:text-[55px]">newquay orchard</span>
+              <span className="text-lightRed text-[30px] min-[1440px]:text-[55px]">{location}</span>
             </h1>
-            <p className="text-darkBlue text-[20px] font-titles min-[1440px]:text-[30px]">newquay</p>
+            <p className="text-darkBlue text-[20px] font-titles min-[1440px]:text-[30px]">{location}</p>
           </div>
           <div className="absolute w-72 top-[21px] -right-[75px] z-20 min-[1440px]:w-[350px] min-[1440px]:top-[20px] min-[1440px]:-right-[100px]">
             <div className="bg-darkBlue p-6 rounded-3xl min-[1440px]:h-[220px]">
@@ -27,10 +49,7 @@ export const FamilyLaptop = async () => {
                 the venue
               </h3>
               <div className="mt-0.5 tracking-wide">
-                <p className="text-beige font-txt leading-tight text-[12px] min-[1440px]:text-[15px]">
-                  A rural escape built by the community, for the community in the hearth of Newquay. A venue for the whole family with seating
-                  options.
-                </p>
+                <p className="text-beige font-txt leading-tight text-[12px] min-[1440px]:text-[15px]">{venueInfo}</p>
 
                 <p className="text-beige mt-1 font-titles underline text-[12px] min-[1440px]:text-[15px]">contact the venue for + info</p>
               </div>
@@ -42,8 +61,8 @@ export const FamilyLaptop = async () => {
             <div className="flex flex-row gap-5">
               <div className="space-y-3">
                 {[
-                  { icon: FaLocationDot, text: "Newquay Orchard, Newquay" },
-                  { icon: FaCalendar, text: "Saturday, May 12, 2025" },
+                  { icon: FaLocationDot, text: `${event}` },
+                  { icon: FaCalendar, text: `${formattedDate}` },
                   { icon: FaClock, text: "7:30 PM to 10:30 PM" },
                 ].map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-2 text-darkBlue font-txt">
@@ -56,7 +75,7 @@ export const FamilyLaptop = async () => {
               <div className="relative">
                 <Link
                   className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets max-w-[200px] top-[20px] min-[1440px]:max-w-[300px] min-[1440px]:h-[80px] min-[1440px]:top-[10px] min-[1440px]:left-[35px]"
-                  href={"/buytickets"}
+                  href={ticketsURL}
                   target="_blank"
                 >
                   <h3 className="font-titles justify-center text-[27px] min-[1440px]:text-[35px]"> buy tickets</h3>
@@ -75,7 +94,7 @@ export const FamilyLaptop = async () => {
       </div>
       <div className="absolute right-[230px] -top-[100px] min-[1440px]:right-[330px] min-[1440px]:-top-[35px]">
         <Image
-          src="/assets/anchor.png"
+          src="/assets/anchor.webp"
           alt="Anchor"
           width={100}
           height={100}
@@ -84,7 +103,7 @@ export const FamilyLaptop = async () => {
       </div>
       <div className="absolute right-[15px] -top-[230px] z-10">
         <Image
-          src="/assets/familyPhoto1.png"
+          src="/assets/familyPhoto1.webp"
           alt="
             Performance"
           width={200}
@@ -94,7 +113,7 @@ export const FamilyLaptop = async () => {
       </div>
       <div className="absolute right-[25px] -top-[35px] z-30 min-[1440px]:top-[53px] min-[1440px]:z-20">
         <Image
-          src="/assets/familyPhoto2.png"
+          src="/assets/familyPhoto2.webp"
           alt="Musicians"
           width={200}
           height={200}
@@ -103,7 +122,7 @@ export const FamilyLaptop = async () => {
       </div>
       <div className="absolute right-[275px] top-[230px] w-[380px] z-40 min-[1440px]:right-0 min-[1440px]:left-[520px] min-[1440px]:top-[268px] min-[1440px]:z-30 min-[1440px]:w-[550px]">
         <Image
-          src="/assets/familyPhoto3.png"
+          src="/assets/familyPhoto3.webp"
           alt="crowd"
           width={550}
           height={550}
@@ -112,7 +131,7 @@ export const FamilyLaptop = async () => {
       </div>
       <div className="absolute -right-[0px] -bottom-[30px] min-[1440px]:-bottom-[300px]">
         <Image
-          src="/assets/drawing2.png"
+          src="/assets/drawing2.webp"
           alt="Background Drawing"
           width={300}
           height={300}
@@ -133,15 +152,15 @@ export const FamilyLaptop = async () => {
         </div>
       </div>
       <div className="relative">
-        <Link href={"/tickets"}>
-          <Image
-            src="/assets/arrow2.png"
-            alt="More gigs"
-            width={300}
-            height={300}
-            className="absolute left-[25px] -top-[100px] w-[310px] h-[110px] min-[1440px]:left-[10px] min-[1440px]:-top-[180px] min-[1440px]:w-[430px] min-[1440px]:h-[120px]"
-          />
-          <p className="absolute inset-0 font-titles text-beige left-[135px] -top-[72px] text-[40px] min-[1440px]:left-[135px] min-[1440px]:-top-[155px] min-[1440px]:text-[50px]">
+        <Image
+          src="/assets/arrow2.webp"
+          alt="More gigs"
+          width={300}
+          height={300}
+          className="absolute left-[25px] -top-[100px] w-[310px] h-[110px] min-[1440px]:left-[10px] min-[1440px]:-top-[180px] min-[1440px]:w-[430px] min-[1440px]:h-[120px]"
+        />
+        <Link href={"/tickets/calendar-view"}>
+          <p className="absolute inset-0 font-titles text-beige left-[115px] -top-[72px] text-[40px] min-[1440px]:left-[135px] min-[1440px]:-top-[155px] min-[1440px]:text-[50px]">
             more gigs
           </p>
         </Link>

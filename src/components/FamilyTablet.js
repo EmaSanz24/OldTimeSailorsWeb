@@ -2,8 +2,28 @@ import Link from "next/link";
 import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
+const formatDate = (inputDate) => {
+  // Parse the input date
+  const [day, month, year] = inputDate.split("/").map(Number);
 
-export const FamilyTablet = async () => {
+  // Create a Date object
+  // Note: months in JavaScript Date are 0-indexed, so we subtract 1 from the month
+  const date = new Date(year, month - 1, day);
+
+  // Array of day names
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  // Array of month names
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  // Format the date
+  const formattedDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+
+  return formattedDate;
+};
+export const FamilyTablet = async ({ data }) => {
+  const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
+  const formattedDate = formatDate(date);
   return (
     <div className="pt-[110px]">
       {/* Main container with border */}
@@ -13,9 +33,9 @@ export const FamilyTablet = async () => {
             <span className="text-darkBlue text-[40px]">old time sailors </span>
             <span className="text-lightRed text-[40px] ">at</span>
             <br />
-            <span className="text-lightRed text-[40px] ">newquay orchard</span>
+            <span className="text-lightRed text-[40px] ">{location}</span>
           </h1>
-          <p className="text-darkBlue text-[20px] font-titles ">newquay</p>
+          <p className="text-darkBlue text-[20px] font-titles ">{location}</p>
           <div className="absolute w-64 top-20 -right-4">
             <div className="bg-darkBlue p-6 rounded-3xl">
               <h3 className="text-lightRed text-[25px] font-titles leading-tight">
@@ -25,10 +45,7 @@ export const FamilyTablet = async () => {
                 the venue
               </h3>
               <div className="mt-0.5">
-                <p className="text-beige font-txt leading tight text-[15px]">
-                  A rural escape built by the community, for the community in the hearth of Newquay. A venue for the whole family with seating
-                  options.
-                </p>
+                <p className="text-beige font-txt leading tight text-[15px]">{venueInfo}</p>
 
                 <p className="text-beige mt-1 font-titles underline text-[15px]">contact the venue for + info</p>
               </div>
@@ -41,8 +58,8 @@ export const FamilyTablet = async () => {
           <div className="flex flex-row gap-5">
             <div className="space-y-3">
               {[
-                { icon: FaLocationDot, text: "Newquay Orchard, Newquay" },
-                { icon: FaCalendar, text: "Saturday, May 12, 2025" },
+                { icon: FaLocationDot, text: `${event}` },
+                { icon: FaCalendar, text: `${formattedDate}` },
                 { icon: FaClock, text: "7:30 PM to 10:30 PM" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2 text-darkBlue font-txt">
@@ -55,7 +72,7 @@ export const FamilyTablet = async () => {
             <div className="relative mt-8">
               <Link
                 className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets max-w-[200px]"
-                href={"/buytickets"}
+                href={ticketsURL}
                 target="_blank"
               >
                 <h3 className="font-titles justify-center text-[27px] "> buy tickets</h3>
@@ -91,7 +108,7 @@ export const FamilyTablet = async () => {
           {/* Photo 2  */}
           <div className="absolute right-[8px] -top-12 w-[350px] z-10 ">
             <Image
-              src="/assets/familyPhoto2.png"
+              src="/assets/familyPhoto2.webp"
               alt="Musicians"
               width={1200}
               height={1200}
@@ -103,7 +120,7 @@ export const FamilyTablet = async () => {
         <div className="relative h-[750px] mx-5 mb-4">
           <div className="absolute left-[0px] -top-[5px] z-20 w-1/2">
             <Image
-              src="/assets/familyPhoto1.png"
+              src="/assets/familyPhoto1.webp"
               alt="
             Performance"
               width={350}
@@ -111,24 +128,21 @@ export const FamilyTablet = async () => {
               className="z-10 h-[320px] shadow-gray-500 shadow-[0px_3px_3px_rgba(0,0,0,0.3)]"
             />
             <div className="relative">
-              <Link href={"/tickets"}>
-                <Image
-                  src="/assets/arrow2.png"
-                  alt="More gigs"
-                  width={580}
-                  height={440}
-                  className="absolute -left-[18px] top-[30px] w-[290px] h-[110px]"
-                />
-                <p className="absolute inset-0 font-titles text-beige w-3/4 text-center ml-4 top-[50px] text-[50px]">
-                  {/* {" "} */}
-                  more gigs
-                </p>
+              <Image
+                src="/assets/arrow2.webp"
+                alt="More gigs"
+                width={580}
+                height={440}
+                className="absolute -left-[18px] top-[30px] w-[290px] h-[110px]"
+              />
+              <Link href={"/tickets/calendar-view"}>
+                <p className="absolute inset-0 font-titles text-beige w-3/4 text-center ml-4 top-[50px] text-[50px]">more gigs</p>
               </Link>
             </div>
           </div>
           <div className="absolute -right-[15px] top-[100px] w-[450px] h-[200px] z-10 ">
             <Image
-              src="/assets/familyPhoto3.png"
+              src="/assets/familyPhoto3.webp"
               alt="crowd"
               width={800}
               height={800}
@@ -144,7 +158,7 @@ export const FamilyTablet = async () => {
               <p className="text-darkBlue font-titles text-[80px] ">show</p>
             </div>
             <div className="text-lightRed text-[15px] flex flex-col">
-              <Image src="/assets/anchor.png" alt="Anchor" width={60} height={60} className="ml-[45px] rotate-12 mb-4" />
+              <Image src="/assets/anchor.webp" alt="Anchor" width={60} height={60} className="ml-[45px] rotate-12 mb-4" />
               <div className="-ml-[60px] mb-[30px] leading-none tracking-widest font-titles text-[20px]">
                 <p>a traditional sailor show,</p>
                 <p>sing along and dance with us!</p>
@@ -153,7 +167,7 @@ export const FamilyTablet = async () => {
           </div>
         </div>
         <Image
-          src="/assets/drawing2.png"
+          src="/assets/drawing2.webp"
           alt="Background Drawing"
           width={300}
           height={300}
