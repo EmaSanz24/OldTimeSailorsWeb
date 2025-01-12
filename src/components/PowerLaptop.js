@@ -59,7 +59,7 @@ export const PowerLaptop = async ({ data }) => {
             <div className="border-t-2 border-dashed border-[#e9ddc7] my-4" />
 
             {/* Event info */}
-            <div className="space-y-2 p-4">
+            <div className="space-y-2 p-4 ">
               <div className="flex flex-row gap-5">
                 <div className="space-y-3">
                   {[
@@ -120,9 +120,9 @@ export const PowerLaptop = async ({ data }) => {
           <div className="absolute -right-[28px] bottom-[0px]">
             <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[330px] h-[300px]" loading="lazy" />
           </div>
-          <div className="absolute top-[150px] left-[40px] w-[410px] h-[280px] z-50">
+          <div className="absolute top-[165px] left-[40px] w-[410px] h-[280px] z-50">
             <Image src="/assets/powerVideoBox.webp" alt="Video frame" width={430} height={100} priority={true} />
-            <div className="absolute inset-0 top-[45px] -left-[10px] -right-[10px] flex items-center justify-center">
+            <div className="absolute inset-0 top-[43px] -left-[10px] -right-[10px] flex items-center justify-center">
               <video
                 controls
                 preload="none"
