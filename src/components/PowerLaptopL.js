@@ -35,18 +35,17 @@ export const PowerLaptopL = async ({ data }) => {
             <div className="text-left px-10">
               <h1 className="leading-none">
                 <span className="text-lightRed font-titles text-[55px]">old time sailors </span>
-                <span className="text-[#e9ddc7]  font-titles text-[55px]"> at</span>
+                <span className="text-beige  font-titles text-[55px]"> at</span>
                 <br />
-                <span className="text-[#e9ddc7] font-titles text-[55px]">{event}</span>
+                <span className="text-beige font-titles text-[55px]">{event}</span>
               </h1>
               <p className="text-lightRed font-txt text-[30px] mt-4">{location}</p>
             </div>
             <div className="absolute w-[350px] top-[20px] -right-[100px] z-20">
               <div className="bg-[#e9ddc7] h-[220px] p-6 rounded-3xl">
                 <h3 className="text-lightRed text-[30px] font-titles leading-none">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
                   <p className="text-darkBlue text-[15px] font-txt leading-tight">{venueInfo}</p>

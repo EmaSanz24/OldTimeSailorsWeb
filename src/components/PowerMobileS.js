@@ -88,6 +88,7 @@ export const PowerMobileS = async ({ data }) => {
                 <span className="text-beige text-xl">{event}</span>
               </h1>
               <p className="text-lightRed text-sm font-txt">{location}</p>
+              <p className="text-lightRed text-sm font-txt">{location}</p>
             </div>
 
             <div className="border-t-2 border-dashed border-beige my-4" />
@@ -95,9 +96,8 @@ export const PowerMobileS = async ({ data }) => {
             <div className="absolute -right-[12px] top-[70px] w-[160px]">
               <div className="bg-beige p-3 py-4 rounded-2xl">
                 <h3 className="text-lightRed text-[15px]  font-titles leading-tight">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 ">
                   <p className="text-darkBlue text-[7px] leading-tight font-txt">

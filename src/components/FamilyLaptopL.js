@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 const formatDate = (inputDate) => {
   // Parse the input date
   const [day, month, year] = inputDate.split("/").map(Number);
@@ -26,35 +26,38 @@ const formatDate = (inputDate) => {
 export const FamilyLaptopL = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
+  const eventURL = "/eventURL";
+  const router = useRouter();
   return (
     <>
       <div className="relative top-[100px]">
         <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
-          <div className="border border-darkBeige p-2 relative w-[950px] -right-[95px] -top-[310px]">
-            <div className="text-left font-times px-10">
-              <h1 className="font-bold leading-none">
-                <span className="text-darkBlue font-titles text-[55px]">old time sailors </span>
-                <span className="text-lightRed font-titles text-[55px]">at</span>
+          <div className="border-[3px] border-darkBeige p-2 relative w-[950px] -right-[95px] -top-[310px]">
+            <div className="text-left px-10">
+              <h1 className="font-bold leading-none font-titles lowercase">
+                <span className="text-darkBlue text-[55px]">old time sailors </span>
+                <span className="text-lightRed text-[55px]">at</span>
                 <br />
-                <span className="text-lightRed font-titles text-[55px]">{event}</span>
+                <span className="text-lightRed text-[55px]">{event}</span>
               </h1>
-              <p className="text-darkBlue font-titles text-[30px]">{location}</p>
+              <p className="text-darkBlue font-txt lowercase text-[30px]">{location}</p>
             </div>
             <div className="absolute w-[350px] top-[20px] -right-[100px] z-20">
-              <div className="bg-darkBlue h-[220px] p-6 rounded-3xl">
+              <div className="bg-darkBlue p-6 rounded-3xl">
                 <h3 className="text-lightRed text-[30px] font-titles leading-none">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
                   <p className="text-beige text-[15px] font-txt leading-tight">{venueInfo}</p>
-                  <p className="text-beige text-[15px] mt-1 font-titles underline">contact the venue for + info</p>
+                  <Link href={eventURL}>
+                    <p className="text-beige text-[15px] mt-1 font-titles underline">contact the venue for + info</p>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-2 border-dashed border-darkBeige my-4" />
+            <div className="border-t-3 border-dashed border-darkBeige my-4" />
 
             {/* Event info */}
             <div className="space-y-6 p-4">
@@ -65,25 +68,29 @@ export const FamilyLaptopL = async ({ data }) => {
                     { icon: FaCalendar, text: `${formattedDate}` },
                     { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-darkBlue font-semibold">
-                      <Icon className="text-[15px]" />
-                      <span className="text-[15px]">{text}</span>
+                    <div key={text} className="flex items-center gap-2 text-darkBlue font-txt">
+                      <Icon className="text-[19px]" />
+                      <span className="text-[19px]">{text}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="relative">
                   <Link
-                    className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets max-w-[200px] top-[20px] min-[1440px]:max-w-[300px] min-[1440px]:h-[80px] min-[1440px]:top-[10px] min-[1440px]:left-[35px]"
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets top-[27px] left-8"
+                    style={{
+                      "--octagon-width": "270px",
+                      "--octagon-height": "45px",
+                    }}
                     href={ticketsURL}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[27px] min-[1440px]:text-[35px]"> buy tickets</h3>
+                    <h3 className="font-txt uppercase justify-center text-[32px] "> buy tickets</h3>
                   </Link>
                 </div>
               </div>
 
-              <p className="text-sm text-left text-darkBlue leading-8 font-txt">
+              <p className="text-[19px] text-left text-darkBlue leading-8 font-txt">
                 You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and
                 singing! You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way
                 you have never seen before. The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time
@@ -118,14 +125,7 @@ export const FamilyLaptopL = async ({ data }) => {
           </div>
           {/* Photo 3 */}
           <div className="absolute left-[520px] top-[268px] z-30">
-            <Image
-              src="/assets/familyPhoto3.webp"
-              alt="Crowd"
-              width={400}
-              height={400}
-              className="w-[550px] shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
-              loading="lazy"
-            />
+            <Image src="/assets/familyPhoto3.webp" alt="Crowd" width={400} height={400} className="w-[550px] " loading="lazy" />
           </div>
           <div className="absolute -right-[0px] -bottom-[300px]">
             <Image
@@ -138,11 +138,11 @@ export const FamilyLaptopL = async ({ data }) => {
             />
           </div>
 
-          <div className="absolute top-[170px] left-[10px]">
+          <div className="absolute top-[205px] left-[10px]">
             <Image src="/assets/videoBox.webp" alt="Video frame" width={590} height={280} priority={true} />
           </div>
 
-          <div className="absolute inset-0 top-[203px] left-[47px] z-40">
+          <div className="absolute inset-0 top-[239px] left-[47px] z-40">
             <video
               controls
               preload="none"
@@ -154,28 +154,27 @@ export const FamilyLaptopL = async ({ data }) => {
             </video>
           </div>
 
-          <div className="relative">
+          <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
             <Image
               src="/assets/arrow2.webp"
               alt="More gigs"
               width={300}
               height={300}
-              className="absolute left-[10px] top-[0px] w-[430px] h-[120px]"
+              className="absolute left-[10px] top-[10px] w-[430px] h-[120px] cursor-pointer"
               loading="lazy"
             />
-            <Link href={"/tickets/calendar-view"}>
-              <p className="absolute inset-0  font-titles text-beige left-[150px] top-[25px] text-[50px]">more gigs</p>
-            </Link>
+
+            <p className="absolute inset-0  font-titles text-beige left-[150px] top-[35px] text-[50px]">more gigs</p>
           </div>
           {/* Title */}
           <div className="absolute -bottom-[420px]  left-[15px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
-              <div className="leading-none">
+              <div className="leading-[110px]">
                 <p className="text-[#1b3441] text-[125px] font-titles">family</p>
-                <p className="text-darkBlue text-[125px] font-titles">show</p>
+                <p className="text-darkBlue text-[145px] font-titles">show</p>
               </div>
-              <div className="text-lightRed text-[30px] -mb-[150px] -ml-[95px]">
-                <div className="font-titles leading-tight tracking-widest">
+              <div className="text-lightRed text-[30px] -mb-[150px] -ml-[35px]">
+                <div className="font-txt uppercase leading-tight tracking-widest">
                   <p>a traditional sailor show,</p>
                   <p>sing along and dance with us!</p>
                 </div>

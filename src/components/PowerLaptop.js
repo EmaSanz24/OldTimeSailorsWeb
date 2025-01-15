@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const formatDate = (inputDate) => {
   // Parse the input date
@@ -26,6 +27,9 @@ const formatDate = (inputDate) => {
 export const PowerLaptop = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
+
+  const router = useRouter();
+
   return (
     <>
       <div className="relative top-[340px] right-[5px]">
@@ -35,19 +39,18 @@ export const PowerLaptop = async ({ data }) => {
             <div className="text-left px-10">
               <h1 className="leading-none">
                 <span className="text-lightRed font-titles text-[30px]">old time sailors </span>
-                <span className="text-[#e9ddc7] font-titles text-[30px]">at</span>
+                <span className="text-beige font-titles text-[30px]">at</span>
                 <br />
                 <br />
-                <span className="text-[#e9ddc7] font-titles text-[30px]">{event}</span>
+                <span className="text-beige font-titles text-[30px]">{event}</span>
               </h1>
               <p className="text-lightRed font-txt text-[20px] mt-2">{location}</p>
             </div>
             <div className="absolute w-[250px] top-[21px] -right-[75px] z-20">
               <div className="bg-[#e9ddc7] p-4 rounded-3xl ">
                 <h3 className="text-lightRed text-[25px] font-titles leading-none">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
                   <p className="text-darkBlue text-[12px] font-txt leading-tight">{venueInfo}</p>
@@ -88,7 +91,7 @@ export const PowerLaptop = async ({ data }) => {
                 </div>
               </div>
 
-              <p className="text-sm text-left text-[#e9ddc7] font-txt leading-[31px] px-4">
+              <p className="text-sm text-left text-beige font-txt leading-[31px] px-4">
                 Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
                 they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
                 'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and

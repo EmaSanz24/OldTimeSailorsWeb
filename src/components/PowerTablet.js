@@ -80,9 +80,8 @@ export const PowerTablet = async ({ data }) => {
             <div className="absolute w-64 top-20 -right-4">
               <div className="bg-[#e9ddc7] p-6 rounded-3xl">
                 <h3 className="text-lightRed text-[25px] font-titles leading-tight">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5">
                   <p className="text-darkBlue text-[12px] font-txt leading-tight">
@@ -100,7 +99,7 @@ export const PowerTablet = async ({ data }) => {
           <div className="border-t-2 border-dashed border-beige my-4" />
 
           {/* Event info */}
-          <div className="space-y-6">
+          <div className="space-y-6 ">
             <div className="flex flex-row gap-5">
               <div className="space-y-3">
                 {[

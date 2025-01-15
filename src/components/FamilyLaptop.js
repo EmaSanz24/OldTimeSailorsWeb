@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const formatDate = (inputDate) => {
   // Parse the input date
@@ -26,36 +27,37 @@ const formatDate = (inputDate) => {
 export const FamilyLaptop = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
+  const eventURL = "/eventURL";
+  const router = useRouter();
   return (
-    <div className="relative -bottom-[340px] min-[1440px]:-bottom-[100px]">
-      <div className="relative w-full h-full my-[50px] min-[1440px]:my-[250px]">
+    <div className="relative -bottom-[340px] ">
+      <div className="relative w-full h-full my-[50px]">
         {/* Main container with border */}
-        <div className="border border-darkBeige p-2 relative w-[650px] -right-[95px] -top-[310px] min-[1440px]:w-[950px]">
+        <div className="border-[3px] border-darkBeige p-2 relative w-[650px] -right-[95px] -top-[310px] min-[1440px]:w-[950px]">
           <div className="text-left px-10">
-            <h1 className="font-titles leading-none">
-              <span className="text-darkBlue text-[30px] min-[1440px]:text-[55px]">old time sailors </span>
-              <span className="text-lightRed text-[30px] min-[1440px]:text-[55px]">at</span>
+            <h1 className="font-titles leading-none lowercase">
+              <span className="text-darkBlue text-[40px] min-[1440px]:text-[55px]">old time sailors </span>
+              <span className="text-lightRed text-[40px] min-[1440px]:text-[55px]">at</span>
               <br />
-              <span className="text-lightRed text-[30px] min-[1440px]:text-[55px]">{location}</span>
+              <span className="text-lightRed text-[40px] min-[1440px]:text-[55px]">{location}</span>
             </h1>
-            <p className="text-darkBlue text-[20px] font-titles min-[1440px]:text-[30px]">{location}</p>
+            <p className="text-darkBlue text-[30px] lowercase font-txt">{location}</p>
           </div>
-          <div className="absolute w-72 top-[21px] -right-[75px] z-20 min-[1440px]:w-[350px] min-[1440px]:top-[20px] min-[1440px]:-right-[100px]">
-            <div className="bg-darkBlue p-6 rounded-3xl min-[1440px]:h-[220px]">
-              <h3 className="text-lightRed text-[25px] font-titles leading-none min-[1440px]:text-[30px]">
-                {" "}
-                more about
-                <br />
-                the venue
+          <div className="absolute w-72 top-[21px] -right-[75px] z-20">
+            <div className="bg-darkBlue p-6 rounded-3xl">
+              <h3 className="text-lightRed text-[25px] font-titles leading-none">
+                <p>more about</p>
+                <p>the venue</p>
               </h3>
               <div className="mt-0.5 tracking-wide">
                 <p className="text-beige font-txt leading-tight text-[12px] min-[1440px]:text-[15px]">{venueInfo}</p>
-
-                <p className="text-beige mt-1 font-titles underline text-[12px] min-[1440px]:text-[15px]">contact the venue for + info</p>
+                <Link href={eventURL}>
+                  <p className="text-beige mt-1 font-titles underline text-[12px] min-[1440px]:text-[15px]">contact the venue for + info</p>
+                </Link>
               </div>
             </div>
           </div>
-          <div className="border-t-2 border-dashed border-darkBeige my-4" />
+          <div className="border-t-3 border-dashed border-darkBeige my-4" />
           {/* Event Info  */}
           <div className="space-y-6 p-4">
             <div className="flex flex-row gap-5">
@@ -63,26 +65,30 @@ export const FamilyLaptop = async ({ data }) => {
                 {[
                   { icon: FaLocationDot, text: `${event}` },
                   { icon: FaCalendar, text: `${formattedDate}` },
-                  { icon: FaClock, text: "7:30 PM to 10:30 PM" },
+                  { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                 ].map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-2 text-darkBlue font-txt">
-                    <Icon className="text-[14px] min-[1440px]:text-[18px]" />
-                    <span className="text-[14px] min-[1440px]:text-[18px]">{text}</span>
+                    <Icon className="text-[18px]" />
+                    <span className="text-[18px]">{text}</span>
                   </div>
                 ))}
               </div>
 
               <div className="relative">
                 <Link
-                  className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets max-w-[200px] top-[20px] min-[1440px]:max-w-[300px] min-[1440px]:h-[80px] min-[1440px]:top-[10px] min-[1440px]:left-[35px]"
+                  className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-[25px]"
+                  style={{
+                    "--octagon-width": "270px",
+                    "--octagon-height": "35px",
+                  }}
                   href={ticketsURL}
                   target="_blank"
                 >
-                  <h3 className="font-titles justify-center text-[27px] min-[1440px]:text-[35px]"> buy tickets</h3>
+                  <h3 className="font-txt uppercase justify-center text-[29px]"> buy tickets</h3>
                 </Link>
               </div>
             </div>
-            <p className="text-[12.5px] font-txt text-darkBlue text-left leading-8 px-4 min-[1440px]:text-[17px]">
+            <p className="text-[15px] font-txt text-darkBlue text-left leading-7 px-4">
               You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and
               singing! You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way you
               have never seen before. The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time of
@@ -92,13 +98,13 @@ export const FamilyLaptop = async ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="absolute right-[230px] -top-[100px] min-[1440px]:right-[330px] min-[1440px]:-top-[35px]">
+      <div className="absolute right-[218px] -top-[120px] ">
         <Image
           src="/assets/anchor.webp"
           alt="Anchor"
           width={100}
           height={100}
-          className="w-[40px] h-[50px] min-[1440px]:w-[60px] min-[1440px]:h-[70px]"
+          className="w-[60px] h-[70px] min-[1440px]:w-[60px] min-[1440px]:h-[70px]"
         />
       </div>
       <div className="absolute right-[15px] -top-[230px] z-10">
@@ -108,7 +114,7 @@ export const FamilyLaptop = async ({ data }) => {
             Performance"
           width={200}
           height={200}
-          className="w-[200px] h-[200px] shadow-gray-500 shadow-[0px_3px_3px_rgba(0,0,0,0.3)] min-[1440px]:w-[290px] min-[1440px]:h-[290px]"
+          className="w-[205px] h-[205px] shadow-gray-500 shadow-[0px_3px_3px_rgba(0,0,0,0.3)] min-[1440px]:w-[290px] min-[1440px]:h-[290px]"
         />
       </div>
       <div className="absolute right-[25px] -top-[35px] z-30 min-[1440px]:top-[53px] min-[1440px]:z-20">
@@ -126,7 +132,7 @@ export const FamilyLaptop = async ({ data }) => {
           alt="crowd"
           width={550}
           height={550}
-          className="h-[350px] shadow-[5px_0px_5px_rgba(0,0,0,0.3)] min-[1440px]:w-[550px] min-[1440px]:h-[550px]"
+          className="h-[350px]  min-[1440px]:w-[550px] min-[1440px]:h-[550px]"
         />
       </div>
       <div className="absolute -right-[0px] -bottom-[30px] min-[1440px]:-bottom-[300px]">
@@ -135,10 +141,10 @@ export const FamilyLaptop = async ({ data }) => {
           alt="Background Drawing"
           width={300}
           height={300}
-          className="w-[280px] h-[230px] min-[1440px]:w-[380px] min-[1440px]:h-[330px] contrast-[25%]"
+          className="w-[300px] h-[250px] min-[1440px]:w-[380px] min-[1440px]:h-[330px] contrast-[25%]"
         />
       </div>
-      <div className="absolute top-[150px] left-[40px] w-[410px] h-[280px] z-50 min-[1440px]:top-[200px] min-[1440px]:left-[10px] min-[1440px]:w-[590px] min-[1440px]:h-[280px]">
+      <div className="absolute top-[190px] left-[40px] w-[410px] h-[280px] z-50 ">
         <Image src="/assets/videoBox.webp" alt="Video Frame" width={590} height={280} />
         <div className="absolute inset-0 flex items-center justify-center mb-7 min-[1440px]:top-[107px]">
           <video
@@ -151,28 +157,25 @@ export const FamilyLaptop = async ({ data }) => {
           </video>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
         <Image
           src="/assets/arrow2.webp"
           alt="More gigs"
           width={300}
           height={300}
-          className="absolute left-[25px] -top-[100px] w-[310px] h-[110px] min-[1440px]:left-[10px] min-[1440px]:-top-[180px] min-[1440px]:w-[430px] min-[1440px]:h-[120px]"
+          className="absolute left-[25px] -top-[150px] w-[310px] h-[110px] cursor-pointer"
         />
-        <Link href={"/tickets/calendar-view"}>
-          <p className="absolute inset-0 font-titles text-beige left-[115px] -top-[72px] text-[40px] min-[1440px]:left-[135px] min-[1440px]:-top-[155px] min-[1440px]:text-[50px]">
-            more gigs
-          </p>
-        </Link>
+
+        <p className="absolute inset-0 font-titles text-beige left-[115px] -top-[122px] text-[40px] ">more gigs</p>
       </div>
-      <div className="absolute -bottom-[250px]  left-[45px] z-10 min-[1440px]:-bottom-[470px] min-[1440px]:left-[55px]">
+      <div className="absolute -bottom-[165px]  left-[45px] z-10 ">
         <div className="flex flex-row items-center gap-3 mb-5">
-          <div className="leading-none">
-            <p className="text-darkBlue font-titles text-[80px] min-[1440px]:text-[125px]">family</p>
-            <p className="text-darkBlue font-titles text-[80px] min-[1440px]:text-[125px]">show</p>
+          <div className="leading-[63px]">
+            <p className="text-darkBlue font-titles text-[80px] min-[1440px]:text-[135px]">family</p>
+            <p className="text-darkBlue font-titles text-[80px] min-[1440px]:text-[135px]">show</p>
           </div>
-          <div className="text-lightRed text-[20px] -mb-[95px] -ml-[45px] min-[1440px]:text-[30px] min-[1440px]:-mb-[150px] min-[1440px]:-ml-[50px]">
-            <div className="leading-tight tracking-widest font-titles">
+          <div className="text-lightRed text-[20px] -mb-[75px] -ml-[45px]">
+            <div className="leading-tight tracking-widest font-txt uppercase">
               <p>a traditional sailor show,</p>
               <p>sing along and dance with us!</p>
             </div>

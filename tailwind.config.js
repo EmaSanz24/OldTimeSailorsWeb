@@ -16,7 +16,6 @@ module.exports = {
         lightRed: "#dd3254",
         musicColor: "#253142",
         darkBeige: "#938f73",
-        // darkBeige: "#d1c3a9",
       },
       backgroundImage: {
         beigePattern: "url('/assets/backgrounds/bg-beige-desktop.webp')",

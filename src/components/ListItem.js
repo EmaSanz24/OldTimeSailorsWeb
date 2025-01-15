@@ -31,28 +31,28 @@ const formatDateOrRange = (dateInput) => {
 const ListItem = ({ event }) => {
   let longDate = formatDateOrRange(event.date);
   return (
-    <div className="relative border-b border-y-2 border-lightRed py-2 mx-1 md:mx-3 lg:mx-20 xl:mx-40 2xl:mx-80">
+    <div className="relative border-b-3 border-lightRed py-2 mx-1 md:mx-[5%]">
       <div className="flex justify-between items-center">
-        <div className="space-y-1 md:space-y-3 pr-2 w-3/4">
+        <div className="space-y-0 md:space-y-1 pr-2 w-3/4">
           <div className="flex items-baseline gap-1">
             <span
-              className="text-darkBlue font-numbers text-xl md:text-3xl 
+              className="text-darkBlue font-txt font-bold text-xl md:text-3xl 
             "
             >
               {longDate}
             </span>
-            <span className="font-txt text-darBlue md:text-2xl">- {event.gigStartTime}</span>
-            <span className="font-txt text-darBlue md:text-2xl">- {event.gigFinishTime}</span>
+            <span className="font-txt text-darkBlue md:text-2xl">- {event.gigStartTime}</span>
+            <span className="font-txt text-darkBlue md:text-2xl">- {event.gigFinishTime}</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-titles text-lightRed">{event.event}</h2>
+          <h2 className="text-2xl md:text-4xl font-titles text-lightRed">{event.event.toLowerCase()}</h2>
           <p className="text-darkBlue  font-txt text-xl md:text-3xl">{event.location}</p>
         </div>
         <Link
           href={`/tickets/${event.event.replace(/\s+/g, "-").toLowerCase()}`}
           rel="noopener noreferrer"
-          className="flex items-center justify-center octagon-tickets bg-lightRed md:w-1/8"
+          className="flex items-center justify-center services-octagon-link max-h-[50px] max-w-[170px] md:max-h-[80px] md:max-w-[260px] lg:max-w-[300px] 1xl:h-[100px] bg-lightRed md:w-1/8 lg:w-1/10"
         >
-          <p className="text-center text-2xl md:text-[42px] font-titles text-beige">+ info</p>
+          <p className="text-center text-3xl md:text-[38px] lg:text-[42px] 1xl:text-[46px] font-txt font-bold uppercase text-beige">+ info</p>
         </Link>
       </div>
     </div>
