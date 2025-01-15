@@ -56,7 +56,7 @@ const Footer = () => {
         pathname === "/" ? "py-0.5 xl:p-0.5 2k:py-2" : "py-0.5 md1:py-2"
       } ${
         isPowerLandingPath()
-          ? "bg-darkBlue py-3 xl:py-4 2k:py-5"
+          ? "bg-darkBlue py-0.5 lg:py-0 xl:py-2 2k:py-3"
           : ""
       }`}  
       style={{

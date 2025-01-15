@@ -7,47 +7,8 @@ import { PowerMobileL } from "./PowerMobileL";
 import { PowerLaptopL } from "./PowerLaptopL";
 import { PowerDesktop } from "./PowerDesktop";
 import PowerDesktopL from "./PowerDesktopL";
-import { useEffect, useCallback } from "react";
-
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
 
 export const PowerLanding = async ({ data }) => {
-  // Optimizar la función de scroll con useCallback
-  const handleScroll = useCallback(
-    debounce(() => {
-      requestAnimationFrame(() => {
-        // Lógica de scroll si es necesaria
-      });
-    }, 16),
-    []
-  );
-
-  useEffect(() => {
-    // Prevenir scroll durante la carga inicial
-    document.body.style.overflowY = "hidden";
-
-    // Permitir scroll después de que todo esté listo
-    setTimeout(() => {
-      document.body.style.overflowY = "auto";
-    }, 100);
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.body.style.overflowY = "auto";
-    };
-  }, [handleScroll]);
 
   return (
     <div
