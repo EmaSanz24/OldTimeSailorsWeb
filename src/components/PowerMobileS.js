@@ -3,6 +3,7 @@ import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 import { memo } from "react";
+import { useRouter } from "next/navigation";
 const formatDate = (inputDate) => {
   // Parse the input date
   const [day, month, year] = inputDate.split("/").map(Number);
@@ -35,14 +36,16 @@ const EventDescription = memo(() => (
 export const PowerMobileS = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
+  const eventURL = "/eventURL";
+  const router = useRouter();
   return (
     <>
-      <div className="relative -bottom-[80px]">
+      <div className="relative -bottom-[50px] px-[15px] z-0 transform translate-z-0 will-change-transform">
         <div className="relative w-full h-full my-[10px]">
           {/* Contenedor principal con borde */}
-          <div className="border-[3px] border-darkBeige p-2 m-4 relative">
-            <div className="text-left font-times">
-              <h1 className="font-titles ">
+          <div className="border-[3px] border-beige p-2 m-4 relative">
+            <div className="text-left lowercase">
+              <h1 className="font-titles leading-none">
                 <span className="text-lightRed text-xl">old time sailors </span> <span className="text-beige text-xl"> at</span>
                 <br />
                 <span className="text-beige text-xl">{event}</span>
@@ -50,18 +53,19 @@ export const PowerMobileS = async ({ data }) => {
               <p className="text-lightRed text-sm font-txt">{location}</p>
             </div>
 
-            <div className="border-t-3 border-dashed border-darkBeige my-4" />
+            <div className="border-t-3 border-dashed border-beige my-4" />
 
-            <div className="absolute -right-[12px] top-20 w-[160px]">
+            <div className="absolute -right-[12px] top-[70px] w-[160px]">
               <div className="bg-beige p-3 py-4 rounded-2xl">
-                <h3 className="text-lightRed text-[15px]  font-titles leading-tight">
+                <h3 className="text-lightRed text-[15px]  font-titles leading-none">
                   <p>more about</p>
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 ">
                   <p className="text-darkBlue text-[7px] leading-tight font-txt">{venueInfo}</p>
-
-                  <p className="text-darkBlue text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
+                  <Link href={eventURL}>
+                    <p className="text-darkBlue text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -72,11 +76,14 @@ export const PowerMobileS = async ({ data }) => {
                 {[
                   { icon: FaLocationDot, text: `${event}` },
                   { icon: FaCalendar, text: `${formattedDate}` },
-                  { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
+                  {
+                    icon: FaClock,
+                    text: `${gigStartTime} to ${gigFinishTime}`,
+                  },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-2 text-darkBlue font-semibold">
-                    <Icon className="text-[10px] text-beige" />
-                    <span className="text-[7.5px] text-beige">{text}</span>
+                  <div key={text} className="flex items-center gap-2 text-darkBlue font-bold">
+                    <Icon className="text-[10px] text-lightRed" />
+                    <span className="text-[8px] text-beige font-txt">{text}</span>
                   </div>
                 ))}
 
@@ -84,134 +91,118 @@ export const PowerMobileS = async ({ data }) => {
                   <Link
                     className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                     style={{
-                      "--octagon-width": "100px",
-                      "--octagon-height": "28px",
+                      "--octagon-width": "180px",
+                      "--octagon-height": "30px",
                     }}
-                    href={ticketsURL}
+                    href={`${ticketsURL}`}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[12px]"> buy tickets</h3>
+                    <h3 className="justify-center text-[14px] font-txt uppercase"> buy tickets</h3>
                   </Link>
                 </div>
                 <EventDescription />
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Media section */}
-          <div className="w-full h-[400px] relative -top-5 -left-2">
-            <div className="relative h-[200px]">
-              {/* Video */}
-              {/* Contenedor principal */}
-              <div className="relative w-[245px] h-[130px] -left-[5px]">
-                {/* Video primero en el DOM pero con z-index menor */}
-                <div className="absolute inset-0  flex items-center justify-center z-20">
-                  <video
-                    controls
-                    preload="none"
-                    poster={"/assets/thumbnailvideoP.webp"}
-                    className="w-[70%] h-[80%] absolute -top-[7px] left-[26px] object-cover rounded-sm]
+      {/* Media section */}
+      <div className="w-full h-[400px] relative top-5 -left-2">
+        <div className="relative h-[200px]">
+          {/* Video */}
+          {/* Contenedor principal */}
+          <div className="relative w-[210px] h-[120px] left-[5px]">
+            {/* Video primero en el DOM pero con z-index menor */}
+            <div className="absolute inset-0  flex items-center justify-center z-20">
+              <video
+                controls
+                preload="none"
+                poster={"/assets/thumbnailvideoP.webp"}
+                className="w-[76%] h-[74%] absolute top-[1px] left-[27px] object-cover rounded-sm]
                     hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
-                  >
-                    <source src="/assets/powerVideo.mp4" type="video/mp4" />
-                  </video>
-                </div>
-
-                {/* Recuadro después en el DOM y con z-index mayor */}
-                <div className="absolute inset-0 z-10 -top-[45px] left-[5px]">
-                  <Image
-                    src="/assets/powerVideoBox.webp"
-                    alt="Video frame"
-                    width={215}
-                    height={166}
-                    className="w-[215px] h-[166px]"
-                    priority={true}
-                  />
-                </div>
-              </div>
-
-              {/* Photo 2 */}
-              <div className="absolute -right-1 -top-4 w-[130px] h-[130px]">
-                <Image
-                  src="/assets/powerPhoto2.webp"
-                  alt="Musicians"
-                  width={130}
-                  height={130}
-                  quality={75}
-                  className="w-[130px] h-[130px]"
-                  loading="lazy"
-                />
-              </div>
+              >
+                <source src="/assets/powerVideo.mp4" type="video/mp4" />
+              </video>
             </div>
 
-            {/* Lower photos */}
-            <div className="relative h-[200px] bottom-8">
-              <div className="absolute left-7 -top-16 w-1/2 z-20">
-                <Image
-                  src="/assets/powerPhoto1.webp"
-                  alt="Performance"
-                  width={145}
-                  height={145}
-                  quality={75}
-                  className="w-[145px] h-[145px] z-10 "
-                  loading="lazy"
-                />
-                <div className="relative">
-                  <Image
-                    src="/assets/beigeArrow.webp"
-                    alt="More gigs"
-                    width={145}
-                    height={40}
-                    quality={75}
-                    className="absolute right-8 -bottom-12 w-[145px] h-[40px]"
-                    loading="lazy"
-                  />
-                  <Link href={"/tickets/calendar-view"}>
-                    <p className="absolute inset-0 font-times font-titles text-darkBlue left-[35px] top-[13px] text-[20px]">more gigs</p>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="absolute -right-1 -top-11 w-[156px] h-[156px] z-10">
-                <Image
-                  src="/assets/powerPhoto3.webp"
-                  alt="Crowd"
-                  width={156}
-                  height={154}
-                  quality={75}
-                  className="w-[156px] h-[156px]"
-                  loading="lazy"
-                />
-              </div>
+            {/* Recuadro después en el DOM y con z-index mayor */}
+            <div className="absolute inset-0 z-10 -top-[45px] left-[5px]">
+              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={215} height={166} className="w-[215px] h-[166px]" priority={true} />
             </div>
+          </div>
 
-            {/* Title */}
-            <div className="absolute bottom-6 left-4 z-20">
-              <div className="flex flex-row items-center gap-3">
-                <div className="flex flex-col leading-none">
-                  <p className="text-lightRed text-[35px] font-titles">power</p>
-                  <p className="text-lightRed text-[35px] font-titles">show</p>
-                </div>
-                <div className="text-beige text-[8px] flex flex-col">
-                  <div className="-ml-[30px] mt-[40px] leading-none tracking-widest font-titles">
-                    <p>an upbeat, darker show. get ready to</p>
-                    <p>party below deck like a pirate!</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          {/* Photo 2 */}
+          <div className="absolute -right-1 -top-4 w-[130px] h-[130px]">
             <Image
-              src="/assets/shipDrawing.webp"
-              alt="Background drawing"
-              width={150}
-              height={110}
+              src="/assets/powerPhoto4.jpg"
+              alt="Musicians"
+              width={130}
+              height={130}
               quality={75}
-              className="w-[150px] h-[130px] absolute bottom-[10px] -right-4 z-10"
+              className="w-[130px] h-[130px]"
               loading="lazy"
             />
           </div>
         </div>
+
+        {/* Lower photos */}
+        <div className="relative h-[200px] bottom-8">
+          <div className="absolute left-[40px] -top-[71.5px] w-1/2 z-20">
+            <Image
+              src="/assets/powerPhoto1.webp"
+              alt="Performance"
+              width={145}
+              height={145}
+              quality={75}
+              className="w-[143px] h-[145px] z-10 "
+              loading="lazy"
+            />
+            <div className="relative" onClick={() => router.back()}>
+              <Image
+                src="/assets/beigeArrow.webp"
+                alt="More gigs"
+                width={145}
+                height={40}
+                quality={75}
+                className="absolute right-8 -bottom-12 w-[145px] h-[40px]"
+                loading="lazy"
+              />
+
+              <p className="absolute inset-0 font-times font-titles text-darkBlue left-[35px] top-[13px] text-[20px]">more gigs</p>
+            </div>
+          </div>
+
+          <div className="absolute -right-1 -top-[54px] w-[156px] h-[156px] z-10">
+            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={156} height={154} quality={75} className="w-[156px] h-[156px]" loading="lazy" />
+          </div>
+        </div>
+
+        {/* Title */}
+        <div className="absolute bottom-6 left-4 z-20">
+          <div className="flex flex-row items-center gap-3">
+            <div className="flex flex-col leading-none">
+              <p className="text-lightRed text-[35px] font-titles">power</p>
+              <p className="text-lightRed text-[35px] font-titles">show</p>
+            </div>
+            <div className="text-beige text-[8px] flex flex-col">
+              <div className="-ml-[30px] mt-[40px] leading-none tracking-widest font-txt uppercase">
+                <p>an upbeat, darker show. get ready to</p>
+                <p>party below deck like a pirate!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <Image
+          src="/assets/shipDrawing.webp"
+          alt="Background drawing"
+          width={150}
+          height={110}
+          quality={75}
+          className="w-[150px] h-[130px] absolute bottom-[10px] -right-2 z-10 brightness-[300%] invert"
+          loading="lazy"
+        />
       </div>
     </>
   );

@@ -35,7 +35,7 @@ export const FamilyLaptopL = async ({ data }) => {
           {/* Contenedor principal con borde */}
           <div className="border-[3px] border-darkBeige p-2 relative w-[950px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
-              <h1 className="font-bold leading-none font-titles lowercase">
+              <h1 className=" leading-none font-titles lowercase">
                 <span className="text-darkBlue text-[55px]">old time sailors </span>
                 <span className="text-lightRed text-[55px]">at</span>
                 <br />

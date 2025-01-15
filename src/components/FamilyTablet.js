@@ -39,6 +39,7 @@ export const FamilyTablet = async ({ data }) => {
             <span className="text-lightRed text-[40px] ">{event}</span>
           </h1>
           <p className="text-darkBlue text-[25px] font-txt lowercase">{location}</p>
+
           <div className="absolute w-64 top-20 -right-4">
             <div className="bg-darkBlue p-6 rounded-3xl">
               <h3 className="text-lightRed text-[25px] font-titles leading-none">
@@ -46,7 +47,7 @@ export const FamilyTablet = async ({ data }) => {
                 <p>the venue</p>
               </h3>
               <div className="mt-0.5">
-                <p className="text-beige font-txt leading tight text-[15px]">{venueInfo}</p>
+                <p className="text-beige font-txt leading-tight text-[15px]">{venueInfo}</p>
                 <Link href={eventURL}>
                   <p className="text-beige mt-1 font-titles underline text-[16px]">contact the venue for + info</p>
                 </Link>

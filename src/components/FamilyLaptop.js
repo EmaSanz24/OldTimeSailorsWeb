@@ -33,13 +33,18 @@ export const FamilyLaptop = async ({ data }) => {
     <div className="relative -bottom-[340px] ">
       <div className="relative w-full h-full my-[50px]">
         {/* Main container with border */}
-        <div className="border-[3px] border-darkBeige p-2 relative w-[650px] -right-[95px] -top-[310px] min-[1440px]:w-[950px]">
+        <div className="border-[3px] border-darkBeige p-2 relative w-[650px] -right-[95px] -top-[310px]">
           <div className="text-left px-10">
             <h1 className="font-titles leading-none lowercase">
-              <span className="text-darkBlue text-[40px] min-[1440px]:text-[55px]">old time sailors </span>
-              <span className="text-lightRed text-[40px] min-[1440px]:text-[55px]">at</span>
+              <span className="text-darkBlue text-[40px] ">old time sailors </span>
+              <span className="text-lightRed text-[40px] ">at</span>
               <br />
-              <span className="text-lightRed text-[40px] min-[1440px]:text-[55px]">{location}</span>
+              <span
+                className="text-lightRed text-[40px] 
+              "
+              >
+                {location}
+              </span>
             </h1>
             <p className="text-darkBlue text-[30px] lowercase font-txt">{location}</p>
           </div>
@@ -50,9 +55,9 @@ export const FamilyLaptop = async ({ data }) => {
                 <p>the venue</p>
               </h3>
               <div className="mt-0.5 tracking-wide">
-                <p className="text-beige font-txt leading-tight text-[12px] min-[1440px]:text-[15px]">{venueInfo}</p>
+                <p className="text-beige font-txt leading-tight text-[12px]">{venueInfo}</p>
                 <Link href={eventURL}>
-                  <p className="text-beige mt-1 font-titles underline text-[12px] min-[1440px]:text-[15px]">contact the venue for + info</p>
+                  <p className="text-beige mt-1 font-titles underline text-[12px]">contact the venue for + info</p>
                 </Link>
               </div>
             </div>
@@ -171,8 +176,8 @@ export const FamilyLaptop = async ({ data }) => {
       <div className="absolute -bottom-[165px]  left-[45px] z-10 ">
         <div className="flex flex-row items-center gap-3 mb-5">
           <div className="leading-[63px]">
-            <p className="text-darkBlue font-titles text-[80px] min-[1440px]:text-[135px]">family</p>
-            <p className="text-darkBlue font-titles text-[80px] min-[1440px]:text-[135px]">show</p>
+            <p className="text-darkBlue font-titles text-[80px] ">family</p>
+            <p className="text-darkBlue font-titles text-[80px] ">show</p>
           </div>
           <div className="text-lightRed text-[20px] -mb-[75px] -ml-[45px]">
             <div className="leading-tight tracking-widest font-txt uppercase">

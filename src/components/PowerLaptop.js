@@ -27,7 +27,7 @@ const formatDate = (inputDate) => {
 export const PowerLaptop = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
-
+  const eventURL = "/eventURL";
   const router = useRouter();
 
   return (
@@ -37,32 +37,33 @@ export const PowerLaptop = async ({ data }) => {
           {/* Contenedor principal con borde */}
           <div className="border-[3px] border-beige p-2 relative w-[650px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
-              <h1 className="leading-none">
-                <span className="text-lightRed font-titles text-[30px]">old time sailors </span>
-                <span className="text-beige font-titles text-[30px]">at</span>
+              <h1 className=" font-titles leading-[18px] lowercase pt-5">
+                <span className="text-lightRed text-[40px]">old time sailors </span>
+                <span className="text-beige text-[40px]">at</span>
                 <br />
                 <br />
-                <span className="text-beige font-titles text-[30px]">{event}</span>
+                <span className="text-beige  text-[40px]">{event}</span>
               </h1>
-              <p className="text-lightRed font-titles text-[20px] mt-2">{location}</p>
+              <p className="text-lightRed font-txt text-[30px] lowercase mt-2">{location}</p>
             </div>
             <div className="absolute w-[250px] top-[21px] -right-[75px] z-20">
-              <div className="bg-[#e9ddc7] p-4 rounded-3xl ">
+              <div className="bg-beige p-4 rounded-3xl ">
                 <h3 className="text-lightRed text-[25px] font-titles leading-none">
                   <p>more about</p>
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
                   <p className="text-darkBlue text-[12px] font-txt leading-tight">{venueInfo}</p>
-
-                  <p className="text-darkBlue text-[12px] mt-1 font-titles underline">contact the venue for + info</p>
+                  <Link href={eventURL}>
+                    <p className="text-darkBlue text-[12px] mt-1 font-titles underline">contact the venue for + info</p>
+                  </Link>
                 </div>
               </div>
             </div>
             <div className="border-t-3 border-dashed border-beige my-4" />
 
             {/* Event info */}
-            <div className="space-y-2 p-4 ">
+            <div className="space-y-2 p-4">
               <div className="flex flex-row gap-5">
                 <div className="space-y-3">
                   {[
@@ -70,28 +71,28 @@ export const PowerLaptop = async ({ data }) => {
                     { icon: FaCalendar, text: `${formattedDate}` },
                     { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-beige font-semibold">
-                      <Icon className="text-[12px] text-lightRed" />
-                      <span className="text-[12px]">{text}</span>
+                    <div key={text} className="flex items-center gap-2 text-beige font-txt px-4">
+                      <Icon className="text-[18px] text-lightRed" />
+                      <span className="text-[18px] font-txt">{text}</span>
                     </div>
                   ))}
                 </div>
                 <div className="relative w-[250px] h-[100px] ">
                   <Link
-                    className="absolute left-5 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
+                    className="absolute left-5 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-[25px]"
                     style={{
-                      width: "200px",
+                      width: "270px",
                       height: "50px",
                     }}
                     href={ticketsURL}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[20px]"> buy tickets</h3>
+                    <h3 className="font-txt justify-center text-[29px] uppercase"> buy tickets</h3>
                   </Link>
                 </div>
               </div>
 
-              <p className="text-sm text-left text-beige font-txt leading-[31px] px-4">
+              <p className="text-[15px] text-left text-beige font-txt leading-7 px-4">
                 Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
                 they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
                 'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and
@@ -107,18 +108,25 @@ export const PowerLaptop = async ({ data }) => {
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[25px] -top-[35px] z-30">
-            <Image src="/assets/powerPhoto2.webp" alt="Musicians" width={200} height={200} className="w-[290px]" loading="lazy" />
+            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={200} height={200} className="w-[290px]" loading="lazy" />
           </div>
           {/* Photo 3 */}
-          <div className="absolute right-[275px] top-[230px] w-[380px] z-40">
-            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="h-[360px] " loading="lazy" />
+          <div className="absolute right-[275px] top-[255px] w-[380px] z-40">
+            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="h-[360px]" loading="lazy" />
           </div>
-          <div className="absolute -right-[28px] bottom-[0px]">
-            <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[330px] h-[300px]" loading="lazy" />
+          <div className="absolute -right-[18px] bottom-[0px]">
+            <Image
+              src="/assets/shipDrawing.webp"
+              alt="Background drawing"
+              width={300}
+              height={300}
+              className="w-[330px] h-[300px] brightness-[300%] invert"
+              loading="lazy"
+            />
           </div>
-          <div className="absolute top-[165px] left-[40px] w-[410px] h-[280px] z-50">
-            <Image src="/assets/powerVideoBox.webp" alt="Video frame" width={430} height={100} priority={true} />
-            <div className="absolute inset-0 top-[43px] -left-[10px] -right-[10px] flex items-center justify-center">
+          <div className="absolute top-[175px] left-[40px] w-[410px] h-[280px] z-50">
+            <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={430} height={100} priority={true} />
+            <div className="absolute inset-0 top-[41px] -left-[10px] -right-[10px] flex items-center justify-center">
               <video
                 controls
                 preload="none"
@@ -129,7 +137,7 @@ export const PowerLaptop = async ({ data }) => {
               </video>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
@@ -138,19 +146,18 @@ export const PowerLaptop = async ({ data }) => {
               className="absolute left-[25px] -top-[100px] w-[310px] h-[110px]"
               loading="lazy"
             />
-            <Link href={"/tickets/calendar-view"}>
-              <p className="absolute inset-0 font-titles font-bold text-darkBlue left-[130px] -top-[72px] text-[40px]">more gigs</p>
-            </Link>
+
+            <p className="absolute inset-0 font-titles  text-darkBlue left-[130px] -top-[72px] text-[40px]">more gigs</p>
           </div>
           {/* Title */}
           <div className="absolute -bottom-[190px]  left-[45px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
-              <div className="leading-none">
+              <div className="leading-[63px]">
                 <p className="text-lightRed text-[80px] font-titles">power</p>
                 <p className="text-lightRed text-[80px] font-titles">show</p>
               </div>
-              <div className="text-beige text-[20px] -mb-[95px] -ml-[35px]">
-                <div className="font-titles leading-tight tracking-widest">
+              <div className="text-beige text-[20px] -mb-[75px] -ml-[35px]">
+                <div className="font-txt leading-tight tracking-widest uppercase">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
                 </div>

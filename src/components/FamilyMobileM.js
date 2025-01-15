@@ -70,7 +70,7 @@ export const FamilyMobileM = async ({ data }) => {
         {/* Contenedor principal con borde */}
         <div className="border-[3px] border-darkBeige p-4 mx-4 relative">
           <div className="text-left lowercase">
-            <h1 className="font-titles">
+            <h1 className="font-titles pt-1">
               <p>
                 <span className="text-darkBlue text-xl">old time sailors </span>
                 <span className="text-lightRed text-xl"> at</span>

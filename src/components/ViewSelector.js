@@ -18,9 +18,9 @@ const MapOption = memo(() => (
         quality={75}
         sizes="(max-width: 768px) 420px, 620px"
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center leading-none">
         <h2 className="text-lightRed text-2xl lg:text-4xl font-titles">view gigs on</h2>
-        <h2 className="text-darkBlue text-5xl lg:text-7xl font-titles">map</h2>
+        <h2 className="text-darkBlue text-[68px] lg:text-[102px] font-titles">map</h2>
       </div>
     </div>
   </Link>
@@ -41,7 +41,7 @@ const CalendarOption = memo(() => (
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h2 className="text-darkBlue text-2xl lg:text-4xl font-titles">view gigs on </h2>
-        <h2 className="text-lightRed text-5xl lg:text-7xl font-titles">Calendar</h2>
+        <h2 className="text-lightRed text-5xl lg:text-7xl font-titles">calendar</h2>
       </div>
     </div>
   </Link>
@@ -71,8 +71,8 @@ const ViewSelector = async () => {
   return (
     <div>
       {/* Main Content */}
-      <div className="w-full h-full flex-1 pt-10 md:pt-16 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] top-[150px] font-times flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
-        <div className="flex flex-col space-y-8 w-full lg:w-[1000px] lg:h-full items-center lg:justify-center lg:ml-20">
+      <div className="w-full h-full flex-1 md:pt-24 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] flex flex-col lg:flex-row items-center justify-center">
+        <div className="flex flex-col space-y-4 w-full lg:w-[1000px] lg:h-full items-center lg:justify-center lg:ml-20">
           <MapOption />
           <CalendarOption />
         </div>

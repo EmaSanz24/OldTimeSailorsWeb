@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useLoader } from "@/context/LoaderContext";
 import { usePathname } from "next/navigation";
@@ -10,6 +9,7 @@ import logo2 from "../../public/assets/logo-services.svg";
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import ViewSwitch from "./ViewSelectorSwitch";
+import { useNavbarColor } from "@/context/NavbarColorProvider";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -20,8 +20,10 @@ const Navbar = () => {
   const [titleColor, setTitleColor] = useState("");
   const [navStyle, setNavStyle] = useState({});
   const [viewSelector, setViewSelector] = useState(false);
+  const { navbarColor } = useNavbarColor();
 
   const fixedRoutes = ["/tickets", "/tickets/map-view", "/tickets/calendar-view", "/reviews", "/media", "/our-clients", "/services"];
+
   const isDynamicRoute = pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
 
   const getBackgroundColor = (path) => {
@@ -119,7 +121,9 @@ const Navbar = () => {
             }}
           >
             <Image
-              src={!["/services", "/tickets"].includes(pathname) ? logo : logo2}
+              src={
+                !["/services", "/tickets", "/tickets/calendar-view", "/tickets/map-view"].includes(pathname) && navbarColor === "light" ? logo : logo2
+              }
               width={65}
               height={65}
               priority={true}
@@ -142,7 +146,7 @@ const Navbar = () => {
         <div className="flex gap-1.5 xs:gap-2 sm:gap-4 items-center">
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients" && navbarColor === "dark"
                 ? "bg-redPattern text-beige"
                 : "bg-beigePattern text-lightRed"
             }
@@ -162,7 +166,7 @@ const Navbar = () => {
 
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              navbarColor === "dark" && pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
                 ? "bg-bluePattern text-beige"
                 : "bg-beigePattern text-darkBlue"
             }
@@ -182,7 +186,7 @@ const Navbar = () => {
 
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              navbarColor === "dark" && pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
                 ? "bg-redPattern text-beige"
                 : "bg-beigePattern text-lightRed"
             }
@@ -202,7 +206,7 @@ const Navbar = () => {
 
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              navbarColor === "dark" && pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
                 ? "bg-bluePattern text-beige"
                 : "bg-beigePattern text-darkBlue"
             }
