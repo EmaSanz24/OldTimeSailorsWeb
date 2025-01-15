@@ -69,7 +69,7 @@ const DrawingImage = memo(() => {
 
 const ViewSelector = async () => {
   return (
-    <>
+    <div>
       {/* Main Content */}
       <div className="w-full h-full flex-1 pt-10 md:pt-16 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] top-[150px] font-times flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-8">
         <div className="flex flex-col space-y-8 w-full lg:w-[1000px] lg:h-full items-center lg:justify-center lg:ml-20">
@@ -78,7 +78,7 @@ const ViewSelector = async () => {
         </div>
         <DrawingImage />
       </div>
-    </>
+    </div>
   );
 };
 
