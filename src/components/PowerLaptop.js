@@ -31,7 +31,7 @@ export const PowerLaptop = async ({ data }) => {
       <div className="relative top-[340px] right-[5px]">
         <div className="relative w-full h-full my-[50px]">
           {/* Contenedor principal con borde */}
-          <div className="border border-[#e9ddc7] p-2 relative w-[650px] -right-[95px] -top-[310px]">
+          <div className="border border-beige p-2 relative w-[650px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="leading-none">
                 <span className="text-lightRed font-titles text-[30px]">old time sailors </span>
@@ -40,7 +40,7 @@ export const PowerLaptop = async ({ data }) => {
                 <br />
                 <span className="text-[#e9ddc7] font-titles text-[30px]">{event}</span>
               </h1>
-              <p className="text-lightRed font-titles text-[20px] mt-2">{location}</p>
+              <p className="text-lightRed font-txt text-[20px] mt-2">{location}</p>
             </div>
             <div className="absolute w-[250px] top-[21px] -right-[75px] z-20">
               <div className="bg-[#e9ddc7] p-4 rounded-3xl ">
@@ -56,7 +56,7 @@ export const PowerLaptop = async ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="border-t-2 border-dashed border-[#e9ddc7] my-4" />
+            <div className="border-t-2 border-dashed border-beige my-4" />
 
             {/* Event info */}
             <div className="space-y-2 p-4 ">
@@ -67,9 +67,9 @@ export const PowerLaptop = async ({ data }) => {
                     { icon: FaCalendar, text: `${formattedDate}` },
                     { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-[#e9ddc7] font-semibold">
+                    <div key={text} className="flex items-center gap-2 text-[#e9ddc7] font-txt px-4">
                       <Icon className="text-[12px] text-lightRed" />
-                      <span className="text-[12px]">{text}</span>
+                      <span className="text-[12px] font-txt">{text}</span>
                     </div>
                   ))}
                 </div>
@@ -77,13 +77,13 @@ export const PowerLaptop = async ({ data }) => {
                   <Link
                     className="absolute left-5 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                     style={{
-                      width: "200px",
+                      width: "250px",
                       height: "50px",
                     }}
                     href={ticketsURL}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[20px]"> buy tickets</h3>
+                    <h3 className="font-txt justify-center text-[30px]"> BUY TICKETS</h3>
                   </Link>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export const PowerLaptop = async ({ data }) => {
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[25px] -top-[35px] z-30">
-            <Image src="/assets/powerPhoto2.webp" alt="Musicians" width={200} height={200} className="w-[290px]" loading="lazy" />
+            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={200} height={200} className="w-[290px]" loading="lazy" />
           </div>
           {/* Photo 3 */}
           <div className="absolute right-[275px] top-[230px] w-[380px] z-40">
@@ -113,15 +113,15 @@ export const PowerLaptop = async ({ data }) => {
               alt="Crowd"
               width={400}
               height={400}
-              className="h-[360px] shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
+              className="h-[360px]"
               loading="lazy"
             />
           </div>
           <div className="absolute -right-[28px] bottom-[0px]">
-            <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[330px] h-[300px]" loading="lazy" />
+            <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[330px] h-[300px] brightness-[300%] invert" loading="lazy" />
           </div>
           <div className="absolute top-[165px] left-[40px] w-[410px] h-[280px] z-50">
-            <Image src="/assets/powerVideoBox.webp" alt="Video frame" width={430} height={100} priority={true} />
+            <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={430} height={100} priority={true} />
             <div className="absolute inset-0 top-[43px] -left-[10px] -right-[10px] flex items-center justify-center">
               <video
                 controls
@@ -143,7 +143,7 @@ export const PowerLaptop = async ({ data }) => {
               loading="lazy"
             />
             <Link href={"/tickets/calendar-view"}>
-              <p className="absolute inset-0 font-titles font-bold text-darkBlue left-[130px] -top-[72px] text-[40px]">more gigs</p>
+              <p className="absolute inset-0 font-titles  text-darkBlue left-[130px] -top-[72px] text-[40px]">more gigs</p>
             </Link>
           </div>
           {/* Title */}
@@ -154,9 +154,9 @@ export const PowerLaptop = async ({ data }) => {
                 <p className="text-lightRed text-[80px] font-titles">show</p>
               </div>
               <div className="text-[#e9ddc7] text-[20px] -mb-[95px] -ml-[35px]">
-                <div className="font-titles leading-tight tracking-widest">
-                  <p>an upbeat, darker show. get ready to</p>
-                  <p>party below deck like a pirate!</p>
+                <div className="font-txt leading-tight tracking-widest">
+                <p>AN UPBEAT, DARKER SHOW. GET READY TO</p>
+                <p>PARTY BELOW DECK LIKE A PIRATE!</p>
                 </div>
               </div>
             </div>

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useLoader } from "@/context/LoaderContext";
 import { usePathname } from "next/navigation";
@@ -10,8 +9,11 @@ import logo2 from "../../public/assets/logo-services.svg";
 import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import ViewSwitch from "./ViewSelectorSwitch";
+import { useParams } from "next/navigation";
+import { fetchEvents } from "@/helpers/fetchData";
 
 const Navbar = () => {
+  const params = useParams();
   const pathname = usePathname();
   const defaultSettings = { loader: 1, photos: true };
   const settings = useLoader() || defaultSettings;
@@ -20,9 +22,46 @@ const Navbar = () => {
   const [titleColor, setTitleColor] = useState("");
   const [navStyle, setNavStyle] = useState({});
   const [viewSelector, setViewSelector] = useState(false);
+  const [currentEvent, setCurrentEvent] = useState(null);
+  const [isPowerEvent, setIsPowerEvent] = useState(false);
 
-  const fixedRoutes = ["/tickets", "/tickets/map-view", "/tickets/calendar-view", "/reviews", "/media", "/our-clients", "/services"];
-  const isDynamicRoute = pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
+  const fixedRoutes = [
+    "/tickets",
+    "/tickets/map-view",
+    "/tickets/calendar-view",
+    "/reviews",
+    "/media",
+    "/our-clients",
+    "/services",
+  ];
+
+  const isDynamicRoute =
+    pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (params.event) {
+        try {
+          const events = await fetchEvents();
+          const foundEvent = events.find(
+            (e) => e.event.toLowerCase().replace(/\s+/g, "-") === params.event
+          );
+          setCurrentEvent(foundEvent);
+          setIsPowerEvent(foundEvent?.typeOfShow === "Power");
+        } catch (error) {
+          console.error("Error fetching event:", error);
+        }
+      }
+    };
+
+    fetchData();
+  }, [params.event]);
+
+  const isPowerLandingPath = () => {
+    return (
+      pathname.startsWith("/tickets/") && currentEvent?.typeOfShow === "Power"
+    );
+  };
 
   const getBackgroundColor = (path) => {
     if (path === "/media") {
@@ -105,7 +144,9 @@ const Navbar = () => {
     <div
       style={navStyle}
       className={`fixed w-screen z-[100] flex flex-col justify-between pt-3 px-1 sm:px-4  ${
-        pathname === "/tickets/calendar-view" ? "bg-beigePatternMobile bg-cover" : ""
+        pathname === "/tickets/calendar-view"
+          ? "bg-beigePatternMobile bg-cover"
+          : ""
       }`}
     >
       <div className="flex justify-between">
@@ -130,7 +171,9 @@ const Navbar = () => {
           <h1
             className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles
            text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl
-            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2 ${isDynamicRoute ? "hidden" : "visible"}`}
+            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2 ${
+              isDynamicRoute ? "hidden" : "visible"
+            }`}
             style={{
               opacity: settings?.loader,
               pointerEvents: settings?.photos ? "auto" : "none",
@@ -142,7 +185,11 @@ const Navbar = () => {
         <div className="flex gap-1.5 xs:gap-2 sm:gap-4 items-center">
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              isPowerLandingPath()
+                ? "bg-redPattern text-beige"
+                : pathname != "/media" &&
+                  pathname != "/reviews" &&
+                  pathname != "/our-clients"
                 ? "bg-redPattern text-beige"
                 : "bg-beigePattern text-lightRed"
             }
@@ -162,7 +209,11 @@ const Navbar = () => {
 
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              isPowerLandingPath()
+                ? "bg-beigePattern text-darkBlue"
+                : pathname != "/media" &&
+                  pathname != "/reviews" &&
+                  pathname != "/our-clients"
                 ? "bg-bluePattern text-beige"
                 : "bg-beigePattern text-darkBlue"
             }
@@ -182,7 +233,11 @@ const Navbar = () => {
 
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              isPowerLandingPath()
+                ? "bg-redPattern text-beige"
+                : pathname != "/media" &&
+                  pathname != "/reviews" &&
+                  pathname != "/our-clients"
                 ? "bg-redPattern text-beige"
                 : "bg-beigePattern text-lightRed"
             }
@@ -202,7 +257,11 @@ const Navbar = () => {
 
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              isPowerLandingPath()
+                ? "bg-beigePattern text-darkBlue"
+                : pathname != "/media" &&
+                  pathname != "/reviews" &&
+                  pathname != "/our-clients"
                 ? "bg-bluePattern text-beige"
                 : "bg-beigePattern text-darkBlue"
             }
