@@ -160,8 +160,8 @@ export const PowerDesktop = async ({ data }) => {
             <Image
               src="/assets/powerPhoto1.webp"
               alt="Performance"
-              width={200}
-              height={200}
+              width={290}
+              height={290}
               className="w-[290px] h-[290px] "
               loading="lazy"
             />
@@ -171,7 +171,7 @@ export const PowerDesktop = async ({ data }) => {
             <Image
               src="/assets/powerPhoto4.jpg"
               alt="Musicians"
-              width={200}
+              width={500}
               height={200}
               className="w-[500px] "
               loading="lazy"
@@ -192,8 +192,8 @@ export const PowerDesktop = async ({ data }) => {
             <Image
               src="/assets/shipDrawing.webp"
               alt="Background drawing"
-              width={300}
-              height={300}
+              width={600}
+              height={500}
               className="w-[600px] h-[500px] brightness-[300%] invert"
               loading="lazy"
             />
@@ -203,7 +203,7 @@ export const PowerDesktop = async ({ data }) => {
               <Image
                 src="/assets/powerVideoBox2.svg"
                 alt="Video frame"
-                width={820}
+                width={650}
                 height={550}
                 className="w-[650px] h-[550px]"
                 priority={true}
@@ -226,8 +226,8 @@ export const PowerDesktop = async ({ data }) => {
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
-              width={300}
-              height={300}
+              width={470}
+              height={150}
               className="absolute left-[10px] top-[25px] w-[470px] h-[150px]"
               loading="lazy"
             />

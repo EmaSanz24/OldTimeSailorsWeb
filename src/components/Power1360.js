@@ -160,8 +160,8 @@ export const Power1360 = async ({ data }) => {
             <Image
               src="/assets/powerPhoto1.webp"
               alt="Performance"
-              width={200}
-              height={200}
+              width={290}
+              height={290}
               className="w-[290px] h-[290px] "
               loading="lazy"
             />
@@ -171,7 +171,7 @@ export const Power1360 = async ({ data }) => {
             <Image
               src="/assets/powerPhoto4.jpg"
               alt="Musicians"
-              width={200}
+              width={390}
               height={200}
               className="w-[390px] "
               loading="lazy"
@@ -182,8 +182,8 @@ export const Power1360 = async ({ data }) => {
             <Image
               src="/assets/powerPhoto3.webp"
               alt="Crowd"
-              width={400}
-              height={500}
+              width={450}
+              height={450}
               className="w-[450px] h-[450px]"
               loading="lazy"
             />
@@ -192,8 +192,8 @@ export const Power1360 = async ({ data }) => {
             <Image
               src="/assets/shipDrawing.webp"
               alt="Background drawing"
-              width={390}
-              height={390}
+              width={500}
+              height={500}
               className="w-[500px] h-[500px] brightness-[300%] invert"
               loading="lazy"
             />
@@ -203,8 +203,8 @@ export const Power1360 = async ({ data }) => {
             <Image
               src="/assets/powerVideoBox2.svg"
               alt="Video frame"
-              width={300}
-              height={300}
+              width={650}
+              height={420}
               className="w-[650px] h-[420px]"
               priority={true}
             />
@@ -225,8 +225,8 @@ export const Power1360 = async ({ data }) => {
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
-              width={300}
-              height={300}
+              width={360}
+              height={100}
               className="absolute left-[10px] top-[125px] w-[360px] h-[100px]"
               loading="lazy"
             />

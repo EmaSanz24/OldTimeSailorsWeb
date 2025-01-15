@@ -178,8 +178,8 @@ export const PowerTablet = async ({ data }) => {
               <Image
                 src="/assets/powerVideoBox2.svg"
                 alt="Video frame"
-                width={500}
-                height={200}
+                width={480}
+                height={370}
                 className="w-[480px] h-[370px]"
                 priority={true}
               />
@@ -206,7 +206,7 @@ export const PowerTablet = async ({ data }) => {
               src="/assets/powerPhoto1.webp"
               alt="Performance"
               width={300}
-              height={280}
+              height={320}
               className="z-10 h-[320px] ml-2 mt-4"
               loading="lazy"
             />
@@ -214,8 +214,8 @@ export const PowerTablet = async ({ data }) => {
               <Image
                 src="/assets/beigeArrow.webp"
                 alt="More gigs"
-                width={300}
-                height={300}
+                width={290}
+                height={110}
                 className="absolute -left-[18px] top-[80px] w-[290px] h-[110px]"
                 loading="lazy"
               />

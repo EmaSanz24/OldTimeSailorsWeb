@@ -97,7 +97,6 @@ export const PowerMobileL = async ({ data }) => {
                 <span className="text-beige text-xl">{event}</span>
               </h1>
               <p className="text-lightRed text-sm font-txt">{location}</p>
-              <p className="text-lightRed text-sm font-txt">{location}</p>
             </div>
 
             <div className="border-t-2 border-dashed border-beige my-4" />
@@ -262,8 +261,8 @@ export const PowerMobileL = async ({ data }) => {
         <Image
           src="/assets/shipDrawing.webp"
           alt="Background drawing"
-          width={155}
-          height={135}
+          width={180}
+          height={145}
           className="w-[180px] h-[145px] absolute -bottom-[110px] -right-[15px] z-20 brightness-[300%] invert"
           loading="lazy"
         />

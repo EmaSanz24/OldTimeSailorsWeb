@@ -88,7 +88,6 @@ export const PowerMobileS = async ({ data }) => {
                 <span className="text-beige text-xl">{event}</span>
               </h1>
               <p className="text-lightRed text-sm font-txt">{location}</p>
-              <p className="text-lightRed text-sm font-txt">{location}</p>
             </div>
 
             <div className="border-t-2 border-dashed border-beige my-4" />
@@ -191,8 +190,8 @@ export const PowerMobileS = async ({ data }) => {
             <Image
               src="/assets/powerPhoto4.jpg"
               alt="Musicians"
-              width={130}
-              height={130}
+              width={120}
+              height={120}
               quality={75}
               className="w-[120px] h-[120px]"
               loading="lazy"
@@ -209,7 +208,7 @@ export const PowerMobileS = async ({ data }) => {
               width={145}
               height={145}
               quality={75}
-              className="w-[135px] h-[135px] z-10 "
+              className="w-[145px] h-[145px] z-10 "
               loading="lazy"
             />
             <div className="relative">
@@ -235,7 +234,7 @@ export const PowerMobileS = async ({ data }) => {
               src="/assets/powerPhoto3.webp"
               alt="Crowd"
               width={156}
-              height={154}
+              height={156}
               quality={75}
               className="w-[156px] h-[156px]"
               loading="lazy"
@@ -263,7 +262,7 @@ export const PowerMobileS = async ({ data }) => {
           src="/assets/shipDrawing.webp"
           alt="Background drawing"
           width={150}
-          height={110}
+          height={130}
           quality={75}
           className="w-[150px] h-[130px] absolute bottom-[10px] -right-4 z-10 brightness-[300%] invert"
           loading="lazy"

@@ -107,7 +107,7 @@ export const PowerLaptop = async ({ data }) => {
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[25px] -top-[35px] z-30">
-            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={200} height={200} className="w-[290px]" loading="lazy" />
+            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={290} height={200} className="w-[290px]" loading="lazy" />
           </div>
           {/* Photo 3 */}
           <div className="absolute right-[275px] top-[230px] w-[380px] z-40">
@@ -115,13 +115,13 @@ export const PowerLaptop = async ({ data }) => {
               src="/assets/powerPhoto3.webp"
               alt="Crowd"
               width={400}
-              height={400}
+              height={360}
               className="h-[360px]"
               loading="lazy"
             />
           </div>
           <div className="absolute -right-[28px] bottom-[0px]">
-            <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[330px] h-[300px] brightness-[300%] invert" loading="lazy" />
+            <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={330} height={300} className="w-[330px] h-[300px] brightness-[300%] invert" loading="lazy" />
           </div>
           <div className="absolute top-[165px] left-[40px] w-[410px] h-[280px] z-50">
             <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={430} height={100} priority={true} />
@@ -140,8 +140,8 @@ export const PowerLaptop = async ({ data }) => {
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
-              width={300}
-              height={300}
+              width={310}
+              height={110}
               className="absolute left-[25px] -top-[100px] w-[310px] h-[110px]"
               loading="lazy"
             />
