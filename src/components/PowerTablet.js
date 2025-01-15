@@ -28,13 +28,13 @@ export const PowerTablet = async ({ data }) => {
     <>
       <div className="relative -bottom-[150px]">
         {/* Contenedor principal con borde */}
-        <div className="border border-[#e9ddc7] p-4 mx-6 relative">
+        <div className="border-[3px] border-beige p-4 mx-6 relative">
           <div className="text-left">
             <h1>
               <span className="text-lightRed font-titles text-[40px]">old time sailors </span>
-              <span className="text-[#e9ddc7] font-titles text-[40px]"> at</span>
+              <span className="text-beige font-titles text-[40px]"> at</span>
               <br />
-              <span className="text-[#e9ddc7] font-titles text-[40px]">{event}</span>
+              <span className="text-beige font-titles text-[40px]">{event}</span>
             </h1>
 
             <p className="text-lightRed font-titles text-[20px]">{location}</p>
@@ -42,9 +42,8 @@ export const PowerTablet = async ({ data }) => {
             <div className="absolute w-64 top-20 -right-4">
               <div className="bg-[#e9ddc7] p-6 rounded-3xl">
                 <h3 className="text-lightRed text-[25px] font-titles leading-tight">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5">
                   <p className="text-darkBlue text-[12px] font-txt leading-tight">{venueInfo}</p>
@@ -55,10 +54,10 @@ export const PowerTablet = async ({ data }) => {
             </div>
           </div>
 
-          <div className="border-t-2 border-dashed border-[#e9ddc7] my-4" />
+          <div className="border-t-3 border-dashed border-beige my-4" />
 
           {/* Event info */}
-          <div className="space-y-6">
+          <div className="space-y-6 ">
             <div className="flex flex-row gap-5">
               <div className="space-y-3">
                 {[
@@ -66,7 +65,7 @@ export const PowerTablet = async ({ data }) => {
                   { icon: FaCalendar, text: `${formattedDate}` },
                   { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-2 text-[#e9ddc7] font-semibold">
+                  <div key={text} className="flex items-center gap-2 text-beige font-semibold">
                     <Icon className="text-[12px] text-lightRed" />
                     <span className="text-[12px]">{text}</span>
                   </div>
@@ -88,7 +87,7 @@ export const PowerTablet = async ({ data }) => {
               </div>
             </div>
 
-            <p className="text-[14px] text-left text-[#e9ddc7] leading-8">
+            <p className="text-[14px] text-left text-beige leading-8">
               Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they
               set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus! 'Rock
               and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard
@@ -149,14 +148,7 @@ export const PowerTablet = async ({ data }) => {
             </div>
 
             <div className="absolute -right-[15px] top-[100px] w-[450px] h-[200px] z-10">
-              <Image
-                src="/assets/powerPhoto3.webp"
-                alt="Crowd"
-                width={400}
-                height={400}
-                className="w-full h-auto shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
-                loading="lazy"
-              />
+              <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="w-full h-auto " loading="lazy" />
             </div>
           </div>
 
@@ -167,7 +159,7 @@ export const PowerTablet = async ({ data }) => {
                 <p className="text-lightRed text-[80px] font-titles">power</p>
                 <p className="text-lightRed text-[80px] font-titles">show</p>
               </div>
-              <div className="text-[#e9ddc7] text-[17px] flex flex-col">
+              <div className="text-beige text-[17px] flex flex-col">
                 <div className="-ml-[45px] mt-[70px] font-titles leading-none tracking-widest">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>

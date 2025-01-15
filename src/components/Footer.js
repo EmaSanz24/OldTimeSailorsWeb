@@ -17,7 +17,7 @@ const Footer = () => {
   }, [pathname]);
   return (
     <footer
-      className={`fixed bottom-0 w-screen flex justify-center items-center  ${pathname === "/" ? "py-0.5 xl:p-0.5 2k:py-2" : "py-0.5 md1:py-2"}`}
+      className={`fixed bottom-0 w-screen flex justify-center items-center z-50 ${pathname === "/" ? "py-0.5 xl:p-0.5 2k:py-2" : "py-0.5 md1:py-2"}`}
       style={{
         opacity: settings?.loader,
         pointerEvents: settings?.photos ? "auto" : "none",

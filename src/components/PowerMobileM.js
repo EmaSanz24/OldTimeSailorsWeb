@@ -23,7 +23,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 const EventDescription = memo(() => (
-  <p className="text-sm pb-5 text-[#e9ddc7] font-txt text-pretty" translate="no">
+  <p className="text-sm pb-5 text-beige font-txt text-pretty" translate="no">
     Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
     for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus! 'Rock and row' with our 21
     strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard Rock on a genre bending adventure
@@ -40,24 +40,23 @@ export const PowerMobileM = async ({ data }) => {
       <div className="relative -bottom-[90px]">
         <div className="relative w-full h-full my-[10px]">
           {/* Contenedor principal con borde */}
-          <div className="border border-darkBeige p-2 m-4 relative">
+          <div className="border-[3px] border-darkBeige p-2 m-4 relative">
             <div className="text-left font-times">
               <h1 className="font-titles ">
                 <span className="text-lightRed text-xl">old time sailors </span> <span className="text-beige text-xl"> at</span>
                 <br />
                 <span className="text-beige text-xl">{event}</span>
               </h1>
-              <p className="text-lightRed text-sm font-titles">{location}</p>
+              <p className="text-lightRed text-sm font-txt">{location}</p>
             </div>
 
-            <div className="border-t-2 border-dashed border-darkBeige my-4" />
+            <div className="border-t-3 border-dashed border-darkBeige my-4" />
 
             <div className="absolute -right-[12px] top-20 w-[160px]">
               <div className="bg-beige p-3 py-4 rounded-2xl">
                 <h3 className="text-lightRed text-[15px]  font-titles leading-tight">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 ">
                   <p className="text-darkBlue text-[7px] leading-tight font-txt">{venueInfo}</p>
@@ -164,14 +163,7 @@ export const PowerMobileM = async ({ data }) => {
               </div>
 
               <div className="absolute -right-[4px] bottom-[59px] w-[197px] h-[190px] z-10">
-                <Image
-                  src="/assets/powerPhoto3.webp"
-                  alt="Crowd"
-                  width={400}
-                  height={400}
-                  className="w-full h-auto shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
-                  loading="lazy"
-                />
+                <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="w-full h-auto " loading="lazy" />
               </div>
             </div>
 
@@ -182,7 +174,7 @@ export const PowerMobileM = async ({ data }) => {
                   <p className="text-lightRed text-[40px] font-titles ">power</p>
                   <p className="text-lightRed text-[40px] font-titles">show</p>
                 </div>
-                <div className="text-[#e9ddc7] text-[8px] flex flex-col">
+                <div className="text-beige text-[8px] flex flex-col">
                   <div className="-ml-[35px] mt-[53px] font-titles leading-none tracking-wider">
                     <p>an upbeat, darker show. get ready to</p>
                     <p>party below deck like a pirate!</p>

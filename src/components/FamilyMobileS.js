@@ -3,7 +3,7 @@ import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 import { memo } from "react";
-
+import { useRouter } from "next/navigation";
 const VideoComponent = memo(() => (
   <div className="absolute left-1 -top-2 w-[228px] h-[110px]">
     <Image
@@ -67,39 +67,39 @@ const formatDate = (inputDate) => {
 
   return formattedDate;
 };
-
 export const FamilyMobileS = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
-
+  const eventURL = "/eventURL";
+  const router = useRouter();
   return (
     <>
       <div className="relative -bottom-[50px]">
         <div className="relative w-full h-full my-[10px]">
           {/* Contenedor principal con borde */}
-          <div className="border border-darkBeige p-2 m-4 relative">
-            <div className="text-left font-times">
-              <h1 className="font-titles">
+          <div className="border-[3px] border-darkBeige p-2 m-4 relative">
+            <div className="text-left lowercase">
+              <h1 className="font-titles leading-none">
                 <span className="text-darkBlue text-xl">old time sailors </span> <span className="text-lightRed text-xl"> at</span>
                 <br />
                 <span className="text-lightRed text-xl">{event}</span>
               </h1>
-              <p className="text-darkBlue text-sm font-titles">{location}</p>
+              <p className="text-darkBlue text-md font-txt">{location}</p>
             </div>
 
-            <div className="border-t-2 border-dashed border-darkBeige my-4" />
+            <div className="border-t-3 border-dashed border-darkBeige my-4" />
 
             <div className="absolute -right-[12px] top-20 w-[160px]">
               <div className="bg-darkBlue p-3 py-4 rounded-2xl">
-                <h3 className="text-lightRed text-[15px] font-bold font-titles leading-tight">
-                  more about
-                  <br />
-                  the venue
+                <h3 className="text-lightRed text-[15px] font-bold font-titles leading-none">
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5">
                   <p className="text-beige text-[7px] leading-tight font-txt">{venueInfo}</p>
-
-                  <p className="text-beige text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
+                  <Link href={eventURL}>
+                    <p className="text-beige text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -112,9 +112,9 @@ export const FamilyMobileS = async ({ data }) => {
                   { icon: FaCalendar, text: `${formattedDate}` },
                   { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                 ].map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-center gap-2 text-darkBlue font-semibold">
+                  <div key={text} className="flex items-center gap-2 text-darkBlue font-bold">
                     <Icon className="text-[10px]" />
-                    <span className="text-[7.5px]">{text}</span>
+                    <span className="text-[10px] font-txt">{text}</span>
                   </div>
                 ))}
 
@@ -122,13 +122,13 @@ export const FamilyMobileS = async ({ data }) => {
                   <Link
                     className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                     style={{
-                      "--octagon-width": "100px",
-                      "--octagon-height": "28px",
+                      "--octagon-width": "180px",
+                      "--octagon-height": "30px",
                     }}
                     href={`${ticketsURL}`}
                     target="_blank"
                   >
-                    <h3 className="font-titles justify-center text-[12px]"> buy tickets</h3>
+                    <h3 className="font-txt justify-center text-[14px] uppercase"> buy tickets</h3>
                   </Link>
                 </div>
                 <EventDescription />
@@ -162,25 +162,23 @@ export const FamilyMobileS = async ({ data }) => {
                 <Image
                   src="/assets/familyPhoto1.webp"
                   alt="Performance"
-                  width={145}
-                  height={145}
+                  width={200}
+                  height={200}
                   quality={75}
-                  className="w-[145px] h-[145px] z-10 shadow-gray-500 shadow-[0px_3px_3px_rgba(0,0,0,0.3)]"
+                  className="w-[153px] h-[155px] z-10 shadow-gray-500 shadow-[0px_3px_3px_rgba(0,0,0,0.3)]"
                   loading="lazy"
                 />
-                <div className="relative">
+                <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
                   <Image
                     src="/assets/arrow2.webp"
                     alt="More gigs"
                     width={145}
                     height={40}
                     quality={75}
-                    className="absolute right-8 -bottom-12 w-[145px] h-[40px]"
+                    className="absolute right-8 -bottom-12 w-[145px] h-[40px] cursor-pointer"
                     loading="lazy"
                   />
-                  <Link href={"/tickets/calendar-view"}>
-                    <p className="absolute inset-0 font-times font-titles text-beige left-[25px] top-[13px] text-[20px]">more gigs</p>
-                  </Link>
+                  <p className="absolute inset-0 font-times font-titles text-beige left-[25px] top-[13px] text-[20px]">more gigs</p>
                 </div>
               </div>
 
@@ -191,18 +189,18 @@ export const FamilyMobileS = async ({ data }) => {
                   width={156}
                   height={154}
                   quality={75}
-                  className="w-[156px] h-[156px] shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
+                  className="w-[156px] h-[156px] "
                   loading="lazy"
                 />
               </div>
             </div>
 
             {/* Title */}
-            <div className="absolute bottom-6 left-4 z-20">
+            <div className="absolute bottom-4 left-4 z-20">
               <div className="flex flex-row items-center gap-3">
-                <div className="flex flex-col leading-none">
-                  <p className="text-darkBlue text-[35px] font-titles">family</p>
-                  <p className="text-darkBlue text-[35px] font-titles">show</p>
+                <div className="flex flex-col leading-[37px]">
+                  <p className="text-darkBlue text-[46px] font-titles">family</p>
+                  <p className="text-darkBlue text-[46px] font-titles">show</p>
                 </div>
                 <div className="text-lightRed text-[8px] flex flex-col">
                   <Image
@@ -214,7 +212,7 @@ export const FamilyMobileS = async ({ data }) => {
                     className="w-[22px] h-[26px] -ml-[5px] rotate-12"
                     loading="lazy"
                   />
-                  <div className="-ml-[35px] mt-[19px] leading-none tracking-widest font-titles">
+                  <div className="-ml-[35px] mt-[19px] leading-none tracking-widest font-txt uppercase">
                     <p>a traditional sailor show,</p>
                     <p>sing along and dance with us!</p>
                   </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FaCalendar, FaClock } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const formatDate = (inputDate) => {
   // Parse the input date
@@ -26,28 +27,30 @@ const formatDate = (inputDate) => {
 export const PowerLaptop = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
+
+  const router = useRouter();
+
   return (
     <>
       <div className="relative top-[340px] right-[5px]">
         <div className="relative w-full h-full my-[50px]">
           {/* Contenedor principal con borde */}
-          <div className="border border-[#e9ddc7] p-2 relative w-[650px] -right-[95px] -top-[310px]">
+          <div className="border-[3px] border-beige p-2 relative w-[650px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="leading-none">
                 <span className="text-lightRed font-titles text-[30px]">old time sailors </span>
-                <span className="text-[#e9ddc7] font-titles text-[30px]">at</span>
+                <span className="text-beige font-titles text-[30px]">at</span>
                 <br />
                 <br />
-                <span className="text-[#e9ddc7] font-titles text-[30px]">{event}</span>
+                <span className="text-beige font-titles text-[30px]">{event}</span>
               </h1>
               <p className="text-lightRed font-titles text-[20px] mt-2">{location}</p>
             </div>
             <div className="absolute w-[250px] top-[21px] -right-[75px] z-20">
               <div className="bg-[#e9ddc7] p-4 rounded-3xl ">
                 <h3 className="text-lightRed text-[25px] font-titles leading-none">
-                  more about
-                  <br />
-                  the venue
+                  <p>more about</p>
+                  <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
                   <p className="text-darkBlue text-[12px] font-txt leading-tight">{venueInfo}</p>
@@ -56,7 +59,7 @@ export const PowerLaptop = async ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="border-t-2 border-dashed border-[#e9ddc7] my-4" />
+            <div className="border-t-3 border-dashed border-beige my-4" />
 
             {/* Event info */}
             <div className="space-y-2 p-4 ">
@@ -67,7 +70,7 @@ export const PowerLaptop = async ({ data }) => {
                     { icon: FaCalendar, text: `${formattedDate}` },
                     { icon: FaClock, text: `${gigStartTime} to ${gigFinishTime}` },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-[#e9ddc7] font-semibold">
+                    <div key={text} className="flex items-center gap-2 text-beige font-semibold">
                       <Icon className="text-[12px] text-lightRed" />
                       <span className="text-[12px]">{text}</span>
                     </div>
@@ -88,7 +91,7 @@ export const PowerLaptop = async ({ data }) => {
                 </div>
               </div>
 
-              <p className="text-sm text-left text-[#e9ddc7] font-txt leading-[31px] px-4">
+              <p className="text-sm text-left text-beige font-txt leading-[31px] px-4">
                 Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
                 they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
                 'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and
@@ -108,14 +111,7 @@ export const PowerLaptop = async ({ data }) => {
           </div>
           {/* Photo 3 */}
           <div className="absolute right-[275px] top-[230px] w-[380px] z-40">
-            <Image
-              src="/assets/powerPhoto3.webp"
-              alt="Crowd"
-              width={400}
-              height={400}
-              className="h-[360px] shadow-[5px_0px_5px_rgba(0,0,0,0.3)]"
-              loading="lazy"
-            />
+            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="h-[360px] " loading="lazy" />
           </div>
           <div className="absolute -right-[28px] bottom-[0px]">
             <Image src="/assets/shipDrawing.webp" alt="Background drawing" width={300} height={300} className="w-[330px] h-[300px]" loading="lazy" />
@@ -153,7 +149,7 @@ export const PowerLaptop = async ({ data }) => {
                 <p className="text-lightRed text-[80px] font-titles">power</p>
                 <p className="text-lightRed text-[80px] font-titles">show</p>
               </div>
-              <div className="text-[#e9ddc7] text-[20px] -mb-[95px] -ml-[35px]">
+              <div className="text-beige text-[20px] -mb-[95px] -ml-[35px]">
                 <div className="font-titles leading-tight tracking-widest">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>

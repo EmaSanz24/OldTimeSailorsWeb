@@ -7,7 +7,7 @@ import FamilyLaptopL from "./FamilyLaptopL";
 
 export const FamilyLanding = async ({ data }) => {
   return (
-    <div className="h-full bg-cover bg-beigePatternMobile overflow-auto">
+    <div className="">
       {/* Mobile S - 320px */}
 
       <div className="block min-[375px]:hidden">
