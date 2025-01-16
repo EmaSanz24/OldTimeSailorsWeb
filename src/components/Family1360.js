@@ -155,7 +155,7 @@ export const Family1360 = async ({ data }) => {
           <div className="absolute -bottom-[320px]  left-[90px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-[90px]">
-                <p className="text-darkBlue text-[110px] font-titles m-0">power</p>
+                <p className="text-darkBlue text-[110px] font-titles m-0">family</p>
                 <p className="text-darkBlue text-[110px] font-titles m-0  ">show</p>
               </div>
               <div className="text-lightRed text-[25px] -mb-[130px] -ml-[65px] leading-none font-txt">
