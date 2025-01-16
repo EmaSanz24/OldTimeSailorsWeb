@@ -30,7 +30,7 @@ export const FamilyLaptop = async ({ data }) => {
   const eventURL = "/eventURL";
   const router = useRouter();
   return (
-    <div className="relative -bottom-[340px] ">
+    <div className="relative -bottom-[340px] mb-[30px]">
       <div className="relative w-full h-full my-[50px]">
         {/* Main container with border */}
         <div className="border-[3px] border-darkBeige p-2 relative w-[650px] -right-[95px] -top-[310px]">
