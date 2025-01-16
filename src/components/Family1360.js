@@ -36,10 +36,10 @@ export const Family1360 = async ({ data }) => {
           <div className="border-[3px] border-darkBeige p-2 relative w-[850px] -right-[104px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="font-titles leading-none lowercase">
-                <span className="text-DarkBlue text-[55px]">old time sailors </span>
-                <span className="text-lightRed  text-[55px]"> at</span>
+                <span className="text-DarkBlue text-[53px]">old time sailors </span>
+                <span className="text-lightRed  text-[53px]"> at</span>
                 <br />
-                <span className="text-lightRed  text-[55px]">{event}</span>
+                <span className="text-lightRed  text-[53px]">{event}</span>
               </h1>
               <p className="text-darkBlue font-txt text-[30px] mt-4 lowercase">{location}</p>
             </div>
