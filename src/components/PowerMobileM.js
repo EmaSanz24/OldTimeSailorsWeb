@@ -181,7 +181,7 @@ export const PowerMobileM = async ({ data }) => {
             src="/assets/shipDrawing.webp"
             alt="Background drawing"
             width={170}
-            height={150}
+            height={140}
             className="w-[170px] h-[140px] absolute -bottom-[70px] -right-[7px] z-20 brightness-[300%] invert"
             loading="lazy"
           />

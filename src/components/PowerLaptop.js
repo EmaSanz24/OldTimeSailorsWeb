@@ -32,8 +32,8 @@ export const PowerLaptop = async ({ data }) => {
 
   return (
     <>
-      <div className="relative top-[340px] right-[5px]">
-        <div className="relative w-full h-full my-[50px]">
+      <div className="relative top-[330px] right-[5px">
+        <div className="relative w-full my-[50px]">
           {/* Contenedor principal con borde */}
           <div className="border-[3px] border-beige p-2 relative w-[650px] -right-[95px] -top-[310px]">
             <div className="text-left px-10">
@@ -46,7 +46,7 @@ export const PowerLaptop = async ({ data }) => {
               </h1>
               <p className="text-lightRed font-txt text-[30px] lowercase mt-2">{location}</p>
             </div>
-            <div className="absolute w-[250px] top-[21px] -right-[75px] z-20">
+            <div className="absolute w-[250px] top-[27px] -right-[75px] z-20">
               <div className="bg-beige p-4 rounded-3xl ">
                 <h3 className="text-lightRed text-[25px] font-titles leading-none">
                   <p>more about</p>
@@ -108,7 +108,7 @@ export const PowerLaptop = async ({ data }) => {
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[25px] -top-[35px] z-30">
-            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={200} height={200} className="w-[290px]" loading="lazy" />
+            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={290} height={200} className="w-[290px]" loading="lazy" />
           </div>
           {/* Photo 3 */}
           <div className="absolute right-[275px] top-[255px] w-[380px] z-40">
@@ -141,8 +141,8 @@ export const PowerLaptop = async ({ data }) => {
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
-              width={300}
-              height={300}
+              width={310}
+              height={110}
               className="absolute left-[25px] -top-[100px] w-[310px] h-[110px]"
               loading="lazy"
             />
@@ -150,7 +150,7 @@ export const PowerLaptop = async ({ data }) => {
             <p className="absolute inset-0 font-titles  text-darkBlue left-[130px] -top-[72px] text-[40px]">more gigs</p>
           </div>
           {/* Title */}
-          <div className="absolute -bottom-[190px]  left-[45px] z-10 ">
+          <div className="absolute -bottom-[190px]  left-[45px] z-10 pb-8">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-[63px]">
                 <p className="text-lightRed text-[80px] font-titles">power</p>

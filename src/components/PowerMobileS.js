@@ -40,8 +40,8 @@ export const PowerMobileS = async ({ data }) => {
   const router = useRouter();
   return (
     <>
-      <div className="relative -bottom-[50px] px-[15px] z-0 transform translate-z-0 will-change-transform">
-        <div className="relative w-full h-full my-[10px]">
+      <div className="relative -bottom-[50px] px-[15px]">
+        <div className="relative w-full my-[10px]">
           {/* Contenedor principal con borde */}
           <div className="border-[3px] border-beige p-2 m-4 relative">
             <div className="text-left lowercase">
@@ -137,8 +137,8 @@ export const PowerMobileS = async ({ data }) => {
             <Image
               src="/assets/powerPhoto4.jpg"
               alt="Musicians"
-              width={130}
-              height={130}
+              width={120}
+              height={120}
               quality={75}
               className="w-[130px] h-[130px]"
               loading="lazy"
@@ -198,7 +198,7 @@ export const PowerMobileS = async ({ data }) => {
           src="/assets/shipDrawing.webp"
           alt="Background drawing"
           width={150}
-          height={110}
+          height={130}
           quality={75}
           className="w-[150px] h-[130px] absolute bottom-[10px] -right-2 z-10 brightness-[300%] invert"
           loading="lazy"

@@ -121,7 +121,7 @@ export const PowerTablet = async ({ data }) => {
 
             {/* Recuadro después en el DOM y con z-index mayor */}
             <div className="absolute inset-0 z-10 -top-[110px] -left-[15px]">
-              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={500} height={200} className="w-[480px] h-[370px]" priority={true} />
+              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={480} height={370} className="w-[480px] h-[370px]" priority={true} />
             </div>
           </div>
 
@@ -139,8 +139,8 @@ export const PowerTablet = async ({ data }) => {
               <Image
                 src="/assets/beigeArrow.webp"
                 alt="More gigs"
-                width={300}
-                height={300}
+                width={290}
+                height={110}
                 className="absolute -left-[18px] top-[80px] w-[290px] h-[110px]"
                 loading="lazy"
               />

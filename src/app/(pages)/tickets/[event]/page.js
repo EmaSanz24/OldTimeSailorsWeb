@@ -48,14 +48,14 @@ const GigLanding = () => {
   if (currentEvent.typeOfShow === "Family") {
     setNavbarColor("dark");
     return (
-      <MainDiv className="w-screen bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain overflow-auto">
+      <MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain overflow-auto">
         <FamilyLanding data={currentEvent} />
       </MainDiv>
     );
   }
   setNavbarColor("light");
   return (
-    <MainDiv className="w-screen h-dvh bg-darkBlue bg-contain pb-[18px] md1:pb-[44px] xl:pb-[40px] 2k:pb-[52px] 4k:pb-[64px]">
+    <MainDiv className="w-screen h-dvh bg-darkBlue bg-contain overflow-auto">
       <PowerLanding data={currentEvent} />
     </MainDiv>
   );

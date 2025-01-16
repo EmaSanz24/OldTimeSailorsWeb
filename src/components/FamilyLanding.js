@@ -4,6 +4,9 @@ import { FamilyMobileS } from "./FamilyMobileS";
 import { FamilyMobileM } from "./FamilyMobileM";
 import { FamilyMobileL } from "./FamilyMobileL";
 import FamilyLaptopL from "./FamilyLaptopL";
+import Family1360 from "./Family1360";
+import FamilyDesktop from "./FamilyDesktop";
+import FamilyDesktopL from "./FamilyDesktopL";
 
 export const FamilyLanding = async ({ data }) => {
   return (
@@ -33,15 +36,30 @@ export const FamilyLanding = async ({ data }) => {
         </div>
       </div>
       {/* Laptop - 1024px */}
-      <div className="hidden min-[1024px]:block min-[1440px]:hidden">
+      <div className="hidden min-[1024px]:block min-[1360px]:hidden">
         <div className="w-[1024px] min-h-screen relative mx-auto">
           <FamilyLaptop data={data} />
         </div>
       </div>
+      <div className="hidden min-[1360px]:block min-[1440px]:hidden">
+        <div className="w-[1360px] min-h-screen relative mx-auto">
+          <Family1360 data={data} />
+        </div>
+      </div>
       {/* Laptop L - 1440px */}
-      <div className="hidden min-[1440px]:block">
+      <div className="hidden min-[1440px]:block min-[1600px]:hidden">
         <div className="w-[1440px] min-h-screen relative mx-auto">
           <FamilyLaptopL data={data} />
+        </div>
+      </div>
+      <div className="hidden min-[1600px]:block min-[1920px]:hidden">
+        <div className="w-[1600px] min-h-screen relative mx-auto">
+          <FamilyDesktop data={data} />
+        </div>
+      </div>
+      <div className="hidden min-[1920px]:block">
+        <div className="w-[1920px] min-h-screen relative mx-auto">
+          <FamilyDesktopL data={data} />
         </div>
       </div>
     </div>

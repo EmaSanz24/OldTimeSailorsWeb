@@ -170,7 +170,7 @@ export const FamilyLaptopL = async ({ data }) => {
           <div className="absolute -bottom-[420px]  left-[15px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-[110px]">
-                <p className="text-[#1b3441] text-[125px] font-titles">family</p>
+                <p className="text-darkBlue text-[125px] font-titles">family</p>
                 <p className="text-darkBlue text-[145px] font-titles">show</p>
               </div>
               <div className="text-lightRed text-[30px] -mb-[150px] -ml-[35px]">

@@ -101,15 +101,15 @@ export const PowerLaptopL = async ({ data }) => {
             </div>
           </div>
           <div className="absolute right-[15px] -top-[230px] z-10">
-            <Image src="/assets/powerPhoto1.webp" alt="Performance" width={200} height={200} className="w-[290px] h-[290px] " loading="lazy" />
+            <Image src="/assets/powerPhoto1.webp" alt="Performance" width={290} height={290} className="w-[290px] h-[290px] " loading="lazy" />
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[25px] top-[53px] z-20">
-            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={200} height={200} className="w-[390px] " loading="lazy" />
+            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={390} height={200} className="w-[390px] " loading="lazy" />
           </div>
           {/* Photo 3 */}
           <div className="absolute left-[520px] top-[288px] z-30">
-            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="w-[550px]" loading="lazy" />
+            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={550} height={400} className="w-[550px]" loading="lazy" />
           </div>
           <div className="absolute -right-[0px] -bottom-[350px]">
             <Image
@@ -122,7 +122,7 @@ export const PowerLaptopL = async ({ data }) => {
             />
           </div>
 
-          <div className="absolute top-[185px] left-[10px] z-30 ">
+          <div className="absolute top-[125px] left-[10px] z-30 ">
             <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={590} height={300} className="h-[450px]" priority={true} />
           </div>
 
@@ -141,8 +141,8 @@ export const PowerLaptopL = async ({ data }) => {
             <Image
               src="/assets/beigeArrow.webp"
               alt="More gigs"
-              width={300}
-              height={300}
+              width={430}
+              height={120}
               className="absolute left-[10px] top-[25px] w-[430px] h-[120px]"
               loading="lazy"
             />

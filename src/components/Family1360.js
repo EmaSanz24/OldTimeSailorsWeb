@@ -23,7 +23,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const Power1360 = async ({ data }) => {
+export const Family1360 = async ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
@@ -33,31 +33,31 @@ export const Power1360 = async ({ data }) => {
       <div className="relative -bottom-[100px]">
         <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
-          <div className="border-[3px] border-beige p-2 relative w-[850px] -right-[104px] -top-[310px]">
+          <div className="border-[3px] border-darkBeige p-2 relative w-[850px] -right-[104px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="font-titles leading-none lowercase">
-                <span className="text-lightRed text-[55px]">old time sailors </span>
-                <span className="text-beige  text-[55px]"> at</span>
+                <span className="text-DarkBlue text-[55px]">old time sailors </span>
+                <span className="text-lightRed  text-[55px]"> at</span>
                 <br />
-                <span className="text-beige  text-[55px]">{event}</span>
+                <span className="text-lightRed  text-[55px]">{event}</span>
               </h1>
-              <p className="text-lightRed font-txt text-[30px] mt-4 lowercase">{location}</p>
+              <p className="text-darkBlue font-txt text-[30px] mt-4 lowercase">{location}</p>
             </div>
             <div className="absolute w-[350px] top-[20px] -right-[100px] z-20">
-              <div className="bg-beige h-[220px] p-6 rounded-3xl">
+              <div className="bg-darkBlue h-[220px] p-6 rounded-3xl">
                 <h3 className="text-lightRed text-[30px] font-titles leading-none">
                   <p>more about</p>
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-darkBlue text-[15px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-beige text-[15px] font-txt leading-tight">{venueInfo}</p>
                   <Link href={eventURL}>
-                    <p className="text-darkBlue text-[14px] mt-1 font-titles underline">contact the venue for + info</p>
+                    <p className="text-beige text-[14px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-2 border-dashed border-beige my-4" />
+            <div className="border-t-3 border-dashed border-darkBeige my-4" />
 
             {/* Event info */}
             <div className="space-y-6 p-4 px-10">
@@ -71,8 +71,8 @@ export const Power1360 = async ({ data }) => {
                       text: `${gigStartTime} to ${gigFinishTime}`,
                     },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-beige font-txt">
-                      <Icon className="text-[18px] text-lightRed" />
+                    <div key={text} className="flex items-center gap-2 text-darkBlue font-txt">
+                      <Icon className="text-[18px] text-darkBlue" />
                       <span className="text-[18px] font-txt">{text}</span>
                     </div>
                   ))}
@@ -93,56 +93,55 @@ export const Power1360 = async ({ data }) => {
                 </div>
               </div>
 
-              <p className="text-[17px] text-left text-beige font-txt leading-7">
-                Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
-                they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
-                'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and
-                Hard Rock on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates. Get
-                ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with The
-                Old Time Sailors... be prepared to expect the unexpected!
+              <p className="text-[17px] text-left text-darkBlue font-txt leading-7">
+                You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and
+                singing! You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way
+                you have never seen before. The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time
+                of clashing tankards, and drunken debauchery. Sing and dance along like a drunken sailor as the band perform centuries old folk and
+                shanty songs. Fancy dress is encouraged, so pull out your best seafaring garments me hearties and join the festivities.
               </p>
             </div>
           </div>
           <div className="absolute right-[18px] -top-[230px] z-10">
-            <Image src="/assets/powerPhoto1.webp" alt="Performance" width={290} height={290} className="w-[290px] h-[290px] " loading="lazy" />
+            <Image src="/assets/familyPhoto1.webp" alt="Performance" width={290} height={290} className="w-[290px] h-[290px] " loading="lazy" />
           </div>
           {/* Photo 2 */}
           <div className="absolute right-[45px] top-[53px] z-20">
-            <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={390} height={200} className="w-[390px] " loading="lazy" />
+            <Image src="/assets/familyPhoto2.webp" alt="Musicians" width={390} height={200} className="w-[390px] " loading="lazy" />
           </div>
           {/* Photo 3 */}
           <div className="absolute left-[510px] top-[300px] z-30">
-            <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={450} height={450} className="w-[450px] h-[450px]" loading="lazy" />
+            <Image src="/assets/familyPhoto3.webp" alt="Crowd" width={450} height={450} className="w-[450px] h-[450px]" loading="lazy" />
           </div>
-          <div className="absolute right-[5px] -bottom-[300px]">
+          <div className="absolute right-[35px] -bottom-[300px]">
             <Image
-              src="/assets/shipDrawing.webp"
+              src="/assets/drawing2.webp"
               alt="Background drawing"
-              width={450}
-              height={450}
-              className="w-[450px] h-[450px] brightness-[300%] invert"
+              width={350}
+              height={350}
+              className="w-[350px] h-[350px] contrast-[25%]"
               loading="lazy"
             />
           </div>
-
-          <div className="absolute w-full h-full top-[190px] -left-[10px] z-30 ">
-            <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={420} className="w-[650px] h-[420px]" priority={true} />
+          <div className="absolute top-[225px] left-[10px]">
+            <Image src="/assets/videoBox.webp" alt="Video frame" width={590} height={280} priority={true} />
           </div>
 
-          <div className="absolute inset-0 top-[285px] left-[80px] z-50">
+          <div className="absolute inset-0 top-[257px] left-[47px] z-40">
             <video
               controls
               preload="none"
-              poster={"/assets/thumbnailvideoP.webp"}
-              className="object-cover w-[470px] h-[270px] rounded-sm hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
+              poster={"/assets/thumbnailvideo.webp"}
+              className="object-cover w-[540px] h-[300px] border-darkBlue border-[10px] rounded-sm shadow-gray-500 shadow-[2px_-2px_5px_rgba(0,0,0,0.3)]
+              hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
             >
-              <source src="/assets/powerVideo.mp4" type="video/mp4" />
+              <source src="/assets/familyVideo.mp4" type="video/mp4" />
             </video>
           </div>
 
           <div className="relative -top-[150px]" onClick={() => router.back()} role="button" tabIndex={0}>
             <Image
-              src="/assets/beigeArrow.webp"
+              src="/assets/arrow2.webp"
               alt="More gigs"
               width={360}
               height={100}
@@ -150,19 +149,19 @@ export const Power1360 = async ({ data }) => {
               loading="lazy"
             />
 
-            <p className="absolute inset-0 font-titles text-darkBlue left-[130px] top-[156px] text-[50px]">more gigs</p>
+            <p className="absolute inset-0 font-titles text-beige left-[130px] top-[156px] text-[50px]">more gigs</p>
           </div>
           {/* Title */}
           <div className="absolute -bottom-[320px]  left-[90px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-[90px]">
-                <p className="text-lightRed text-[110px] font-titles m-0">power</p>
-                <p className="text-lightRed text-[110px] font-titles m-0  ">show</p>
+                <p className="text-darkBlue text-[110px] font-titles m-0">power</p>
+                <p className="text-darkBlue text-[110px] font-titles m-0  ">show</p>
               </div>
-              <div className="text-beige text-[25px] -mb-[150px] -ml-[65px] leading-none">
-                <div className="font-txt leading-none tracking-widest">
-                  <p className="m-0">AN UPBEAT, DARKER SHOW. GET READY TO</p>
-                  <p className="m-0">PARTY BELOW DECK LIKE A PIRATE!</p>
+              <div className="text-lightRed text-[25px] -mb-[130px] -ml-[65px] leading-none font-txt">
+                <div className="font-txt leading-none tracking-widest uppercase">
+                  <p>a traditional sailor show,</p>
+                  <p>sing along and dance with us!</p>
                 </div>
               </div>
             </div>
@@ -172,4 +171,4 @@ export const Power1360 = async ({ data }) => {
     </>
   );
 };
-export default Power1360;
+export default Family1360;
