@@ -46,7 +46,7 @@ const formatDate = (inputDate) => {
 
   return formattedDate;
 };
-
+//
 export const FamilyDesktop = ({ data }) => {
   const {
     event,
