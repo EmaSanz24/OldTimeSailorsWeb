@@ -33,14 +33,14 @@ const EventDescription = memo(() => (
   </p>
 ));
 
-export const PowerMobileM = async ({ data }) => {
+export const PowerMobileM =  ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
   const router = useRouter();
   return (
     <>
-      <div className="relative top-[0px]">
+      <div className="relative top-[15px]">
         <div className="relative -bottom-[50px] px-[15px] z-0 transform translate-z-0 will-change-transform">
           <div className="relative w-full h-full my-[10px]">
             {/* Contenedor principal con borde */}
@@ -164,12 +164,12 @@ export const PowerMobileM = async ({ data }) => {
           {/* Title */}
           <div className="absolute -bottom-[50px] left-[20px] z-30">
             <div className="flex flex-row items-center gap-3">
-              <div className="flex flex-col leading-[39px]">
-                <p className="text-lightRed text-[50px] font-titles ">power</p>
-                <p className="text-lightRed text-[50px] font-titles">show</p>
+              <div className="flex flex-col leading-[50px]">
+                <p className="text-lightRed text-[60px] font-titles ">power</p>
+                <p className="text-lightRed text-[60px] font-titles">show</p>
               </div>
-              <div className="text-beige text-[8px] flex flex-col">
-                <div className="-ml-[35px] mt-[53px] font-txt leading-none tracking-widest uppercase">
+              <div className="text-beige text-[9px] flex flex-col">
+                <div className="-ml-[45px] mt-[73px] font-txt leading-none tracking-widest uppercase truncate">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
                 </div>
@@ -182,7 +182,7 @@ export const PowerMobileM = async ({ data }) => {
             alt="Background drawing"
             width={170}
             height={140}
-            className="w-[170px] h-[140px] absolute -bottom-[70px] -right-[7px] z-20 brightness-[300%] invert"
+            className="w-[220px] h-[200px] absolute -bottom-[95px] -right-[20px] z-0 brightness-[300%] invert"
             loading="lazy"
           />
         </div>

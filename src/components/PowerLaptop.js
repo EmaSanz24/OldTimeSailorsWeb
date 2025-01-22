@@ -24,7 +24,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const PowerLaptop = async ({ data }) => {
+export const PowerLaptop = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";

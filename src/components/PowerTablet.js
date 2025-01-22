@@ -22,7 +22,7 @@ const formatDate = (inputDate) => {
 
   return formattedDate;
 };
-export const PowerTablet = async ({ data }) => {
+export const PowerTablet = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";

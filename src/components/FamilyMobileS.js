@@ -67,7 +67,7 @@ const formatDate = (inputDate) => {
 
   return formattedDate;
 };
-export const FamilyMobileS = async ({ data }) => {
+export const FamilyMobileS = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";

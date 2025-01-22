@@ -2,6 +2,9 @@ import "../globals.css";
 import localFont from "next/font/local";
 import PagesWrapper from "@/wrappers/PagesWrapper";
 
+
+
+
 const khmer_mn = localFont({
   src: "../../../public/fonts/Times-Sans-Serif.ttf",
   subsets: ["latin"],

@@ -1,5 +1,4 @@
 "use client";
-
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { fetchEvents } from "@/helpers/fetchData";
@@ -23,7 +22,9 @@ const GigLanding = () => {
 
         const events = await fetchEvents();
 
-        const foundEvent = events.find((e) => e.event.toLowerCase().replace(/\s+/g, "-") === event);
+        const foundEvent = events.find(
+          (e) => e.event.toLowerCase().replace(/\s+/g, "-") === event
+        );
 
         if (foundEvent) {
           setCurrentEvent(foundEvent);
@@ -41,27 +42,31 @@ const GigLanding = () => {
       fetchData();
     }
   }, [event]);
+
+  useEffect(() => {
+    if (currentEvent) {
+      setNavbarColor(currentEvent.typeOfShow === "Family" ? "dark" : "light");
+    }
+  }, [currentEvent, setNavbarColor]);
+
   if (isLoading) return <Loading />;
   if (error) return <div>{error}</div>;
   if (!currentEvent) return <div>No event found</div>;
 
-  if (currentEvent.typeOfShow === "Family") {
-    setNavbarColor("dark");
-    return (
-      <MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain overflow-auto">
-        <FamilyLanding data={currentEvent} />
-      </MainDiv>
-    );
-  }
-  setNavbarColor("light");
   return (
-    <MainDiv className="w-screen h-dvh bg-darkBlue bg-contain overflow-auto">
-      <PowerLanding data={currentEvent} />
+    <MainDiv
+      className={
+        currentEvent.typeOfShow === "Family"
+          ? "w-screen h-dvh bg-beigePattern md1:bg-beigePattern xl:bg-beigePattern bg-contain overflow-auto"
+          : "w-screen h-dvh bg-darkBlue bg-contain overflow-auto"
+      }
+    >
+      {currentEvent.typeOfShow === "Family" ? (
+        <FamilyLanding data={currentEvent} />
+      ) : (
+        <PowerLanding data={currentEvent} />
+      )}
     </MainDiv>
   );
 };
-
-<MainDiv className="w-screen h-dvh bg-beigePatternMobile md1:bg-beigePatternTablet xl:bg-beigePattern bg-contain pb-[18px] md1:pb-[44px] xl:pb-[40px] 2k:pb-[52px] 4k:pb-[64px]">
-  <FamilyLanding />
-</MainDiv>;
 export default GigLanding;

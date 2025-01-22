@@ -1,5 +1,4 @@
-import Maps from "@/components/Maps";
-import MapsWrapper from "@/wrappers/MapsWrapper";
+import MapViewComponent from "@/components/MapViewComponent";
 
 export const metadata = {
   title: "Tickets",
@@ -51,9 +50,7 @@ const MapView = async () => {
   const markersList = await fetchMarkers();
 
   return (
-    <MapsWrapper>
-      <Maps markersList={markersList} />
-    </MapsWrapper>
+    <MapViewComponent markersList={markersList}/>
   );
 };
 

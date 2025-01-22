@@ -33,7 +33,7 @@ const EventDescription = memo(() => (
   </p>
 ));
 
-export const PowerMobileS = async ({ data }) => {
+export const PowerMobileS =  ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";

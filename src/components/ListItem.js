@@ -36,16 +36,16 @@ const ListItem = ({ event }) => {
         <div className="space-y-0 md:space-y-1 pr-2 w-3/4">
           <div className="flex items-baseline gap-1">
             <span
-              className="text-darkBlue font-txt font-bold text-xl md:text-3xl 
+              className="text-[10px] text-darkBlue font-txt font-bold  xs:text-[15px] md:text-3xl truncate
             "
             >
               {longDate}
             </span>
-            <span className="font-txt text-darkBlue md:text-2xl">- {event.gigStartTime}</span>
-            <span className="font-txt text-darkBlue md:text-2xl">- {event.gigFinishTime}</span>
+            <span className="text-[10px] font-txt text-darkBlue xs:text-[15px] md:text-2xl truncate">- {event.gigStartTime}</span>
+            <span className="text-[10px] font-txt text-darkBlue xs:text-[15px] md:text-2xl truncate">- {event.gigFinishTime}</span>
           </div>
-          <h2 className="text-2xl md:text-4xl font-titles text-lightRed">{event.event.toLowerCase()}</h2>
-          <p className="text-darkBlue  font-txt text-xl md:text-3xl">{event.location}</p>
+          <h2 className="text-[12px] xs:text-[20px] md:text-[42px] font-titles text-lightRed leading-none ">{event.event.toLowerCase()}</h2>
+          <p className="text-[11px] xs:text-[18px] text-darkBlue  font-txt  md:text-3xl">{event.location}</p>
         </div>
         <Link
           href={`/tickets/${event.event.replace(/\s+/g, "-").toLowerCase()}`}

@@ -23,7 +23,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const PowerLaptopL = async ({ data }) => {
+export const PowerLaptopL =  ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
@@ -122,11 +122,11 @@ export const PowerLaptopL = async ({ data }) => {
             />
           </div>
 
-          <div className="absolute top-[125px] left-[10px] z-30 ">
+          <div className="absolute top-[195px] left-[10px] z-30 ">
             <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={590} height={300} className="h-[450px]" priority={true} />
           </div>
 
-          <div className="absolute inset-0 top-[295px] left-[74px] z-50">
+          <div className="absolute inset-0 top-[305px] left-[74px] z-50">
             <video
               controls
               preload="none"

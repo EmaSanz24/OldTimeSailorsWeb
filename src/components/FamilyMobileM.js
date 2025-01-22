@@ -59,14 +59,14 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const FamilyMobileM = async ({ data }) => {
+export const FamilyMobileM = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
   const router = useRouter();
   return (
     <>
-      <div className="relative -bottom-[65px]">
+      <div className="relative -bottom-[72px]">
         {/* Contenedor principal con borde */}
         <div className="border-[3px] border-darkBeige p-4 mx-4 relative">
           <div className="text-left lowercase">

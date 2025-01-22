@@ -51,14 +51,14 @@ export const PowerLanding = ({ data }) => {
         </div>
       </div>
       {/* Laptop L - 1440px */}
-      <div className="hidden min-[1440px]:block min-[1600px]:hidden">
+      <div className="hidden min-[1440px]:block min-[1680px]:hidden">
         <div className="w-[1440px] min-h-screen relative mx-auto">
           <PowerLaptopL data={data} />
         </div>
       </div>
       {/* Desktop - 1600px */}
-      <div className="hidden min-[1600px]:block min-[1920px]:hidden">
-        <div className="w-[1600px] min-h-screen relative mx-auto">
+      <div className="hidden min-[1680px]:block min-[1920px]:hidden">
+        <div className="w-[1680px] min-h-screen relative mx-auto">
           <PowerDesktop data={data} />
         </div>
       </div>

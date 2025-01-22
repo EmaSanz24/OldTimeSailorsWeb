@@ -67,12 +67,12 @@ const DrawingImage = memo(() => {
   );
 });
 
-const ViewSelector = async () => {
+const ViewSelector = () => {
   return (
     <div>
       {/* Main Content */}
-      <div className="w-full h-full flex-1 md:pt-14 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] flex flex-col lg:flex-row items-center justify-center md2:pt-8">
-        <div className="flex flex-col space-y-4 w-full lg:w-[1000px] lg:h-full items-center lg:justify-center lg:ml-20">
+      <div className="w-full h-[700px] md:h-auto  flex-1 md:pt-10 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] flex flex-col lg:flex-row items-center justify-center md2:pt-8">
+        <div className="flex flex-col  items-center justify-center space-y-4 w-full lg:w-[1000px] lg:h-full lg:justify-center lg:ml-20">
           <MapOption />
           <CalendarOption />
         </div>
