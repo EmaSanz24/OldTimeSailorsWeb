@@ -46,10 +46,11 @@ export const PowerMobileM =  ({ data }) => {
             {/* Contenedor principal con borde */}
             <div className="border-[3px] border-beige p-4 mx-4 relative">
               <div className="text-left lowercase">
-                <h1 className="font-titles pt-1">
-                  <span className="text-lightRed text-xl">old time sailors </span> <span className="text-beige text-xl"> at</span>
-                  <br />
-                  <span className="text-beige text-xl">{event}</span>
+                <h1 className="font-titles pt-1 text-2xl leading-none">
+                  <div>
+                  <span className="text-lightRed">old time sailors </span> 
+                  <span className="text-beige"> at</span></div>
+                  <p className="text-beige">{event}</p>
                 </h1>
                 <p className="text-lightRed text-sm font-txt">{location}</p>
               </div>
@@ -73,7 +74,7 @@ export const PowerMobileM =  ({ data }) => {
 
               {/* Event info */}
               <div className="space-y-6 ">
-                <div className="space-y-3">
+                <div className="space-y-1.5">
                   {[
                     { icon: FaLocationDot, text: `${event}` },
                     { icon: FaCalendar, text: `${formattedDate}` },
@@ -82,7 +83,7 @@ export const PowerMobileM =  ({ data }) => {
                       text: `${gigStartTime} to ${gigFinishTime}`,
                     },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-darkBlue font-txt">
+                    <div key={text} className="flex items-center gap-2 text-darkBlue font-txt leading-none">
                       <Icon className="text-[12px] text-lightRed" />
                       <span className="text-[11px] text-beige">{text}</span>
                     </div>
@@ -101,7 +102,8 @@ export const PowerMobileM =  ({ data }) => {
                       <h3 className="font-txt justify-center text-[18px] uppercase">buy tickets</h3>
                     </Link>
                   </div>
-                  <EventDescription />
+                   <EventDescription/>
+                 
                 </div>
               </div>
             </div>
@@ -140,7 +142,7 @@ export const PowerMobileM =  ({ data }) => {
 
           {/* Lower photos */}
           <div className="relative h-[200px]">
-            <div className="absolute left-[40px] -top-[78px] w-1/2 z-20">
+            <div className="absolute left-[40px] -top-[80px] w-1/2 z-20">
               <Image src="/assets/powerPhoto1.webp" alt="Performance" width={170} height={170} className="w-[162px] h-[150px] z-10" loading="lazy" />
               <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
                 <Image
@@ -168,8 +170,8 @@ export const PowerMobileM =  ({ data }) => {
                 <p className="text-lightRed text-[60px] font-titles ">power</p>
                 <p className="text-lightRed text-[60px] font-titles">show</p>
               </div>
-              <div className="text-beige text-[9px] flex flex-col">
-                <div className="-ml-[45px] mt-[73px] font-txt leading-none tracking-widest uppercase truncate">
+              <div className="text-beige text-[9.5px] flex flex-col">
+                <div className="-ml-[45px] mt-[73px] font-txt font-bold leading-none tracking-widest uppercase truncate">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
                 </div>
@@ -182,7 +184,7 @@ export const PowerMobileM =  ({ data }) => {
             alt="Background drawing"
             width={170}
             height={140}
-            className="w-[220px] h-[200px] absolute -bottom-[95px] -right-[20px] z-0 brightness-[300%] invert"
+            className="w-[220px] h-[200px] absolute -bottom-[95px] -right-[20px] z-0 brightness-[235%] invert-[78%]"
             loading="lazy"
           />
         </div>
