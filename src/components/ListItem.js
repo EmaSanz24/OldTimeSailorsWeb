@@ -52,7 +52,7 @@ const ListItem = ({ event }) => {
           rel="noopener noreferrer"
           className="flex items-center justify-center services-octagon-link max-h-[50px] max-w-[170px] md:max-h-[80px] md:max-w-[260px] lg:max-w-[300px] 1xl:h-[100px] bg-lightRed md:w-1/8 lg:w-1/10"
         >
-          <p className="text-center text-3xl md:text-[38px] lg:text-[42px] 1xl:text-[46px] font-txt font-bold uppercase text-beige">+ info</p>
+          <p className="text-center text-[25px] md:text-[38px] lg:text-[42px] 1xl:text-[46px] font-txt font-bold uppercase text-beige">+ info</p>
         </Link>
       </div>
     </div>

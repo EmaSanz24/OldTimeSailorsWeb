@@ -23,7 +23,7 @@ const VideoComponent = memo(() => (
 ));
 
 const EventDescription = memo(() => (
-  <div className="text-[12px] pb-5 pt-2 text-darkBlue font-txt">
+  <div className="text-[12px] pb-5 pt-4 text-darkBlue font-txt">
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
       You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and singing!
     </p>
@@ -70,14 +70,14 @@ export const FamilyMobileM = ({ data }) => {
         {/* Contenedor principal con borde */}
         <div className="border-[3px] border-darkBeige p-4 mx-4 relative">
           <div className="text-left lowercase">
-            <h1 className="font-titles pt-1">
+            <h1 className="font-titles pt-1 leading-none text-[23px]">
               <p>
-                <span className="text-darkBlue text-xl">old time sailors </span>
-                <span className="text-lightRed text-xl"> at</span>
+                <span className="text-darkBlue">old time sailors </span>
+                <span className="text-lightRed"> at</span>
               </p>
               <p className="text-lightRed text-xl">{event}</p>
             </h1>
-            <p className="text-darkBlue text-lg font-txt">{location}</p>
+            <p className="text-darkBlue text-md font-txt">{location}</p>
           </div>
 
           <div className="border-t-3 border-dashed border-darkBeige my-4" />
@@ -99,7 +99,7 @@ export const FamilyMobileM = ({ data }) => {
 
           {/* Event info */}
           <div className="space-y-6">
-            <div className="space-y-3">
+            <div className="space-y-1.5">
               {[
                 { icon: FaLocationDot, text: `${event}` },
                 { icon: FaCalendar, text: `${formattedDate}` },
@@ -196,7 +196,7 @@ export const FamilyMobileM = ({ data }) => {
                   className="w-[40px] h-[45px] mb-3 rotate-12"
                   loading="lazy"
                 />
-                <div className="-ml-[35px] -mb-1  font-txt uppercase leading-none tracking-widest">
+                <div className="-ml-[35px] -mb-1  font-txt uppercase leading-none tracking-widest font-bold">
                   <p>a traditional sailor show,</p>
                   <p>sing along and dance with us!</p>
                 </div>

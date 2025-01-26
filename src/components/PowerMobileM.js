@@ -24,35 +24,43 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 const EventDescription = memo(() => (
-  <p className="text-sm pb-5 pt-3 text-beige font-txt text-pretty" translate="no">
-    Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
-    for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus! 'Rock and row' with our 21
-    strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard Rock on a genre bending adventure
-    into uncharted waters, join in the Wall of Death and thrash it out with your shipmates. Get ready for vigorous vocals, emphatic energy, mosh pits
-    and head banging: we play it live and we play it loud, but as always with The Old Time Sailors... be prepared to expect the unexpected!
-  </p>
+  <div className="text-[12px] pb-5 pt-3 text-beige font-txt text-left">
+    <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+      Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
+      for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
+    </p>
+    <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+      'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard Rock
+      on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates.
+    </p>
+    <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+      Get ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with The Old Time
+      Sailors... be prepared to expect the unexpected!
+    </p>
+  </div>
 ));
 
-export const PowerMobileM =  ({ data }) => {
+export const PowerMobileM = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
   const router = useRouter();
   return (
     <>
-      <div className="relative top-[15px]">
-        <div className="relative -bottom-[50px] px-[15px] z-0 transform translate-z-0 will-change-transform">
+      <div className="relative top-[15px] mx-3">
+        <div className="relative -bottom-[50px]  z-0 transform translate-z-0 will-change-transform">
           <div className="relative w-full h-full my-[10px]">
             {/* Contenedor principal con borde */}
             <div className="border-[3px] border-beige p-4 mx-4 relative">
               <div className="text-left lowercase">
-                <h1 className="font-titles pt-1 text-2xl leading-none">
-                  <div>
-                  <span className="text-lightRed">old time sailors </span> 
-                  <span className="text-beige"> at</span></div>
+                <h1 className="font-titles pt-1 leading-none text-[23px] ">
+                  <p>
+                    <span className="text-lightRed">old time sailors </span>
+                    <span className="text-beige"> at</span>
+                  </p>
                   <p className="text-beige">{event}</p>
                 </h1>
-                <p className="text-lightRed text-sm font-txt">{location}</p>
+                <p className="text-lightRed text-md font-txt">{location}</p>
               </div>
 
               <div className="border-t-3 border-dashed border-beige my-4" />
@@ -102,8 +110,7 @@ export const PowerMobileM =  ({ data }) => {
                       <h3 className="font-txt justify-center text-[18px] uppercase">buy tickets</h3>
                     </Link>
                   </div>
-                   <EventDescription/>
-                 
+                  <EventDescription />
                 </div>
               </div>
             </div>
@@ -170,7 +177,7 @@ export const PowerMobileM =  ({ data }) => {
                 <p className="text-lightRed text-[60px] font-titles ">power</p>
                 <p className="text-lightRed text-[60px] font-titles">show</p>
               </div>
-              <div className="text-beige text-[9.5px] flex flex-col">
+              <div className="text-beige text-[7px] flex flex-col">
                 <div className="-ml-[45px] mt-[73px] font-txt font-bold leading-none tracking-widest uppercase truncate">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
