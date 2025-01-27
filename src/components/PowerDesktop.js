@@ -127,10 +127,6 @@ export const PowerDesktop = ({ data }) => {
             />
           </div>
           <div className="relative bottom-[550px] w-full">
-            <div className="absolute top-[95px] left-[10px] z-20 ">
-              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={550} className="w-[670px] h-[570px]" priority={true} />
-            </div>
-
             <div className="absolute inset-0 top-[255px] left-[85px] z-30">
               <video
                 controls
@@ -141,6 +137,9 @@ export const PowerDesktop = ({ data }) => {
               >
                 <source src="/assets/powerVideo.mp4" type="video/mp4" />
               </video>
+            </div>
+            <div className="absolute top-[95px] left-[10px] z-20 ">
+              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={550} className="w-[670px] h-[570px]" priority={true} />
             </div>
           </div>
 
