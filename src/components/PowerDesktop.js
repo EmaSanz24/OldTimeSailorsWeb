@@ -24,14 +24,14 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const PowerDesktop =  ({ data }) => {
+export const PowerDesktop = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
   const router = useRouter();
   return (
     <>
-      <div className="relative -bottom-[100px]">
+      <div className="relative -bottom-[170px]">
         <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
           <div className="border-[3px] border-beige p-2 relative w-[1100px] -right-[100px] -top-[310px]">
@@ -113,7 +113,7 @@ export const PowerDesktop =  ({ data }) => {
             <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={500} height={200} className="w-[600px]" loading="lazy" />
           </div>
           {/* Photo 3 */}
-          <div className="absolute  left-[515px] top-[460px] z-30">
+          <div className="absolute  left-[515px] top-[460px] z-20">
             <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={600} height={600} className="w-[600px] h-[600px]" loading="lazy" />
           </div>
           <div className="absolute -right-[15px] -bottom-[500px]">
@@ -127,11 +127,11 @@ export const PowerDesktop =  ({ data }) => {
             />
           </div>
           <div className="relative bottom-[550px] w-full">
-            <div className="absolute top-[95px] left-[10px] z-30 ">
+            <div className="absolute top-[95px] left-[10px] z-20 ">
               <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={550} className="w-[670px] h-[570px]" priority={true} />
             </div>
 
-            <div className="absolute inset-0 top-[255px] left-[85px] z-50">
+            <div className="absolute inset-0 top-[255px] left-[85px] z-30">
               <video
                 controls
                 preload="none"
@@ -163,7 +163,7 @@ export const PowerDesktop =  ({ data }) => {
                 <p className="text-lightRed text-[180px] font-titles">show</p>
               </div>
               <div className="text-beige text-[30px] -mb-[205px] -ml-[105px]">
-                <div className="font-txt font-black leading-tight tracking-widest uppercase">
+                <div className="font-txt font-bold leading-tight tracking-widest uppercase">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck line like a pirate</p>
                 </div>

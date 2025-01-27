@@ -24,7 +24,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 const EventDescription = memo(() => (
-  <div className="text-[12px] pb-5 pt-3 text-beige font-txt text-left">
+  <div className="text-[12px] pb-5 pt-5 text-beige font-txt text-left">
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
       Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
       for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
@@ -47,7 +47,7 @@ export const PowerMobileM = ({ data }) => {
   const router = useRouter();
   return (
     <>
-      <div className="relative top-[15px] mx-3">
+      <div className="relative top-[15px]">
         <div className="relative -bottom-[50px]  z-0 transform translate-z-0 will-change-transform">
           <div className="relative w-full h-full my-[10px]">
             {/* Contenedor principal con borde */}
@@ -191,7 +191,7 @@ export const PowerMobileM = ({ data }) => {
             alt="Background drawing"
             width={170}
             height={140}
-            className="w-[220px] h-[200px] absolute -bottom-[95px] -right-[20px] z-0 brightness-[235%] invert-[78%]"
+            className="w-[220px] h-[200px] absolute -bottom-[95px] -right-[20px] z-0 "
             loading="lazy"
           />
         </div>
