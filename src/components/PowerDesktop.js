@@ -126,21 +126,22 @@ export const PowerDesktop = ({ data }) => {
               loading="lazy"
             />
           </div>
-
-          <div className="absolute inset-0 flex items-center justify-center top-[402px] right-[995px] z-30">
-            <video
-              controls
-              preload="none"
-              poster={"/assets/thumbnailvideoP.png"}
-              style={{ maxWidth: "100%" }}
-              className="object-cover w-[520px] h-[300px] rounded-sm
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center justify-center -top-[300px] right-[995px] z-30">
+              <video
+                controls
+                preload="none"
+                poster={"/assets/thumbnailvideoP.png"}
+                style={{ maxWidth: "100%" }}
+                className="object-cover w-[520px] h-[300px] rounded-sm
                       hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
-            >
-              <source src="/assets/powerVideo.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div className="absolute top-[240px] left-[10px] z-20 ">
-            <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={550} className="w-[670px] h-[570px]" priority={true} />
+              >
+                <source src="/assets/powerVideo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="absolute -top-[458px] left-[10px] z-20 ">
+              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={550} className="w-[670px] h-[570px]" priority={true} />
+            </div>
           </div>
 
           <div className="relative top-[15px]" onClick={() => router.back()} role="button" tabIndex={0}>
