@@ -23,7 +23,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const PowerLaptopL =  ({ data }) => {
+export const PowerLaptopL = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
@@ -130,7 +130,7 @@ export const PowerLaptopL =  ({ data }) => {
             <video
               controls
               preload="none"
-              poster={"/assets/thumbnailvideoP.webp"}
+              poster={"/assets/thumbnailVideoP.webp"}
               className="object-cover w-[460px] h-[270px] rounded-sm hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
             >
               <source src="/assets/powerVideo.mp4" type="video/mp4" />

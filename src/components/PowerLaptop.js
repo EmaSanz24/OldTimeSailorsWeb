@@ -130,7 +130,7 @@ export const PowerLaptop = ({ data }) => {
               <video
                 controls
                 preload="none"
-                poster={"/assets/thumbnailvideoP.webp"}
+                poster={"/assets/thumbnailVideoP.webp"}
                 className="object-cover w-[75%] h-[75%] rounded-sm z-20  hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
               >
                 <source src="/assets/powerVideo.mp4" type="video/mp4" />

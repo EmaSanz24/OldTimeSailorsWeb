@@ -42,7 +42,7 @@ const EventDescription = memo(() => (
   </p>
 ));
 
-export const PowerMobileL =  ({ data }) => {
+export const PowerMobileL = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
@@ -125,7 +125,7 @@ export const PowerMobileL =  ({ data }) => {
               <video
                 controls
                 preload="none"
-                poster={"/assets/thumbnailvideoP.webp"}
+                poster={"/assets/thumbnailVideoP.webp"}
                 playsInline
                 loading="lazy"
                 className="w-[78%] h-[98%] absolute -top-[7px] left-[33px] object-cover rounded-sm] hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"

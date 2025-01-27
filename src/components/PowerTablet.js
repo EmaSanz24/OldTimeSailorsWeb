@@ -112,7 +112,7 @@ export const PowerTablet = ({ data }) => {
               <video
                 controls
                 preload="none"
-                poster={"/assets/thumbnailvideoP.webp"}
+                poster={"/assets/thumbnailVideoP.webp"}
                 className="w-[70%] h-[98%] absolute -top-[19px] left-[31px] object-cover rounded-sm]  hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
               >
                 <source src="/assets/powerVideo.mp4" type="video/mp4" />

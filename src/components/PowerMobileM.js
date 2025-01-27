@@ -127,7 +127,7 @@ export const PowerMobileM = ({ data }) => {
                 <video
                   controls
                   preload="none"
-                  poster={"/assets/thumbnailvideoP.webp"}
+                  poster={"/assets/thumbnailVideoP.webp"}
                   className="w-[78%] h-[85%] absolute top-[6px] left-[29px] object-cover rounded-sm]
               hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
                 >
