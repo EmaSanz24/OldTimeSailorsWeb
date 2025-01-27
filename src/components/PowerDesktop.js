@@ -131,7 +131,7 @@ export const PowerDesktop = ({ data }) => {
               <video
                 controls
                 preload="none"
-                poster={"/assets/thumbnailvideoP.png"}
+                poster={"/assets/thumbnailVideoP.webp"}
                 style={{ maxWidth: "100%" }}
                 className="object-cover w-[520px] h-[300px] rounded-sm
                       hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
