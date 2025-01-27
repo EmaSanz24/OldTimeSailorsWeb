@@ -117,7 +117,7 @@ export const PowerLaptopL = ({ data }) => {
               alt="Background drawing"
               width={420}
               height={420}
-              className="w-[420px] h-[420px] brightness-[300%] invert"
+              className="w-[420px] h-[420px] mix-blend-multiply brightness-[55%] opacity-[75%]"
               loading="lazy"
             />
           </div>

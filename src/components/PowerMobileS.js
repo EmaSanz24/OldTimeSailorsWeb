@@ -200,7 +200,7 @@ export const PowerMobileS = ({ data }) => {
           width={150}
           height={130}
           quality={75}
-          className="w-[150px] h-[130px] absolute bottom-[10px] -right-2 z-10 brightness-[300%] invert"
+          className="w-[150px] h-[130px] absolute bottom-[10px] -right-2 z-10 mix-blend-multiply brightness-[55%] opacity-[75%]"
           loading="lazy"
         />
       </div>

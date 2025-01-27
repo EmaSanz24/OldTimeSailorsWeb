@@ -190,7 +190,7 @@ export const PowerMobileL = ({ data }) => {
           alt="Background drawing"
           width={180}
           height={145}
-          className="w-[180px] h-[145px] absolute -bottom-[110px] -right-[5px] z-20 brightness-[300%] invert"
+          className="w-[180px] h-[145px] absolute -bottom-[110px] -right-[5px] z-20 mix-blend-multiply brightness-[55%] opacity-[75%]"
           loading="lazy"
         />
       </div>

@@ -175,7 +175,7 @@ export const PowerTablet = ({ data }) => {
           alt="Background drawing"
           width={300}
           height={300}
-          className="absolute -bottom-[20px] right-[5px] z-20 brightness-[300%] invert"
+          className="absolute -bottom-[20px] right-[5px] z-20 mix-blend-multiply brightness-[55%] opacity-[75%]"
           loading="lazy"
         />
       </div>

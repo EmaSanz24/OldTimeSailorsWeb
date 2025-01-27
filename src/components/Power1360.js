@@ -120,7 +120,7 @@ export const Power1360 = ({ data }) => {
               alt="Background drawing"
               width={450}
               height={450}
-              className="w-[450px] h-[450px] brightness-[300%] invert"
+              className="w-[450px] h-[450px] mix-blend-multiply brightness-[55%] opacity-[75%]"
               loading="lazy"
             />
           </div>

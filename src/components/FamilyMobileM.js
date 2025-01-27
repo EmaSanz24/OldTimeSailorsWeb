@@ -210,7 +210,7 @@ export const FamilyMobileM = ({ data }) => {
             width={160}
             height={115}
             quality={75}
-            className="w-[160px] h-[115px] absolute -bottom-[55px] -right-[2px] z-20 contrast-[25%]"
+            className="w-[160px] h-[115px] absolute -bottom-[55px] -right-[2px] z-20 brightness-[78%] contrast-[91%]"
             loading="lazy"
           />
         </div>

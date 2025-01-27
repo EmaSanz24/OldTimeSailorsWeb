@@ -23,7 +23,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const FamilyLaptopL =  ({ data }) => {
+export const FamilyLaptopL = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
@@ -133,7 +133,7 @@ export const FamilyLaptopL =  ({ data }) => {
               alt="Background drawing"
               width={300}
               height={300}
-              className="w-[380px] h-[330px] contrast-[25%]"
+              className="w-[380px] h-[330px] brightness-[78%] contrast-[91%]"
               loading="lazy"
             />
           </div>

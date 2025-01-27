@@ -23,7 +23,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 
-export const Family1360 =  ({ data }) => {
+export const Family1360 = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
   const eventURL = "/eventURL";
@@ -119,7 +119,7 @@ export const Family1360 =  ({ data }) => {
               alt="Background drawing"
               width={350}
               height={350}
-              className="w-[350px] h-[350px] contrast-[25%]"
+              className="w-[350px] h-[350px] brightness-[78%] contrast-[91%]"
               loading="lazy"
             />
           </div>

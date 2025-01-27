@@ -167,7 +167,7 @@ export const FamilyTablet = ({ data }) => {
           alt="Background Drawing"
           width={300}
           height={300}
-          className="absolute -bottom-[15px] right-[0px] z-20 contrast-[25%]"
+          className="absolute -bottom-[15px] right-[0px] z-20 brightness-[78%] contrast-[91%]"
         />
       </div>
     </div>

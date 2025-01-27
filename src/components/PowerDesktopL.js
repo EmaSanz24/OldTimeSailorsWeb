@@ -121,7 +121,7 @@ export const PowerDesktopL = ({ data }) => {
               alt="Background drawing"
               width={800}
               height={800}
-              className="w-[800px] h-[800px] brightness-[300%] invert"
+              className="w-[800px] h-[800px] mix-blend-multiply brightness-[55%] opacity-[75%]"
               loading="lazy"
             />
           </div>

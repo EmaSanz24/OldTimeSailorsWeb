@@ -132,7 +132,7 @@ export const FamilyDesktop = ({ data }) => {
               alt="Background drawing"
               width={600}
               height={500}
-              className="w-[600px] h-[450px] contrast-[25%]"
+              className="w-[600px] h-[450px] brightness-[78%] contrast-[91%]"
               loading="lazy"
             />
           </div>

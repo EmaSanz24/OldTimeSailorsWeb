@@ -226,7 +226,7 @@ export const FamilyMobileS = ({ data }) => {
               width={150}
               height={110}
               quality={75}
-              className="w-[150px] h-[110px] absolute bottom-[18px] -right-2 z-10 contrast-[25%]"
+              className="w-[150px] h-[110px] absolute bottom-[18px] -right-2 z-10 brightness-[78%] contrast-[91%]"
               loading="lazy"
             />
           </div>
