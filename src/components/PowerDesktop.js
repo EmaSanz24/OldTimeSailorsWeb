@@ -127,7 +127,7 @@ export const PowerDesktop = ({ data }) => {
             />
           </div>
           <div className="relative bottom-[550px] w-full">
-            <div className="absolute inset-0 top-[255px] left-[85px] z-30">
+            <div className="absolute inset-0 flex items-center justify-center top-[402px] right-[995px] z-30">
               <video
                 controls
                 preload="none"
