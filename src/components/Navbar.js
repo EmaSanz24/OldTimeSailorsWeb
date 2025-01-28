@@ -107,7 +107,7 @@ const Navbar = () => {
     <div
       style={navStyle}
       className={`fixed w-screen z-[100] flex flex-col justify-between pt-3 px-1 sm:px-4 3xl:px-9  ${
-        pathname === "/tickets/calendar-view" ? "bg-beigePatternMobile bg-cover" : ""
+        pathname === "/tickets/calendar-view" || pathname === "/tickets" ? "bg-beigePatternMobile bg-cover" : ""
       }`}
     >
       <div className="flex justify-between">

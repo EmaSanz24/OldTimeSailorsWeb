@@ -1,4 +1,5 @@
 import TicketsComponent from "@/components/tickets-client";
+import ViewSelector from "@/components/ViewSelector";
 
 export const metadata = {
   title: "Tickets",
@@ -16,9 +17,9 @@ export const metadata = {
 };
 
 const Tickets = () => {
-  
   return (
-    <TicketsComponent/>
+    <ViewSelector />
+    // <TicketsComponent/>
   );
 };
 

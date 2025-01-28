@@ -4,6 +4,7 @@ import { memo } from "react";
 import blueFrame from "../../public/assets/blue-frame.webp";
 import redFrame from "../../public/assets/red-frame.png";
 import footerImage from "../../public/assets/view-selector-image.JPEG";
+import MainDiv from "./MainDiv";
 
 // Componente memoizado para la opción de Map
 const MapOption = memo(() => (
@@ -69,16 +70,15 @@ const DrawingImage = memo(() => {
 
 const ViewSelector = () => {
   return (
-    <div>
+    <MainDiv className="w-full h-dvh pt-[85px] xs:pt-[100px] flex-1 md:pt-[140px] md1:pt-[140px] md2:pt-[150px] overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] lg:flex flex-col lg:flex-row lg:items-center lg:pt-0 xl:pt-[60px] 4xl:pt-[80px] fullHD:pt-[150px] 4k:pt-[170px]">
       {/* Main Content */}
-      <div className="w-full h-[700px] md:h-auto  flex-1 md:pt-10 overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] flex flex-col lg:flex-row items-center justify-center md2:pt-8">
-        <div className="flex flex-col  items-center justify-center space-y-4 w-full lg:w-[1000px] lg:h-full lg:justify-center lg:ml-20">
-          <MapOption />
-          <CalendarOption />
-        </div>
-        <DrawingImage />
+
+      <div className="flex flex-col  items-center justify-center space-y-4 w-full lg:w-[1000px] lg:h-full lg:justify-center lg:ml-20">
+        <MapOption />
+        <CalendarOption />
       </div>
-    </div>
+      <DrawingImage />
+    </MainDiv>
   );
 };
 
