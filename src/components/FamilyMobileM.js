@@ -75,12 +75,12 @@ export const FamilyMobileM = ({ data }) => {
                 <span className="text-darkBlue">old time sailors </span>
                 <span className="text-lightRed"> at</span>
               </p>
-              <p className="text-lightRed text-xl">{event}</p>
+              <p className="text-lightRed">{event}</p>
             </h1>
             <p className="text-darkBlue text-md font-txt">{location}</p>
           </div>
 
-          <div className="border-t-3 border-dashed border-darkBeige my-4" />
+          <div className="border-more-dashed my-4" />
 
           <div className="absolute -right-[12px] top-20 w-44">
             <div className="bg-darkBlue p-3 rounded-2xl">
@@ -89,7 +89,10 @@ export const FamilyMobileM = ({ data }) => {
                 <p>the venue</p>
               </h3>
               <div className="mt-0.5">
-                <p className="text-beige text-[9px] leading-tight font-txt">{venueInfo}</p>
+                <p className="text-beige text-[9px] leading-tight font-txt">
+                  {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                  seating options.
+                </p>
                 <Link href={eventURL}>
                   <p className="text-beige text-[9px] mt-1 font-titles underline">contact the venue for + info</p>
                 </Link>
@@ -115,7 +118,7 @@ export const FamilyMobileM = ({ data }) => {
                 <Link
                   className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                   style={{
-                    "--octagon-width": "200px",
+                    "--octagon-width": "153px",
                     "--octagon-height": "33px",
                   }}
                   href={ticketsURL}
@@ -150,7 +153,7 @@ export const FamilyMobileM = ({ data }) => {
 
           {/* Lower photos */}
           <div className="relative h-[200px]">
-            <div className="absolute left-[27px] -top-[70px] w-1/2 z-20">
+            <div className="absolute left-[18px] -top-[70px] w-1/2 z-20">
               <Image
                 src="/assets/familyPhoto1.webp"
                 alt="Performance"
@@ -210,7 +213,7 @@ export const FamilyMobileM = ({ data }) => {
             width={160}
             height={115}
             quality={75}
-            className="w-[160px] h-[115px] absolute -bottom-[55px] -right-[2px] z-20 brightness-[78%] contrast-[91%]"
+            className="w-[160px] h-[115px] absolute -bottom-[55px] -right-[2px] z-20 brightness-[78%] contrast-[91%] opacity-[70%]"
             loading="lazy"
           />
         </div>

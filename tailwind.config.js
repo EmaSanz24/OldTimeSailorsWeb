@@ -48,7 +48,24 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui(), require("@tailwindcss/aspect-ratio")],
+  plugins: [
+    nextui(),
+    require("@tailwindcss/aspect-ratio"),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".border-more-dashed": {
+          borderStyle: "solid",
+          borderWidth: "1px",
+          borderImage: "repeating-linear-gradient(to right, #938f73 0, #938f73 10px, transparent 10px, transparent 12px) 1",
+        },
+        ".border-more-dashed-beige": {
+          borderStyle: "solid",
+          borderWidth: "1px",
+          borderImage: "repeating-linear-gradient(to right, #e6d9c1 0, #e6d9c1 10px, transparent 10px, transparent 12px) 1",
+        },
+      });
+    },
+  ],
   corePlugins: {
     aspectRatio: false,
   },

@@ -53,14 +53,17 @@ export const PowerLaptop = ({ data }) => {
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-darkBlue text-[12px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-darkBlue text-[12px] font-txt leading-tight">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-darkBlue text-[12px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-3 border-dashed border-beige my-4" />
+            <div className="border-more-dashed-beige my-4" />
 
             {/* Event info */}
             <div className="space-y-2 p-4">

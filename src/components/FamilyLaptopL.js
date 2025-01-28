@@ -50,14 +50,17 @@ export const FamilyLaptopL = ({ data }) => {
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-beige text-[15px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-beige text-[15px] font-txt leading-tight">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-beige text-[15px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-3 border-dashed border-darkBeige my-4" />
+            <div className="border-more-dashed my-4" />
 
             {/* Event info */}
             <div className="space-y-6 p-4">
@@ -77,15 +80,15 @@ export const FamilyLaptopL = ({ data }) => {
 
                 <div className="relative">
                   <Link
-                    className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets top-[27px] left-8"
+                    className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets top-[8px] left-[90px]"
                     style={{
-                      "--octagon-width": "270px",
-                      "--octagon-height": "45px",
+                      width: "290px",
+                      height: "95px",
                     }}
                     href={ticketsURL}
                     target="_blank"
                   >
-                    <h3 className="font-txt uppercase justify-center text-[32px] "> buy tickets</h3>
+                    <h3 className="font-txt uppercase justify-center text-[35px] "> buy tickets</h3>
                   </Link>
                 </div>
               </div>

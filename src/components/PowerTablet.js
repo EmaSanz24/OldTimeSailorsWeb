@@ -49,7 +49,10 @@ export const PowerTablet = ({ data }) => {
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5">
-                  <p className="text-darkBlue text-[15px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-darkBlue text-[15px] font-txt leading-tight">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-darkBlue text-[16px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
@@ -58,7 +61,7 @@ export const PowerTablet = ({ data }) => {
             </div>
           </div>
 
-          <div className="border-t-3 border-dashed border-beige my-4" />
+          <div className="border-more-dashed-beige my-4" />
 
           {/* Event info */}
           <div className="space-y-6 ">

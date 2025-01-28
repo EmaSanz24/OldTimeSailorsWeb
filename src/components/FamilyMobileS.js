@@ -87,7 +87,7 @@ export const FamilyMobileS = ({ data }) => {
               <p className="text-darkBlue text-md font-txt">{location}</p>
             </div>
 
-            <div className="border-t-3 border-dashed border-darkBeige my-4" />
+            <div className="border-more-dashed my-4" />
 
             <div className="absolute -right-[12px] top-20 w-[160px]">
               <div className="bg-darkBlue p-3 py-4 rounded-2xl">
@@ -96,7 +96,10 @@ export const FamilyMobileS = ({ data }) => {
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5">
-                  <p className="text-beige text-[7px] leading-tight font-txt">{venueInfo}</p>
+                  <p className="text-beige text-[7px] leading-tight font-txt">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-beige text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
                   </Link>
@@ -122,7 +125,7 @@ export const FamilyMobileS = ({ data }) => {
                   <Link
                     className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                     style={{
-                      "--octagon-width": "180px",
+                      "--octagon-width": "125px",
                       "--octagon-height": "30px",
                     }}
                     href={`${ticketsURL}`}
@@ -158,7 +161,7 @@ export const FamilyMobileS = ({ data }) => {
 
             {/* Lower photos */}
             <div className="relative h-[200px] bottom-8">
-              <div className="absolute left-7 -top-16 w-1/2 z-20">
+              <div className="absolute left-[22px] -top-16 w-1/2 z-20">
                 <Image
                   src="/assets/familyPhoto1.webp"
                   alt="Performance"
@@ -226,7 +229,7 @@ export const FamilyMobileS = ({ data }) => {
               width={150}
               height={110}
               quality={75}
-              className="w-[150px] h-[110px] absolute bottom-[18px] -right-2 z-10 brightness-[78%] contrast-[91%]"
+              className="w-[150px] h-[110px] absolute bottom-[18px] -right-2 z-10 brightness-[78%] contrast-[91%] opacity-[70%]"
               loading="lazy"
             />
           </div>

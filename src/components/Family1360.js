@@ -43,21 +43,24 @@ export const Family1360 = ({ data }) => {
               </h1>
               <p className="text-darkBlue font-txt text-[30px] mt-4 lowercase">{location}</p>
             </div>
-            <div className="absolute w-[350px] top-[20px] -right-[100px] z-20">
+            <div className="absolute w-[350px] top-[20px] -right-[103px] z-20">
               <div className="bg-darkBlue h-[220px] p-6 rounded-3xl">
                 <h3 className="text-lightRed text-[30px] font-titles leading-none">
                   <p>more about</p>
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-beige text-[15px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-beige text-[15px] font-txt leading-tight">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-beige text-[14px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-3 border-dashed border-darkBeige my-4" />
+            <div className="border-more-dashed my-4" />
 
             {/* Event info */}
             <div className="space-y-6 p-4 px-10">
@@ -80,10 +83,10 @@ export const Family1360 = ({ data }) => {
 
                 <div className="relative w-[250px] h-[100px]">
                   <Link
-                    className="absolute left-12 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-4"
+                    className="absolute left-12 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-2"
                     style={{
-                      width: "270px",
-                      height: "75px",
+                      width: "260px",
+                      height: "87px",
                     }}
                     href={ticketsURL}
                     target="_blank"

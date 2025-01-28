@@ -51,14 +51,17 @@ export const FamilyDesktopL = ({ data }) => {
                   the venue
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-beige text-[15px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-beige text-[15px] font-txt leading-tight">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-beige text-[20px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-3 border-dashed border-darkBeige my-4" />
+            <div className="border-more-dashed my-4" />
 
             {/* Event info */}
             <div className="space-y-6 pl-[45px]">

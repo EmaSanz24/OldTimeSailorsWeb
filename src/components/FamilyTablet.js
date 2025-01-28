@@ -47,7 +47,10 @@ export const FamilyTablet = ({ data }) => {
                 <p>the venue</p>
               </h3>
               <div className="mt-0.5">
-                <p className="text-beige font-txt leading-tight text-[15px]">{venueInfo}</p>
+                <p className="text-beige font-txt leading-tight text-[15px]">
+                  {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                  seating options.
+                </p>
                 <Link href={eventURL}>
                   <p className="text-beige mt-1 font-titles underline text-[16px]">contact the venue for + info</p>
                 </Link>
@@ -55,7 +58,7 @@ export const FamilyTablet = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="border-t-3 border-dashed border-darkBeige my-4" />
+        <div className="border-more-dashed my-4" />
         {/* Event Info  */}
         <div className="space-y-6">
           <div className="flex flex-row gap-5">
@@ -167,7 +170,7 @@ export const FamilyTablet = ({ data }) => {
           alt="Background Drawing"
           width={300}
           height={300}
-          className="absolute -bottom-[15px] right-[0px] z-20 brightness-[78%] contrast-[91%]"
+          className="absolute -bottom-[15px] right-[0px] z-20 brightness-[78%] contrast-[91%] opacity-[70%]"
         />
       </div>
     </div>

@@ -43,7 +43,7 @@ export const FamilyLaptop = ({ data }) => {
                 className="text-lightRed text-[40px] 
               "
               >
-                {location}
+                {event}
               </span>
             </h1>
             <p className="text-darkBlue text-[30px] lowercase font-txt">{location}</p>
@@ -55,14 +55,17 @@ export const FamilyLaptop = ({ data }) => {
                 <p>the venue</p>
               </h3>
               <div className="mt-0.5 tracking-wide">
-                <p className="text-beige font-txt leading-tight text-[12px]">{venueInfo}</p>
+                <p className="text-beige font-txt leading-tight text-[12px]">
+                  {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                  seating options.
+                </p>
                 <Link href={eventURL}>
                   <p className="text-beige mt-1 font-titles underline text-[12px]">contact the venue for + info</p>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="border-t-3 border-dashed border-darkBeige my-4" />
+          <div className="border-more-dashed my-4" />
           {/* Event Info  */}
           <div className="space-y-6 p-4">
             <div className="flex flex-row gap-5">
@@ -81,15 +84,15 @@ export const FamilyLaptop = ({ data }) => {
 
               <div className="relative">
                 <Link
-                  className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-[25px]"
+                  className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-[14px]"
                   style={{
-                    "--octagon-width": "270px",
-                    "--octagon-height": "35px",
+                    width: "185px",
+                    height: "80px",
                   }}
                   href={ticketsURL}
                   target="_blank"
                 >
-                  <h3 className="font-txt uppercase justify-center text-[29px]"> buy tickets</h3>
+                  <h3 className="font-txt uppercase justify-center text-[27px]"> buy tickets</h3>
                 </Link>
               </div>
             </div>

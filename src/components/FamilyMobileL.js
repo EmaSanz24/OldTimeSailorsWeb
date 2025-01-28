@@ -22,7 +22,7 @@ const VideoComponent = memo(() => (
 ));
 
 const EventDescription = memo(() => (
-  <div className="text-[14px] pb-5 text-darkBlue font-txt">
+  <div className="text-[14px] pb-6 pt-5 text-darkBlue font-txt">
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
       You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and singing!
     </p>
@@ -76,7 +76,7 @@ export const FamilyMobileL = ({ data }) => {
             <p className="text-darkBlue text-xl font-txt">{location}</p>
           </div>
 
-          <div className="border-t-3 border-dashed border-darkBeige my-4" />
+          <div className="border-more-dashed my-4" />
 
           <div className="absolute -right-[12px] top-20 w-44">
             <div className="bg-darkBlue p-3 rounded-2xl">
@@ -85,7 +85,10 @@ export const FamilyMobileL = ({ data }) => {
                 <p>the venue</p>
               </h3>
               <div className="mt-0.5">
-                <p className="text-beige text-[9px] leading-tight font-txt">{venueInfo}</p>
+                <p className="text-beige text-[9px] leading-tight font-txt">
+                  {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                  seating options.
+                </p>
                 <Link href={eventURL}>
                   <p className="text-beige text-[9px] mt-1 font-titles underline">contact the venue for + info</p>
                 </Link>
@@ -95,7 +98,7 @@ export const FamilyMobileL = ({ data }) => {
 
           {/* Event info */}
           <div className="space-y-6">
-            <div className="space-y-5">
+            <div className="space-y-2">
               {[
                 { icon: FaLocationDot, text: `${event}` },
                 { icon: FaCalendar, text: `${formattedDate}` },
@@ -111,7 +114,7 @@ export const FamilyMobileL = ({ data }) => {
                 <Link
                   className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                   style={{
-                    "--octagon-width": "240px",
+                    "--octagon-width": "200px",
                     "--octagon-height": "37px",
                   }}
                   href={ticketsURL}
@@ -146,7 +149,7 @@ export const FamilyMobileL = ({ data }) => {
 
           {/* Lower photos */}
           <div className="relative h-[200px]">
-            <div className="absolute left-[26px] bottom-[73px] w-1/2 z-20">
+            <div className="absolute left-[19px] bottom-[73px] w-1/2 z-20">
               <Image
                 src="/assets/familyPhoto1.webp"
                 alt="Performance"
@@ -207,7 +210,7 @@ export const FamilyMobileL = ({ data }) => {
             width={170}
             height={125}
             quality={75}
-            className="w-[170px] h-[125px] absolute -bottom-[110px] -right-[4px] z-20 brightness-[78%] contrast-[91%]"
+            className="w-[170px] h-[125px] absolute -bottom-[110px] -right-[4px] z-20 brightness-[78%] contrast-[91%] opacity-[70%]"
             loading="lazy"
           />
         </div>

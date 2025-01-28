@@ -52,14 +52,17 @@ export const FamilyDesktop = ({ data }) => {
                   the venue
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-beige text-[15px] font-txt leading-tight">{venueInfo}</p>
+                  <p className="text-beige text-[15px] font-txt leading-tight">
+                    {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
+                    seating options.
+                  </p>
                   <Link href={eventURL}>
                     <p className="text-beige text-[15px] mt-1 font-titles underline">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="border-t-3 border-dashed border-darkBeige my-4" />
+            <div className="border-more-dashed my-4" />
 
             {/* Event info */}
             <div className="space-y-6 pl-[45px]">
@@ -82,10 +85,10 @@ export const FamilyDesktop = ({ data }) => {
 
                 <div className="relative w-[250px] h-[100px]">
                   <Link
-                    className="absolute left-4 top-[20px] inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
+                    className="absolute left-8 top-[5px] inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
                     style={{
-                      width: "450px",
-                      height: "85px",
+                      width: "400px",
+                      height: "115px",
                     }}
                     href={ticketsURL}
                     target="_blank"
