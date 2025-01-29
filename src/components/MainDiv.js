@@ -8,7 +8,7 @@ const MainDiv = ({ children, className }) => {
 
   return (
     <main
-      className={`relative flex flex-col ${className}`}
+      className={`relative flex flex-col ${className} main-scroll-wrapper`}
       style={{
         opacity: settings?.loader,
         pointerEvents: settings?.photos ? "auto" : "none",
