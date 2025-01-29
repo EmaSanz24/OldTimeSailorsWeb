@@ -22,7 +22,9 @@ const GigLanding = () => {
 
         const events = await fetchEvents();
 
-        const foundEvent = events.find((e) => e.event.toLowerCase().replace(/\s+/g, "-") === event);
+        const foundEvent = events.find(
+          (e) => e.event.toLowerCase().replace(/\s+/g, "-") === event
+        );
 
         if (foundEvent) {
           setCurrentEvent(foundEvent);
@@ -54,11 +56,23 @@ const GigLanding = () => {
   return (
     <MainDiv
       className={`
-        w-screen overflow-auto
-    ${currentEvent.typeOfShow === "Family" ? " bg-beigePattern bg-contain" : " bg-darkBlue bg-contain"}`}
+        w-full flex-1 
+    ${
+      currentEvent.typeOfShow === "Family"
+        ? " bg-beigePattern bg-contain"
+        : " bg-darkBlue bg-contain"
+    }`}
+      style={{
+        overscrollBehavior: "none", // Esto ayuda a que el scroll sea más natural
+        scrollBehavior: "smooth", // Para un scroll más fluido
+      }}
     >
       <div className="flex-1 h-full">
-        {currentEvent.typeOfShow === "Family" ? <FamilyLanding data={currentEvent} /> : <PowerLanding data={currentEvent} />}
+        {currentEvent.typeOfShow === "Family" ? (
+          <FamilyLanding data={currentEvent} />
+        ) : (
+          <PowerLanding data={currentEvent} />
+        )}
       </div>
     </MainDiv>
   );
