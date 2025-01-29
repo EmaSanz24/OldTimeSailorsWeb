@@ -101,13 +101,23 @@ export const FamilyDesktop = ({ data }) => {
                 </div>
               </div>
 
-              <p className="text-xl pr-[150px] pb-14 text-darkBlue font-txt leading-10">
-                You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing and
-                singing! You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way
-                you have never seen before. The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time
-                of clashing tankards, and drunken debauchery. Sing and dance along like a drunken sailor as the band perform centuries old folk and
-                shanty songs. Fancy dress is encouraged, so pull out your best seafaring garments me hearties and join the festivities.
-              </p>
+              <div className="text-[22px] pb-5 pr-[150px] text-darkBlue font-txt">
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  You are invited to board the Sailorette and join the plentiful crew, 'The Old Time Sailors', for a night of footstomping, dancing
+                  and singing!
+                </p>
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  You will be sailing back to the 19th century for an immersive experience of traditional seafaring music performed in a way you have
+                  never seen before.
+                </p>
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  The Motley Crew and their plethora of traditional and eclectic instruments will take you back to the time of clashing tankards, and
+                  drunken debauchery. Sing and dance along like a drunken sailor as the band perform centuries old folk and shanty songs.
+                </p>
+                <p className="leading-relaxed">
+                  Fancy dress is encouraged, so pull out your best seafaring garments me hearties and join the festivities.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -142,11 +152,11 @@ export const FamilyDesktop = ({ data }) => {
               loading="lazy"
             />
           </div>
-          <div className="absolute top-[340px] left-[35px]">
+          <div className="absolute top-[340px] left-[20px]">
             <Image src="/assets/videoBox.webp" alt="Video frame" width={540} height={340} priority={true} className="w-[600px] h-[425px]" />
           </div>
 
-          <div className="absolute inset-0 top-[375px] left-[70px] z-40">
+          <div className="absolute inset-0 top-[375px] left-[55px] z-40">
             <video
               controls
               preload="none"
