@@ -122,6 +122,7 @@ export const FamilyMobileM = ({ data }) => {
                       d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
                     />
                   </svg>
+
                   <h3 className=" relative font-txt uppercase text-center text-[16px] -top-[29px] z-20 w-[85%]"> buy tickets</h3>
                 </Link>
               </div>

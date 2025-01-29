@@ -83,17 +83,20 @@ export const FamilyDesktop = ({ data }) => {
                   ))}
                 </div>
 
-                <div className="relative w-[250px] h-[100px]">
-                  <Link
-                    className="absolute left-8 top-[5px] inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
-                    style={{
-                      width: "400px",
-                      height: "115px",
-                    }}
-                    href={ticketsURL}
-                    target="_blank"
-                  >
-                    <h3 className="font-txt justify-center text-[55px] uppercase">buy tickets</h3>
+                <div className="relative w-[400px] h-[100px]">
+                  <Link className="absolute left-[70px] top-[5px] inset-0 items-center justify-center  text-beige " href={ticketsURL} target="_blank">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 358.62 137.01"
+                      preserveAspectRatio="none"
+                      className="w-[100%] h-[100px] z-10"
+                    >
+                      <path
+                        fill="#db3a57"
+                        d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
+                      />
+                    </svg>
+                    <h3 className="relative font-txt justify-center text-[47px] uppercase -top-[85px] z-20 w-[100%] text-center">buy tickets</h3>
                   </Link>
                 </div>
               </div>

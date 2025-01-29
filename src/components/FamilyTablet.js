@@ -75,13 +75,15 @@ export const FamilyTablet = ({ data }) => {
               ))}
             </div>
 
-            <div className="relative mt-8">
-              <Link
-                className="absolute inset-0 flex flex-col items-center justify-center bg-lightRed text-beige octagon-tickets max-w-[230px]"
-                href={ticketsURL}
-                target="_blank"
-              >
-                <h3 className="font-txt uppercase justify-center text-[30px] "> buy tickets</h3>
+            <div className="relative">
+              <Link className="absolute inset-0 items-center justify-center  text-beige w-[220px] left-4 top-4" href={ticketsURL} target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.62 137.01" preserveAspectRatio="none" className="w-[100%] h-[65px] z-10">
+                  <path
+                    fill="#db3a57"
+                    d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
+                  />
+                </svg>
+                <h3 className="relative font-txt uppercase justify-center text-[27px] -top-[52px] z-20 w-[100%] text-center "> buy tickets</h3>
               </Link>
             </div>
           </div>

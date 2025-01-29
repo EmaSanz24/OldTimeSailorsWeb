@@ -84,15 +84,17 @@ export const FamilyLaptop = ({ data }) => {
 
               <div className="relative">
                 <Link
-                  className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-[14px]"
-                  style={{
-                    width: "185px",
-                    height: "80px",
-                  }}
+                  className="absolute inset-0 items-center justify-center text-beige top-[10px] w-[240px] left-1"
                   href={ticketsURL}
                   target="_blank"
                 >
-                  <h3 className="font-txt uppercase justify-center text-[27px]"> buy tickets</h3>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.62 137.01" preserveAspectRatio="none" className="w-[100%] h-[95px] z-10">
+                    <path
+                      fill="#db3a57"
+                      d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
+                    />
+                  </svg>
+                  <h3 className="relative font-txt uppercase justify-center text-[32px] -top-[71px] z-20 w-[100%] text-center"> buy tickets</h3>
                 </Link>
               </div>
             </div>
