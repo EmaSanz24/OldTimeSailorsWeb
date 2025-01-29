@@ -198,7 +198,7 @@ export const PowerMobileM = ({ data }) => {
             alt="Background drawing"
             width={170}
             height={140}
-            className="w-[220px] h-[200px] absolute -bottom-[95px] -right-[20px] z-0 mix-blend-multiply brightness-[55%] opacity-[75%]"
+            className="w-[190px] h-[170px] absolute -bottom-[75px] -right-[20px] z-0 mix-blend-multiply brightness-[35%] contrast-[250%] opacity-[85%]"
             loading="lazy"
           />
         </div>

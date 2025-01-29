@@ -22,9 +22,7 @@ const GigLanding = () => {
 
         const events = await fetchEvents();
 
-        const foundEvent = events.find(
-          (e) => e.event.toLowerCase().replace(/\s+/g, "-") === event
-        );
+        const foundEvent = events.find((e) => e.event.toLowerCase().replace(/\s+/g, "-") === event);
 
         if (foundEvent) {
           setCurrentEvent(foundEvent);
@@ -56,19 +54,11 @@ const GigLanding = () => {
   return (
     <MainDiv
       className={`
-        w-screen min-h-dvh xsm:pb-[23px] xs:pb-[65px] md1:pb-[45px] lg:pb-[180px] 1xl:pb-[200px] 1xxl:pb-[250px] 3xl:pb-[300px] 4xl:pb-[550px] fullHD:pb-[1000px]
-    ${
-      currentEvent.typeOfShow === "Family"
-        ? " bg-beigePattern md1:bg-beigePattern xl:bg-beigePattern bg-contain"
-        : " bg-darkBlue bg-contain"
-    }`}
+        w-screen min-h-dvh xsm:pb-[23px] xs:pb-[65px] md1:pb-[45px] lg:pb-[180px] 1xl:pb-[200px] 1xxl:pb-[250px] 3xl:pb-[300px] 4xl:pb-[510px] 4xl:min-h-[1600px] fullHD:pb-[1000px]
+    ${currentEvent.typeOfShow === "Family" ? " bg-beigePattern bg-contain" : " bg-darkBlue bg-contain"}`}
     >
       <div className="flex-1 h-full">
-      {currentEvent.typeOfShow === "Family" ? (
-        <FamilyLanding data={currentEvent} />
-      ) : (
-        <PowerLanding data={currentEvent} />
-      )}
+        {currentEvent.typeOfShow === "Family" ? <FamilyLanding data={currentEvent} /> : <PowerLanding data={currentEvent} />}
       </div>
     </MainDiv>
   );

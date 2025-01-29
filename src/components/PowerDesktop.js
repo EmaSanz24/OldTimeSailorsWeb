@@ -136,13 +136,13 @@ export const PowerDesktop = ({ data }) => {
           <div className="absolute  left-[515px] top-[460px] z-20">
             <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={600} height={600} className="w-[600px] h-[600px]" loading="lazy" />
           </div>
-          <div className="absolute -right-[15px] -bottom-[500px]">
+          <div className="absolute -right-[15px] -bottom-[530px]">
             <Image
               src="/assets/shipDrawing.webp"
               alt="Background drawing"
               width={600}
               height={500}
-              className="w-[600px] h-[500px] mix-blend-multiply brightness-[55%] opacity-[75%]"
+              className="w-[600px] h-[500px] mix-blend-multiply brightness-[55%] contrast-[250%] opacity-[75%]"
               loading="lazy"
             />
           </div>
@@ -177,7 +177,7 @@ export const PowerDesktop = ({ data }) => {
             <p className="absolute inset-0 font-titles text-darkBlue left-[150px] top-[35px] text-[65px]">more gigs</p>
           </div>
           {/* Title */}
-          <div className="absolute -bottom-[470px]  left-[15px] z-10 ">
+          <div className="absolute -bottom-[500px]  left-[15px] z-10 ">
             <div className="flex flex-row items-center gap-3 mb-5">
               <div className="leading-[140px]">
                 <p className="text-lightRed text-[180px] font-titles">power</p>
