@@ -29,7 +29,8 @@ module.exports = {
         bluePatternMobile: "url('/assets/backgrounds/bg-blue-mobile.webp')",
       },
       screens: {
-        xs: "380px",
+        xsm:"320px",
+        xs: "375px",
         xs2: "400px",
         xs3: "410px",
         md1: "600px",

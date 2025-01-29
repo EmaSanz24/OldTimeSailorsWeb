@@ -2,9 +2,6 @@ import "../globals.css";
 import localFont from "next/font/local";
 import PagesWrapper from "@/wrappers/PagesWrapper";
 
-
-
-
 const khmer_mn = localFont({
   src: "../../../public/fonts/Times-Sans-Serif.ttf",
   subsets: ["latin"],
@@ -37,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${khmer_mn.variable} ${royale_signage.variable} ${din_condensed.variable}`}
+        className={`${khmer_mn.variable} ${royale_signage.variable} ${din_condensed.variable} bg-beigePattern`}
       >
         <PagesWrapper>{children}</PagesWrapper>
       </body>

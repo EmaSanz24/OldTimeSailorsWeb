@@ -30,7 +30,7 @@ export const FamilyDesktopL = ({ data }) => {
   const router = useRouter();
   return (
     <>
-      <div className="relative -bottom-[100px]">
+      <div className="relative -bottom-[180px]">
         <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
           <div className="relative border-[3px] border-darkBeige p-2 w-[1200px] h-[850px] -right-[130px] -top-[310px]">
@@ -163,7 +163,7 @@ export const FamilyDesktopL = ({ data }) => {
                 <p className="text-darkBlue text-[190px] font-titles">show</p>
               </div>
               <div className="text-lightRed text-[40px] -mb-[200px] -ml-[105px]">
-                <div className="font-txt leading-tight tracking-widest uppercase">
+                <div className="font-txt font-bold leading-tight tracking-widest uppercase">
                   <p>a traditional sailor show,</p>
                   <p>sing along and dance with us!</p>
                 </div>

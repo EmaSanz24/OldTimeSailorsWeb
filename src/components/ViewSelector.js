@@ -8,7 +8,10 @@ import MainDiv from "./MainDiv";
 
 // Componente memoizado para la opción de Map
 const MapOption = memo(() => (
-  <Link href="/tickets/map-view" className="w-full max-w-[420px] lg:max-w-[620px]">
+  <Link
+    href="/tickets/map-view"
+    className="w-full max-w-[420px] lg:max-w-[620px]"
+  >
     <div className="relative px-5">
       <Image
         src={blueFrame}
@@ -20,8 +23,12 @@ const MapOption = memo(() => (
         sizes="(max-width: 768px) 420px, 620px"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center leading-none">
-        <h2 className="text-lightRed text-2xl lg:text-4xl font-titles">view gigs on</h2>
-        <h2 className="text-darkBlue text-[68px] lg:text-[102px] font-titles">map</h2>
+        <h2 className="text-lightRed text-2xl lg:text-4xl font-titles">
+          view gigs on
+        </h2>
+        <h2 className="text-darkBlue text-[68px] lg:text-[102px] font-titles">
+          map
+        </h2>
       </div>
     </div>
   </Link>
@@ -29,7 +36,10 @@ const MapOption = memo(() => (
 
 // Componente memorizado para la opción de Calendar
 const CalendarOption = memo(() => (
-  <Link href="/tickets/calendar-view" className="w-full max-w-[420px] lg:max-w-[620px]">
+  <Link
+    href="/tickets/calendar-view"
+    className="w-full max-w-[420px] lg:max-w-[620px]"
+  >
     <div className="relative px-5">
       <Image
         src={redFrame}
@@ -41,8 +51,12 @@ const CalendarOption = memo(() => (
         sizes="(max-width: 768px) 420px, 620px"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <h2 className="text-darkBlue text-2xl lg:text-4xl font-titles">view gigs on </h2>
-        <h2 className="text-lightRed text-5xl lg:text-7xl font-titles">calendar</h2>
+        <h2 className="text-darkBlue text-2xl lg:text-4xl font-titles">
+          view gigs on{" "}
+        </h2>
+        <h2 className="text-lightRed text-5xl lg:text-7xl font-titles">
+          calendar
+        </h2>
       </div>
     </div>
   </Link>
@@ -70,15 +84,15 @@ const DrawingImage = memo(() => {
 
 const ViewSelector = () => {
   return (
-    <MainDiv className="w-full h-dvh pt-[85px] xs:pt-[100px] flex-1 md:pt-[140px] md1:pt-[140px] md2:pt-[150px] overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] lg:flex flex-col lg:flex-row lg:items-center lg:pt-0 xl:pt-[60px] 4xl:pt-[80px] fullHD:pt-[150px] 4k:pt-[170px]">
-      {/* Main Content */}
-
+    <div className="flex flex-col w-full h-dvh justify-center items-center  pt-[85px] xs:pt-[100px] flex-1 md:pt-[140px] md1:pt-[140px] md2:pt-[150px] overflow-auto px-3 bg-beigePatternMobile bg-cover lg:right-[50px] lg:flex-row lg:pt-0 xl:pt-[60px] 4xl:pt-[80px] fullHD:pt-[150px] 4k:pt-[170px]">
       <div className="flex flex-col  items-center justify-center space-y-4 w-full lg:w-[1000px] lg:h-full lg:justify-center lg:ml-20">
         <MapOption />
         <CalendarOption />
       </div>
-      <DrawingImage />
-    </MainDiv>
+      <div>
+        <DrawingImage />
+      </div>
+    </div>
   );
 };
 

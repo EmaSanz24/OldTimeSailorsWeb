@@ -66,7 +66,7 @@ export const FamilyMobileM = ({ data }) => {
   const router = useRouter();
   return (
     <>
-      <div className="relative -bottom-[72px]">
+      <div className="relative -bottom-[68px]">
         {/* Contenedor principal con borde */}
         <div className="border-[3px] border-darkBeige p-4 mx-4 relative">
           <div className="text-left lowercase">

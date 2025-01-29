@@ -10,6 +10,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import ViewSwitch from "./ViewSelectorSwitch";
 import { useNavbarColor } from "@/context/NavbarColorProvider";
+import useScrollTrigger from "@/hooks/useScrollTrigger";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -22,9 +23,18 @@ const Navbar = () => {
   const [viewSelector, setViewSelector] = useState(false);
   const { navbarColor } = useNavbarColor();
 
-  const fixedRoutes = ["/tickets", "/tickets/map-view", "/tickets/calendar-view", "/reviews", "/media", "/our-clients", "/services"];
+  const fixedRoutes = [
+    "/tickets",
+    "/tickets/map-view",
+    "/tickets/calendar-view",
+    "/reviews",
+    "/media",
+    "/our-clients",
+    "/services",
+  ];
 
-  const isDynamicRoute = pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
+  const isDynamicRoute =
+    pathname.startsWith("/tickets/") && !fixedRoutes.includes(pathname);
 
   const getBackgroundColor = (path) => {
     if (path === "/media") {
@@ -36,7 +46,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 1) {
         setNavStyle({
           boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
           backgroundColor: getBackgroundColor(pathname),
@@ -103,12 +113,41 @@ const Navbar = () => {
         break;
     }
   }, [pathname]);
+
+  const isScrolled = useScrollTrigger({ threshold: 0 });
+  useEffect(() => {
+    console.log("Scroll state:", isScrolled);
+  }, [isScrolled]);
+
+  const getNavbarBackground = () => {
+    if (!isDynamicRoute || !isScrolled) return "";
+
+    if (navbarColor === "dark") {
+      return "bg-beigePatternMobile bg-cover";
+    } else if (navbarColor === "light") {
+      return "bg-[#1f344a]";
+    }
+
+    return "";
+  };
+
+  const getNavbarStyle = () => {
+    if (isDynamicRoute && isScrolled && navbarColor === 'light') {
+      return {
+        backgroundColor: '#1f344a'
+      };
+    }
+    return {};
+  };
+
   return (
     <div
-      style={navStyle}
+      style={getNavbarStyle()}
       className={`fixed w-screen z-[100] flex flex-col justify-between pt-3 px-1 sm:px-4 3xl:px-9  ${
-        pathname === "/tickets/calendar-view" || pathname === "/tickets" ? "bg-beigePatternMobile bg-cover" : ""
-      }`}
+        pathname === "/tickets/calendar-view" || pathname === "/tickets"
+          ? "bg-beigePatternMobile bg-cover"
+          : ""
+      } ${getNavbarBackground()}`}
     >
       <div className="flex justify-between">
         <div className="flex gap-1.5 sm:gap-4 items-center">
@@ -122,7 +161,14 @@ const Navbar = () => {
           >
             <Image
               src={
-                !["/services", "/tickets", "/tickets/calendar-view", "/tickets/map-view"].includes(pathname) && navbarColor === "light" ? logo : logo2
+                ![
+                  "/services",
+                  "/tickets",
+                  "/tickets/calendar-view",
+                  "/tickets/map-view",
+                ].includes(pathname) && navbarColor === "light"
+                  ? logo
+                  : logo2
               }
               width={65}
               height={65}
@@ -134,7 +180,9 @@ const Navbar = () => {
           <h1
             className={`octagon-navbar bg-${titleBg} bg-contain text-${titleColor} font-titles
            text-2xl xs2:text-[26px] sm:text-[40px] fullHD:text-5xl 2k:text-7xl 4k:text-8xl
-            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2 ${isDynamicRoute ? "hidden" : "visible"}`}
+            flex items-center justify-center fullHD:pb-0.5 fullHD:pl-2 ${
+              isDynamicRoute ? "hidden" : "visible"
+            }`}
             style={{
               opacity: settings?.loader,
               pointerEvents: settings?.photos ? "auto" : "none",
@@ -146,7 +194,10 @@ const Navbar = () => {
         <div className="flex gap-1.5 xs:gap-2 sm:gap-4 items-center">
           <Link
             className={`${
-              pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients" && navbarColor === "dark"
+              pathname != "/media" &&
+              pathname != "/reviews" &&
+              pathname != "/our-clients" &&
+              navbarColor === "dark"
                 ? "bg-redPattern text-beige"
                 : "bg-beigePattern text-lightRed"
             }
@@ -166,7 +217,10 @@ const Navbar = () => {
 
           <Link
             className={`${
-              navbarColor === "dark" && pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              navbarColor === "dark" &&
+              pathname != "/media" &&
+              pathname != "/reviews" &&
+              pathname != "/our-clients"
                 ? "bg-bluePattern text-beige"
                 : "bg-beigePattern text-darkBlue"
             }
@@ -186,7 +240,10 @@ const Navbar = () => {
 
           <Link
             className={`${
-              navbarColor === "dark" && pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              navbarColor === "dark" &&
+              pathname != "/media" &&
+              pathname != "/reviews" &&
+              pathname != "/our-clients"
                 ? "bg-redPattern text-beige"
                 : "bg-beigePattern text-lightRed"
             }
@@ -206,7 +263,10 @@ const Navbar = () => {
 
           <Link
             className={`${
-              navbarColor === "dark" && pathname != "/media" && pathname != "/reviews" && pathname != "/our-clients"
+              navbarColor === "dark" &&
+              pathname != "/media" &&
+              pathname != "/reviews" &&
+              pathname != "/our-clients"
                 ? "bg-bluePattern text-beige"
                 : "bg-beigePattern text-darkBlue"
             }

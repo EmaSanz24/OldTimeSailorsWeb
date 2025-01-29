@@ -11,7 +11,7 @@ const PagesWrapper = ({ children }) => {
     <NextUIProvider>
       <LoaderProvider>
         <NavbarColorProvider>
-          <Navbar />
+          <Navbar/>
           {children}
           <Footer />
         </NavbarColorProvider>

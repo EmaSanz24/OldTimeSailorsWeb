@@ -8,13 +8,13 @@ const MainDiv = ({ children, className }) => {
 
   return (
     <main
-      className={`${className}`}
+      className={`relative flex flex-col ${className}`}
       style={{
         opacity: settings?.loader,
         pointerEvents: settings?.photos ? "auto" : "none",
       }}
     >
-      {children}
+      <div className="flex-1 flex flex-col justify-center items-center h-full relative">{children}</div>
     </main>
   );
 };
