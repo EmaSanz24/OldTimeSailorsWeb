@@ -80,29 +80,38 @@ export const PowerLaptop = ({ data }) => {
                     </div>
                   ))}
                 </div>
-                <div className="relative w-[250px] h-[100px] ">
+                <div className="relative ">
                   <Link
-                    className="absolute left-5 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets top-[25px]"
-                    style={{
-                      width: "270px",
-                      height: "50px",
-                    }}
+                    className="absolute inset-0 items-center justify-center text-beige top-[10px] w-[240px] left-1"
                     href={ticketsURL}
                     target="_blank"
                   >
-                    <h3 className="font-txt justify-center text-[29px] uppercase"> buy tickets</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.62 137.01" preserveAspectRatio="none" className="w-[100%] h-[95px] z-10">
+                      <path
+                        fill="#db3a57"
+                        d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
+                      />
+                    </svg>
+                    <h3 className="relative font-txt uppercase justify-center text-[32px] -top-[71px] z-20 w-[100%] text-center"> buy tickets</h3>
                   </Link>
                 </div>
               </div>
-
-              <p className="text-[15px] text-left text-beige font-txt leading-7 px-4">
-                Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
-                they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
-                'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and
-                Hard Rock on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates. Get
-                ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with The
-                Old Time Sailors... be prepared to expect the unexpected!
-              </p>
+              <div className="text-[15px] pt-5 text-beige font-txt text-left leading-7 px-4">
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
+                  they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted
+                  Circus!
+                </p>
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal
+                  and Hard Rock on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates.
+                </p>
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  Get ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with
+                  The Old Time Sailors... be prepared to expect the unexpected!
+                </p>
+              </div>
+              <p className="text-[15px] text-left text-beige font-txt leading-7 px-4"></p>
             </div>
           </div>
 
@@ -127,7 +136,7 @@ export const PowerLaptop = ({ data }) => {
               loading="lazy"
             />
           </div>
-          <div className="absolute top-[175px] left-[40px] w-[410px] h-[280px] z-50">
+          <div className="absolute top-[195px] left-[38px] w-[410px] h-[280px] z-50">
             <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={430} height={100} priority={true} />
             <div className="absolute inset-0 top-[41px] -left-[10px] -right-[10px] flex items-center justify-center">
               <video

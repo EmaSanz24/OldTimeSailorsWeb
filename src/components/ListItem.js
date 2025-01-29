@@ -47,13 +47,21 @@ const ListItem = ({ event }) => {
           <h2 className="text-[12px] xs:text-[20px] md:text-[42px] font-titles text-lightRed leading-none ">{event.event.toLowerCase()}</h2>
           <p className="text-[11px] xs:text-[18px] text-darkBlue  font-txt  md:text-3xl">{event.location}</p>
         </div>
-        <Link
+        <button
+          onClick={() => (window.location.href = `/tickets/${event.event.replace(/\s+/g, "-").toLowerCase()}`)}
+          className="flex items-center justify-center bg-ticketShape bg-cover bg-center bg-no-repeat h-[30px] w-[130px] xs:w-[130px] xs:h-[33px] md:h-[50px] md:w-[180px] lg:w-[220px] lg:h-[60px] 1xl:h-[65px] md:w-1/8 lg:w-1/10 mb-1"
+        >
+          <p className="text-center text-[25px] xs:text-[24px] md:text-[38px] lg:text-[42px] 1xl:text-[43px] font-txt font-bold uppercase text-beige">
+            + info
+          </p>
+        </button>
+        {/* <Link
           href={`/tickets/${event.event.replace(/\s+/g, "-").toLowerCase()}`}
           rel="noopener noreferrer"
           className="flex items-center justify-center services-octagon-link max-h-[50px] max-w-[170px] md:max-h-[80px] md:max-w-[260px] lg:max-w-[300px] 1xl:h-[100px] bg-lightRed md:w-1/8 lg:w-1/10"
         >
           <p className="text-center text-[25px] md:text-[38px] lg:text-[42px] 1xl:text-[46px] font-txt font-bold uppercase text-beige">+ info</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

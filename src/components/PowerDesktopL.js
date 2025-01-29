@@ -33,7 +33,7 @@ export const PowerDesktopL = ({ data }) => {
       <div className="relative -bottom-[100px]">
         <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
-          <div className="relative border-[3px] border-beige p-2 w-[1200px] h-[950px] -right-[130px] -top-[310px]">
+          <div className="relative border-[3px] border-beige p-2 w-[1200px] h-[850px] -right-[130px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="leading-none lowercase font-titles">
                 <span className="text-lightRed text-[55px]">old time sailors </span>
@@ -82,29 +82,38 @@ export const PowerDesktopL = ({ data }) => {
                   ))}
                 </div>
 
-                <div className="relative w-[250px] h-[100px]">
-                  <Link
-                    className="absolute left-4 inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
-                    style={{
-                      width: "450px",
-                      height: "130px",
-                    }}
-                    href={ticketsURL}
-                    target="_blank"
-                  >
-                    <h3 className="font-txt justify-center text-[55px] uppercase">buy tickets</h3>
+                <div className="relative w-[400px] h-[120px]">
+                  <Link className="absolute left-4 inset-0  items-center justify-center  text-beige " href={ticketsURL} target="_blank">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 358.62 137.01"
+                      preserveAspectRatio="none"
+                      className="w-[100%] h-[120px] z-10"
+                    >
+                      <path
+                        fill="#db3a57"
+                        d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
+                      />
+                    </svg>
+                    <h3 className="relative font-txt justify-center text-[55px] uppercase -top-[99px] z-20 w-[100%] text-center">buy tickets</h3>
                   </Link>
                 </div>
               </div>
-
-              <p className="text-[35px] pr-[175px] text-beige font-txt leading-10">
-                Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
-                they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
-                'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and
-                Hard Rock on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates. Get
-                ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with The
-                Old Time Sailors... be prepared to expect the unexpected!
-              </p>
+              <div className="text-[27px] pr-[175px] text-beige font-txt text-left leading-10">
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as
+                  they set sail for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted
+                  Circus!
+                </p>
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal
+                  and Hard Rock on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates.
+                </p>
+                <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+                  Get ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with
+                  The Old Time Sailors... be prepared to expect the unexpected!
+                </p>
+              </div>
             </div>
           </div>
           <div className="absolute right-[21px] -top-[230px] z-10">

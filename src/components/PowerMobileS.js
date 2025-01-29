@@ -24,13 +24,20 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 const EventDescription = memo(() => (
-  <p className="text-[12px] pb-5 pt-2 text-beige font-txt text-pretty" translate="no">
-    Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
-    for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus! 'Rock and row' with our 21
-    strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard Rock on a genre bending adventure
-    into uncharted waters, join in the Wall of Death and thrash it out with your shipmates. Get ready for vigorous vocals, emphatic energy, mosh pits
-    and head banging: we play it live and we play it loud, but as always with The Old Time Sailors... be prepared to expect the unexpected!
-  </p>
+  <div className="text-[12px] pb-5 pt-5 text-beige font-txt text-left">
+    <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+      Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
+      for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
+    </p>
+    <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+      'Rock and row' with our 21 strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard Rock
+      on a genre bending adventure into uncharted waters, join in the Wall of Death and thrash it out with your shipmates.
+    </p>
+    <p className="leading-relaxed [&:not(:last-child)]:mb-0">
+      Get ready for vigorous vocals, emphatic energy, mosh pits and head banging: we play it live and we play it loud, but as always with The Old Time
+      Sailors... be prepared to expect the unexpected!
+    </p>
+  </div>
 ));
 
 export const PowerMobileS = ({ data }) => {
@@ -91,16 +98,14 @@ export const PowerMobileS = ({ data }) => {
                 ))}
 
                 <div className="relative h-[18px]">
-                  <Link
-                    className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
-                    style={{
-                      "--octagon-width": "180px",
-                      "--octagon-height": "30px",
-                    }}
-                    href={`${ticketsURL}`}
-                    target="_blank"
-                  >
-                    <h3 className="justify-center text-[14px] font-txt uppercase"> buy tickets</h3>
+                  <Link className="absolute inset-0 items-center justify-center text-beige w-[45%] " href={`${ticketsURL}`} target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358.62 137.01" preserveAspectRatio="none" className="w-full h-[35px] z-10">
+                      <path
+                        fill="#db3a57"
+                        d="M25.61,0H333.01c0,14.15,11.47,25.61,25.61,25.61V111.4c-14.15,0-25.61,11.47-25.61,25.61H25.61c0-14.15-11.47-25.61-25.61-25.61V25.61C14.15,25.61,25.61,14.15,25.61,0Z"
+                      />
+                    </svg>
+                    <h3 className="relative font-txt justify-center text-center text-[16px] -top-[29px] z-20 uppercase"> buy tickets</h3>
                   </Link>
                 </div>
                 <EventDescription />
