@@ -102,9 +102,9 @@ export const PowerMobileM = ({ data }) => {
 
                   <div className="relative h-[18px]">
                     <Link
-                      className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets"
+                      className="absolute inset-0 flex flex-row items-center justify-center bg-lightRed text-beige octagon-tickets mt-1"
                       style={{
-                        "--octagon-width": "200px",
+                        "--octagon-width": "160px",
                         "--octagon-height": "33px",
                       }}
                       href={ticketsURL}
@@ -120,7 +120,7 @@ export const PowerMobileM = ({ data }) => {
           </div>
         </div>
         {/* Media section */}
-        <div className="w-full h-[auto] relative top-[30px] -left-2 mb-10">
+        <div className="w-full h-[auto] relative top-[30px] -left-5 mb-10">
           <div className="relative h-[200px]">
             {/* Video */}
             {/* Contenedor principal */}
@@ -145,14 +145,14 @@ export const PowerMobileM = ({ data }) => {
             </div>
 
             {/* Photo 2 */}
-            <div className="absolute -right-[3px] -top-[20px] w-[160px] h-[130px] z-9">
-              <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={150} height={150} className="w-[150px] h-[150px]" loading="lazy" />
+            <div className="absolute -right-[14px] -top-[20px] w-[160px] h-[130px] z-9">
+              <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={150} height={150} className="w-[160px] h-[160px]" loading="lazy" />
             </div>
           </div>
 
           {/* Lower photos */}
           <div className="relative h-[200px]">
-            <div className="absolute left-[40px] -top-[80px] w-1/2 z-20">
+            <div className="absolute left-[32px] -top-[79px] w-1/2 z-20">
               <Image src="/assets/powerPhoto1.webp" alt="Performance" width={170} height={170} className="w-[162px] h-[150px] z-10" loading="lazy" />
               <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
                 <Image
@@ -160,7 +160,7 @@ export const PowerMobileM = ({ data }) => {
                   alt="More gigs"
                   width={160}
                   height={50}
-                  className="w-[160px] h-[50px] absolute right-[55px] -bottom-[60px]"
+                  className="w-[160px] h-[50px] absolute right-[46px] -bottom-[60px]"
                   loading="lazy"
                 />
 

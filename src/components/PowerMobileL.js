@@ -122,7 +122,7 @@ export const PowerMobileL = ({ data }) => {
         <div className="relative h-[200px]">
           {/* Video */}
           {/* Contenedor principal */}
-          <div className="relative w-[295px] h-[130px] left-[0px]">
+          <div className="relative w-[295px] h-[130px] -left-[4px]">
             {/* Video primero en el DOM pero con z-index menor */}
             <div className="absolute inset-0  flex items-center justify-center z-20">
               <video
@@ -131,7 +131,7 @@ export const PowerMobileL = ({ data }) => {
                 poster={"/assets/thumbnailVideoP.webp"}
                 playsInline
                 loading="lazy"
-                className="w-[78%] h-[98%] absolute -top-[7px] left-[33px] object-cover rounded-sm] hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
+                className="w-[77%] h-[98%] absolute -top-[7px] left-[33px] object-cover rounded-sm] hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
               >
                 <source src="/assets/powerVideo.mp4" type="video/mp4" />
               </video>
@@ -139,7 +139,7 @@ export const PowerMobileL = ({ data }) => {
 
             {/* Recuadro después en el DOM y con z-index mayor */}
             <div className="absolute inset-0 z-10 -top-[58px] left-[5px]">
-              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={290} height={209} className="w-[290px] h-[209px]" priority={true} />
+              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={290} height={209} className="w-[285px] h-[209px]" priority={true} />
             </div>
           </div>
 
@@ -151,7 +151,7 @@ export const PowerMobileL = ({ data }) => {
 
         {/* Lower photos */}
         <div className="relative h-[200px]">
-          <div className="absolute left-[33px] bottom-[75px] w-1/2 z-20">
+          <div className="absolute left-[25px] bottom-[78px] w-1/2 z-20">
             <Image src="/assets/powerPhoto1.webp" alt="Performance" width={185} height={185} className=" w-[195px] h-[195px] z-10" loading="lazy" />
             <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
               <Image

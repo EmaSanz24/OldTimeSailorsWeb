@@ -130,7 +130,7 @@ export const PowerDesktop = ({ data }) => {
             />
           </div>
           <div className="relative">
-            <div className="absolute inset-0 flex items-center justify-center -top-[300px] right-[995px] z-30">
+            <div className="absolute inset-0 flex items-center justify-center -top-[300px] right-[1040px] z-30">
               <video
                 controls
                 preload="none"
@@ -142,8 +142,8 @@ export const PowerDesktop = ({ data }) => {
                 <source src="/assets/powerVideo.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="absolute -top-[408px] left-[10px] z-20 ">
-              <Image src="/assets/powerVideoBox.webp" alt="Video frame" width={650} height={550} className="w-[670px] h-[470px]" priority={true} />
+            <div className="absolute -top-[408px] left-[1px] z-20 ">
+              <Image src="/assets/powerVideoBox.webp" alt="Video frame" width={650} height={550} className="w-[640px] h-[470px]" priority={true} />
             </div>
           </div>
 

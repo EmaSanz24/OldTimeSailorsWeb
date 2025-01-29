@@ -109,7 +109,7 @@ export const PowerTablet = ({ data }) => {
         <div className="relative h-[220px]">
           {/* Video */}
           {/* Contenedor principal */}
-          <div className="relative w-[550px] h-[230px] -top-[2px] left-[15px] z-30">
+          <div className="relative w-[550px] h-[230px] -top-[2px] left-[11px] z-30">
             {/* Video primero en el DOM pero con z-index menor */}
             <div className="absolute inset-0  flex items-center justify-center z-40">
               <video
@@ -124,7 +124,7 @@ export const PowerTablet = ({ data }) => {
 
             {/* Recuadro después en el DOM y con z-index mayor */}
             <div className="absolute inset-0 z-10 -top-[110px] -left-[15px]">
-              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={480} height={370} className="w-[480px] h-[370px]" priority={true} />
+              <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={480} height={370} className="w-[480px] h-[372px]" priority={true} />
             </div>
           </div>
 
@@ -136,7 +136,7 @@ export const PowerTablet = ({ data }) => {
 
         {/* Lower photos */}
         <div className="relative h-[750px] mx-5 mb-4">
-          <div className="absolute -top-[26px] left-[10px] w-1/2 z-20">
+          <div className="absolute -top-[26px] -left-[7px] w-1/2 z-20">
             <Image src="/assets/powerPhoto1.webp" alt="Performance" width={300} height={280} className="z-10 h-[320px] ml-7 mt-4" loading="lazy" />
             <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
               <Image

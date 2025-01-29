@@ -27,6 +27,7 @@ module.exports = {
         bluePattern: "url('/assets/backgrounds/bg-blue-desktop.webp')",
         bluePatternTablet: "url('/assets/backgrounds/bg-blue-tablet.webp')",
         bluePatternMobile: "url('/assets/backgrounds/bg-blue-mobile.webp')",
+        ticketShape: "url('/assets/buyTicketAsset.svg')",
       },
       screens: {
         xsm:"320px",

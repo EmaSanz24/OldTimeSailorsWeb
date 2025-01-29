@@ -33,7 +33,7 @@ export const PowerDesktopL = ({ data }) => {
       <div className="relative -bottom-[100px]">
         <div className="relative w-full h-full my-[250px]">
           {/* Contenedor principal con borde */}
-          <div className="relative border-[3px] border-beige p-2 w-[1200px] h-[850px] -right-[130px] -top-[310px]">
+          <div className="relative border-[3px] border-beige p-2 w-[1200px] h-[950px] -right-[130px] -top-[310px]">
             <div className="text-left px-10">
               <h1 className="leading-none lowercase font-titles">
                 <span className="text-lightRed text-[55px]">old time sailors </span>
@@ -129,11 +129,11 @@ export const PowerDesktopL = ({ data }) => {
             />
           </div>
           <div className="relative bottom-[550px] w-full">
-            <div className="absolute top-[95px] left-[10px] z-30 ">
+            <div className="absolute top-[85px] left-[0px] z-30 ">
               <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={650} height={550} className="w-[650px] h-[550px]" priority={true} />
             </div>
 
-            <div className="absolute inset-0 top-[250px] left-[85px] z-50">
+            <div className="absolute inset-0 top-[240px] left-[75px] z-50">
               <video
                 controls
                 preload="none"

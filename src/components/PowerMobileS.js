@@ -24,7 +24,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 const EventDescription = memo(() => (
-  <p className="text-[12px] pb-5 text-beige font-txt text-pretty" translate="no">
+  <p className="text-[12px] pb-5 pt-2 text-beige font-txt text-pretty" translate="no">
     Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
     for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus! 'Rock and row' with our 21
     strong crew of rebellious musicians as the navigate a voyage through the thrashing seas of Hevay Metal and Hard Rock on a genre bending adventure
@@ -55,7 +55,7 @@ export const PowerMobileS = ({ data }) => {
 
             <div className="border-more-dashed-beige my-4" />
 
-            <div className="absolute -right-[12px] top-[70px] w-[160px]">
+            <div className="absolute -right-[28px] top-[70px] w-[145px]">
               <div className="bg-beige p-3 py-4 rounded-2xl">
                 <h3 className="text-lightRed text-[15px]  font-titles leading-none">
                   <p>more about</p>
@@ -111,7 +111,7 @@ export const PowerMobileS = ({ data }) => {
       </div>
 
       {/* Media section */}
-      <div className="w-full h-[400px] relative top-5 -left-2">
+      <div className="w-full h-[400px] relative top-5 -left-3">
         <div className="relative h-[200px]">
           {/* Video */}
           {/* Contenedor principal */}
@@ -136,7 +136,7 @@ export const PowerMobileS = ({ data }) => {
           </div>
 
           {/* Photo 2 */}
-          <div className="absolute -right-1 -top-4 w-[130px] h-[130px]">
+          <div className="absolute -right-2 -top-4 w-[130px] h-[130px]">
             <Image
               src="/assets/powerPhoto4.jpg"
               alt="Musicians"
@@ -151,7 +151,7 @@ export const PowerMobileS = ({ data }) => {
 
         {/* Lower photos */}
         <div className="relative h-[200px] bottom-8">
-          <div className="absolute left-[40px] -top-[71.5px] w-1/2 z-20">
+          <div className="absolute left-[34px] -top-[71.5px] w-1/2 z-20">
             <Image
               src="/assets/powerPhoto1.webp"
               alt="Performance"
