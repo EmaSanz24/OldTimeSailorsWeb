@@ -49,9 +49,7 @@ const fetchMarkers = async () => {
 const MapView = async () => {
   const markersList = await fetchMarkers();
 
-  return (
-    <MapViewComponent markersList={markersList}/>
-  );
+  return <MapViewComponent markersList={markersList} />;
 };
 
 export default MapView;

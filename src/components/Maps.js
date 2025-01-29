@@ -311,7 +311,7 @@ const Maps = ({ markersList }) => {
   );
 
   return (
-    <MainDiv className="h-dvh">
+    <MainDiv className={"h-dvh"}>
       <Map zoom={5} maxZoom={9} center={mapCenter} gestureHandling={"greedy"} disableDefaultUI={true} id={"MapOTS"} restriction={restrictions}>
         {coreLibrary &&
           markersList.map((m) => (
