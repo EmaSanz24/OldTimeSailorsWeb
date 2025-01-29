@@ -65,14 +65,14 @@ export const PowerMobileM = ({ data }) => {
 
               <div className="border-more-dashed-beige my-4" />
 
-              <div className="absolute -right-[12px] top-[70px] w-[160px]">
+              <div className="absolute -right-[12px] top-[70px] w-[176px]">
                 <div className="bg-beige p-3 py-4 rounded-2xl">
                   <h3 className="text-lightRed text-lg  font-bold font-titles leading-none">
                     <p>more about</p>
                     <p>the venue</p>
                   </h3>
                   <div className="mt-0.5 ">
-                    <p className="text-darkBlue text-[7px] leading-tight font-txt">
+                    <p className="text-darkBlue text-[9px] leading-tight font-txt">
                       {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
                       seating options.
                     </p>

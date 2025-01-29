@@ -52,7 +52,7 @@ export const PowerDesktop = ({ data }) => {
                   the venue
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-darkBlue text-[15px] font-txt leading-tight">
+                  <p className="text-darkBlue text-[16px] font-txt leading-tight">
                     {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
                     seating options.
                   </p>

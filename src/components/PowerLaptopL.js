@@ -50,7 +50,7 @@ export const PowerLaptopL = ({ data }) => {
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 tracking-wide">
-                  <p className="text-darkBlue text-[15px] font-txt leading-tight">
+                  <p className="text-darkBlue text-[17px] font-txt leading-tight">
                     {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
                     seating options.
                   </p>

@@ -33,9 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${khmer_mn.variable} ${royale_signage.variable} ${din_condensed.variable} bg-beigePattern`}
-      >
+      <body className={`${khmer_mn.variable} ${royale_signage.variable} ${din_condensed.variable} bg-beigePattern`}>
         <PagesWrapper>{children}</PagesWrapper>
       </body>
     </html>

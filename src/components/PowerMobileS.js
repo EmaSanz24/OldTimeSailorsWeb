@@ -69,7 +69,7 @@ export const PowerMobileS = ({ data }) => {
                   <p>the venue</p>
                 </h3>
                 <div className="mt-0.5 ">
-                  <p className="text-darkBlue text-[7px] leading-tight font-txt">
+                  <p className="text-darkBlue text-[8px] leading-tight font-txt">
                     {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
                     seating options.
                   </p>

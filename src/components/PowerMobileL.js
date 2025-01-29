@@ -72,7 +72,7 @@ export const PowerMobileL = ({ data }) => {
 
             <div className="border-more-dashed-beige my-4" />
 
-            <div className="absolute -right-[12px] top-[30px] w-[160px]">
+            <div className="absolute -right-[12px] top-[70px] w-[176px]">
               <div className="bg-beige p-3 py-4 rounded-2xl">
                 <h3 className="text-lightRed text-lg font-bold  font-titles leading-none">
                   <p>more about</p>
@@ -84,7 +84,7 @@ export const PowerMobileL = ({ data }) => {
                     seating options.
                   </p>
                   <Link href={eventURL}>
-                    <p className="text-darkBlue text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
+                    <p className="text-darkBlue text-[9px] mt-1  underline font-titles">contact the venue for + info</p>
                   </Link>
                 </div>
               </div>
