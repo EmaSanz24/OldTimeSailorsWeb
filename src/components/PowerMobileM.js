@@ -200,7 +200,7 @@ export const PowerMobileM = ({ data }) => {
                 <p className="text-lightRed text-[49px] font-titles ">power</p>
                 <p className="text-lightRed text-[49px] font-titles">show</p>
               </div>
-              <div className="text-beige text-[10.45px] flex flex-col">
+              <div className="text-beige text-[9.45px] flex flex-col">
                 <div className="-ml-[35px] mt-[58px] font-txt font-bold leading-none tracking-widest uppercase truncate">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
