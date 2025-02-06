@@ -22,7 +22,7 @@ export const PowerLanding = ({ data }) => {
 
       {/* Mobile M - 375px */}
       <div className="hidden min-[375px]:block min-[425px]:hidden w-full">
-        <div className="w-[375px] min-h-screen relative mx-auto pb-[75px]">
+        <div className="w-[375px] min-h-screen relative mx-auto pb-[85px]">
           <PowerMobileM data={data} />
         </div>
       </div>

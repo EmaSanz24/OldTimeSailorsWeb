@@ -20,13 +20,13 @@ export const FamilyLanding = ({ data }) => {
       </div>
       {/* Mobile M - 375px */}
       <div className="hidden min-[375px]:block min-[425px]:hidden w-full">
-        <div className="w-[375px] min-h-screen relative mx-auto pb-[65px]">
+        <div className="w-[375px] h-full relative mx-auto pb-[60px]">
           <FamilyMobileM data={data} />
         </div>
       </div>
       {/* Mobile L - 425px */}
       <div className="hidden min-[425px]:block min-[768px]:hidden">
-        <div className="w-[425px] min-h-screen relative mx-auto pb-[65px]">
+        <div className="w-[425px] min-h-screen relative mx-auto pb-[45px]">
           <FamilyMobileL data={data} />
         </div>
       </div>

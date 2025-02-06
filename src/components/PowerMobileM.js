@@ -24,7 +24,7 @@ const formatDate = (inputDate) => {
   return formattedDate;
 };
 const EventDescription = memo(() => (
-  <div className="text-[12px] pb-5 pt-5 text-beige font-txt text-left">
+  <div className="text-[10px] pb-6 pt-11 text-beige font-txt text-left">
     <p className="leading-relaxed [&:not(:last-child)]:mb-0">
       Heave ho and up she rises! Cast aside your compass, throw your maps overboard and join the mutinous crew of The Old Time Sailor as they set sail
       for the wild uninhabited islands of Irish Punk, Shanty Punk, Polka Rock, Romani Punk, Dark Cabaret, and Twisted Circus!
@@ -39,7 +39,30 @@ const EventDescription = memo(() => (
     </p>
   </div>
 ));
-
+const VideoComponent = memo(() => (
+  <div className="absolute left-[39.62px] -top-[42px] z-20">
+    <Image
+      src="/assets/powerVideoBox2.svg"
+      alt="Video frame"
+      width={239}
+      height={148}
+      quality={50}
+      className="transform-gpu relative -left-[14.38px]"
+      priority={true}
+    />
+    <div className="absolute inset-0 flex items-center justify-center">
+      <video
+        controls
+        preload="none"
+        poster={"/assets/thumbnailVideoP.webp"}
+        className="w-[187.97px] h-[106.42px] absolute top-[41px] left-[11px] object-cover rounded-sm]
+              hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
+      >
+        <source src="/assets/powerVideo.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+));
 export const PowerMobileM = ({ data }) => {
   const { event, location, date, ticketsURL, venueInfo, gigStartTime, gigFinishTime } = data;
   const formattedDate = formatDate(date);
@@ -47,37 +70,37 @@ export const PowerMobileM = ({ data }) => {
   const router = useRouter();
   return (
     <>
-      <div className="relative top-[15px]">
+      <div className="relative top-[18.67px]">
         <div className="relative -bottom-[50px]  z-0 transform translate-z-0 will-change-transform">
           <div className="relative w-full h-full my-[10px]">
             {/* Contenedor principal con borde */}
-            <div className="border-[3px] border-beige p-4 mx-4 relative">
-              <div className="text-left lowercase">
-                <h1 className="font-titles pt-1 leading-none text-[23px] ">
+            <div className="border-[2px] border-beige relative mr-[32.72px] ml-[35.28px]">
+              <div className="text-left lowercase pl-[11.61px] pt-[4.5px] w-[190px]">
+                <h1 className="font-titles pt-1 leading-[20px] text-[21px]">
                   <p>
                     <span className="text-lightRed">old time sailors </span>
                     <span className="text-beige"> at</span>
                   </p>
                   <p className="text-beige">{event}</p>
                 </h1>
-                <p className="text-lightRed text-md font-txt">{location}</p>
+                <p className="text-lightRed text-[10.6px] font-txt uppercase">{location}</p>
               </div>
 
-              <div className="border-more-dashed-beige my-4" />
+              <div className="border-more-dashed-beige my-2" />
 
-              <div className="absolute -right-[12px] top-[70px] w-[176px]">
-                <div className="bg-beige p-3 py-4 rounded-2xl">
-                  <h3 className="text-lightRed text-lg  font-bold font-titles leading-none">
+              <div className="absolute -right-[24.5px] top-[24px] w-[146.03px]">
+                <div className="bg-beige p-[11.82px] rounded-2xl">
+                  <h3 className="text-lightRed text-[18px]  font-bold font-titles leading-[16px]">
                     <p>more about</p>
                     <p>the venue</p>
                   </h3>
                   <div className="mt-0.5 ">
-                    <p className="text-darkBlue text-[9px] leading-tight font-txt">
+                    <p className="text-darkBlue text-[8.9px] leading-tight font-txt">
                       {venueInfo}A rural escape built by the community, for the community in the heart of Newquay. A venue for the whole family with
                       seating options.
                     </p>
                     <Link href={eventURL}>
-                      <p className="text-darkBlue text-[8px] mt-1  underline font-titles">contact the venue for + info</p>
+                      <p className="text-darkBlue text-[8.9px] mt-1  underline font-titles">contact the venue for + info</p>
                     </Link>
                   </div>
                 </div>
@@ -85,7 +108,7 @@ export const PowerMobileM = ({ data }) => {
 
               {/* Event info */}
               <div className="space-y-6 ">
-                <div className="space-y-1.5">
+                <div className="ml-[11.61px] mr-[10px]">
                   {[
                     { icon: FaLocationDot, text: `${event}` },
                     { icon: FaCalendar, text: `${formattedDate}` },
@@ -94,15 +117,16 @@ export const PowerMobileM = ({ data }) => {
                       text: `${gigStartTime} to ${gigFinishTime}`,
                     },
                   ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 text-darkBlue font-txt leading-none">
-                      <Icon className="text-[12px] text-lightRed" />
-                      <span className="text-[11px] text-beige">{text}</span>
+                    <div key={text} className="flex items-center gap-1 text-darkBlue font-txt">
+                      <Icon className="text-[9.5px] text-lightRed" />
+                      <span className="text-[9.5px] text-beige">{text}</span>
                     </div>
                   ))}
 
-                  <div className="relative h-[18px]">
-                    <Link className="absolute inset-0 items-center justify-center text-beige w-[53%] left-2" href={ticketsURL} target="_blank">
-                      <svg
+                  <div className="relative -left-[1.05px]">
+                    <Link className="absolute inset-0 text-beige pt-1" href={ticketsURL} target="_blank">
+                      <Image src="/assets/buyTickets.png" width={161.56} height={26.44}></Image>
+                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 358.62 137.01"
                         preserveAspectRatio="none"
@@ -114,7 +138,7 @@ export const PowerMobileM = ({ data }) => {
                         />
                       </svg>
 
-                      <h3 className=" relative font-txt uppercase text-center text-[16px] -top-[29px] z-20 w-[85%]"> buy tickets</h3>
+                      <h3 className=" relative font-txt uppercase text-center text-[16px] -top-[29px] z-20 w-[85%]"> buy tickets</h3> */}
                     </Link>
                   </div>
                   <EventDescription />
@@ -124,68 +148,60 @@ export const PowerMobileM = ({ data }) => {
           </div>
         </div>
         {/* Media section */}
-        <div className="w-full h-[auto] relative top-[30px] -left-5 mb-10">
+        <div className="w-full h-[auto] relative top-[33px] -left-5 mb-10">
           <div className="relative h-[200px]">
             {/* Video */}
-            {/* Contenedor principal */}
-            <div className="relative w-[245px] h-[130px] left-[5px]">
-              {/* Video primero en el DOM pero con z-index menor */}
-              <div className="absolute inset-0  flex items-center justify-center z-20">
-                <video
-                  controls
-                  preload="none"
-                  poster={"/assets/thumbnailVideoP.webp"}
-                  className="w-[78%] h-[85%] absolute top-[6px] left-[29px] object-cover rounded-sm]
-              hover:opacity-100 [&::-webkit-media-controls]:opacity-0 hover:[&::-webkit-media-controls]:opacity-100 [&::-webkit-media-controls]:transition-opacity"
-                >
-                  <source src="/assets/powerVideo.mp4" type="video/mp4" />
-                </video>
-              </div>
-
-              {/* Recuadro después en el DOM y con z-index mayor */}
-              <div className="absolute inset-0 z-10 -top-[45px] left-[5px]">
-                <Image src="/assets/powerVideoBox2.svg" alt="Video frame" width={255} height={196} className="w-[255px] h-[196px]" priority={true} />
-              </div>
-            </div>
-
+            <VideoComponent />
             {/* Photo 2 */}
-            <div className="absolute -right-[14px] -top-[20px] w-[160px] h-[130px] z-9">
-              <Image src="/assets/powerPhoto4.jpg" alt="Musicians" width={150} height={150} className="w-[160px] h-[160px]" loading="lazy" />
+            <div className="absolute -right-[19.20px] -top-[20px] w-[160px] h-[130px] z-9">
+              <Image
+                src="/assets/powerPhoto4.jpg"
+                alt="Musicians"
+                width={150}
+                height={150}
+                className="w-[148.54px] h-[148.54px] shadow-black-500 shadow-[3px_3px_3px_rgba(0,0,0,0.3)]"
+                loading="lazy"
+              />
             </div>
           </div>
 
           {/* Lower photos */}
           <div className="relative h-[200px]">
-            <div className="absolute left-[32px] -top-[79px] w-1/2 z-20">
-              <Image src="/assets/powerPhoto1.webp" alt="Performance" width={170} height={170} className="w-[162px] h-[150px] z-10" loading="lazy" />
+            <div className="absolute left-[47.91px] -top-[88px] z-20">
+              <Image
+                src="/assets/powerPhoto1.webp"
+                alt="Performance"
+                width={170}
+                height={170}
+                className="w-[154.33px] h-[155.33px] z-10  shadow-black-500 shadow-[3px_3px_3px_rgba(0,0,0,0.3)]"
+                loading="lazy"
+              />
               <div className="relative" onClick={() => router.back()} role="button" tabIndex={0}>
                 <Image
-                  src="/assets/beigeArrow.webp"
+                  src="/assets/beigeArrow.png"
                   alt="More gigs"
                   width={160}
                   height={50}
-                  className="w-[160px] h-[50px] absolute right-[46px] -bottom-[60px]"
+                  className="w-[160px] h-[50px] absolute right-[20px] -bottom-[60px]"
                   loading="lazy"
                 />
-
-                <p className="absolute inset-0 font-times font-titles text-darkBlue left-[15px] top-[18px] text-[25px]">more gigs</p>
               </div>
             </div>
 
-            <div className="absolute -right-[4px] bottom-[70px] w-[197px] h-[190px] z-10">
+            <div className="absolute -right-[4px] bottom-[80px] w-[187px] h-[187px] z-10">
               <Image src="/assets/powerPhoto3.webp" alt="Crowd" width={400} height={400} className="w-full h-auto" loading="lazy" />
             </div>
           </div>
 
           {/* Title */}
-          <div className="absolute -bottom-[50px] left-[20px] z-30">
+          <div className="absolute -bottom-[30px] left-[20px] z-30">
             <div className="flex flex-row items-center gap-3">
-              <div className="flex flex-col leading-[50px]">
-                <p className="text-lightRed text-[60px] font-titles ">power</p>
-                <p className="text-lightRed text-[60px] font-titles">show</p>
+              <div className="flex flex-col leading-[43.7px]">
+                <p className="text-lightRed text-[49px] font-titles ">power</p>
+                <p className="text-lightRed text-[49px] font-titles">show</p>
               </div>
-              <div className="text-beige text-[7px] flex flex-col">
-                <div className="-ml-[45px] mt-[73px] font-txt font-bold leading-none tracking-widest uppercase truncate">
+              <div className="text-beige text-[10.45px] flex flex-col">
+                <div className="-ml-[35px] mt-[58px] font-txt font-bold leading-none tracking-widest uppercase truncate">
                   <p>an upbeat, darker show. get ready to</p>
                   <p>party below deck like a pirate!</p>
                 </div>
@@ -198,7 +214,7 @@ export const PowerMobileM = ({ data }) => {
             alt="Background drawing"
             width={170}
             height={140}
-            className="w-[190px] h-[170px] absolute -bottom-[75px] -right-[20px] z-0 mix-blend-multiply brightness-[35%] contrast-[250%] opacity-[85%]"
+            className="w-[153.24px] h-[112.52px] absolute -bottom-[37px] -right-[2px] z-0 mix-blend-multiply brightness-[35%] contrast-[250%] opacity-[85%]"
             loading="lazy"
           />
         </div>
